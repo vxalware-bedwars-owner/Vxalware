@@ -1,0 +1,1050 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+repeat task.wait() until game:IsLoaded() -- better system --
+
+local Window = Rayfield:CreateWindow({
+	Name = "🛏️ Vxalware V3 🛏️",
+	Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+	LoadingTitle = "Vxalware Interface Suite",
+	LoadingSubtitle = "by SynthX",
+	Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+	DisableRayfieldPrompts = false,
+	DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = "bedwars", -- Create a custom folder for your hub/game
+		FileName = "bedwars"
+	},
+
+	Discord = {
+		Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+		Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+		RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+	},
+
+	KeySystem = false, -- Set this to true to use our key system
+	KeySettings = {
+		Title = "Untitled",
+		Subtitle = "Key System",
+		Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
+		FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+		SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+		Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+	}
+})
+
+function newChat(msg)
+	local args = {
+		[1] = msg,
+		[2] = "All"
+	}
+	game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))
+end
+
+local Tab = Window:CreateTab("Scripts", "gamepad-2")
+
+		local Button = Tab:CreateButton({
+			Name = "Autoclicker",
+			Callback = function()
+			end,
+		})
+
+		local function getRemote(name)
+			local remote
+			for i,v in pairs(game:GetDescendants()) do
+				if v.Name == name then
+					remote = v
+					break
+				end
+			end
+			return remote
+		end
+
+		local Button = Tab:CreateButton({
+			Name = "NoFall",
+			Callback = function()
+				local nofallremote = getRemote("GroundHit")
+
+				repeat
+					nofallremote:FireServer()
+					task.wait(0.5)
+				until not true
+			end,
+		})
+
+		local CollectionService = game:GetService("CollectionService")
+
+		local function IsAlive(Player)
+			Player = Player
+
+			if not Player.Character then return false end
+			if not Player.Character:FindFirstChild("Humanoid") then return false end
+			if Player.Character:GetAttribute("Health") <= 0 then return false end
+			if not Player.Character.PrimaryPart then return false end	
+
+			return true
+		end	
+
+		local DamageBlockRemote = game.ReplicatedStorage:WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@easy-games"):WaitForChild("block-engine"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged"):WaitForChild("DamageBlock")
+		local NearestBedFound = false
+		local CanSeeNearestBed = false
+		local LocalPlayer = game.Players.LocalPlayer
+		local CurrentCamera = workspace.CurrentCamera
+
+		local function GetServerPosition(Position)
+			local X = math.round(Position.X / 3)
+			local Y = math.round(Position.Y / 3)
+			local Z = math.round(Position.Z / 3)
+
+			return Vector3.new(X, Y, Z)
+		end
+
+		local function Nuker(NearestBed)
+			task.spawn(function()
+				if NearestBed then
+					NearestBedFound = true
+
+					local RaycastParameters = RaycastParams.new()
+					local TargetBlock = nil
+
+					RaycastParameters.FilterType = Enum.RaycastFilterType.Exclude
+					RaycastParameters.FilterDescendantsInstances = {LocalPlayer.Character}
+					RaycastParameters.IgnoreWater = true
+
+					local RaycastResult = game.Workspace:Raycast(NearestBed.Position + Vector3.new(0, 30, 0), Vector3.new(0, -35, 0), RaycastParameters)
+
+					task.spawn(function()
+						if RaycastResult then
+							if RaycastResult.Instance then
+								TargetBlock = RaycastResult.Instance
+							end
+
+							if not RaycastResult.Instance then
+								TargetBlock = NearestBed
+							end				
+
+							DamageBlockRemote:InvokeServer({
+								blockRef = {
+									blockPosition = GetServerPosition(TargetBlock.Position)
+								},
+
+								hitPosition = GetServerPosition(TargetBlock.Position),
+								hitNormal = GetServerPosition(TargetBlock.Position)
+							})
+						end
+					end)			
+
+					task.spawn(function()
+						local _, Value = CurrentCamera:WorldToScreenPoint(NearestBed.Position)
+
+						CanSeeNearestBed = Value
+					end)
+				end
+			end)
+		end
+
+		local function FindNearestBed(MaxDistance)
+			local MaxDistance = MaxDistance or math.huge
+			local NearestBed = nil
+
+			for i, v in next, CollectionService:GetTagged("bed")do
+				if v:FindFirstChild("Blanket").BrickColor ~= LocalPlayer.Team.TeamColor then			
+					if v:GetAttribute("BedShieldEndTime") then 				
+						if v:GetAttribute("BedShieldEndTime") < workspace:GetServerTimeNow() then
+							local Distance = (v.Position - LocalPlayer.Character.PrimaryPart.Position).Magnitude
+
+							if Distance < MaxDistance then
+								MaxDistance = Distance
+								NearestBed = v
+							end
+						end
+					end
+
+					if not v:GetAttribute("BedShieldEndTime") then
+						local Distance = (v.Position - LocalPlayer.Character.PrimaryPart.Position).Magnitude
+
+						if Distance < MaxDistance then
+							MaxDistance = Distance
+							NearestBed = v
+						end
+					end
+				end
+			end
+
+			return NearestBed
+		end
+
+		local Button = Tab:CreateButton({
+			Name = "Nuker",
+			Callback = function()
+				nuker = game:GetService("RunService").Heartbeat:Connect(function()
+					task.wait(0.09)
+					if IsAlive(LocalPlayer) then
+						local NearestBed = FindNearestBed(35) or nil
+
+						if NearestBed then
+							Nuker(NearestBed)
+						end
+					end
+				end)
+			end,
+		})
+
+		local Button = Tab:CreateButton({
+			Name = "Aimassist",
+			Callback = function()
+			end,
+		})
+
+		local Button = Tab:CreateButton({
+			Name = "Reach",
+			Callback = function()
+			end,
+		})
+
+		local Button = Tab:CreateButton({
+			Name = "Triggerbot",
+			Callback = function()
+			end,
+		})
+
+		local Button = Tab:CreateButton({
+			Name = "Fastkill",
+			Callback = function()
+			end,
+		})
+
+		local Tab = Window:CreateTab("Blatant",
+			"skull")
+		local Button = Tab:CreateButton({
+			Name = "Autoleave",
+			Callback = function()
+			end,
+		})
+
+		local Button = Tab:CreateButton({
+			Name = "HighJump",
+			Callback = function()
+			end,
+		})
+
+		local Button = Tab:CreateButton({
+			Name = "Range Visualiser (Doesnt work)",
+			Callback = function()
+			end,
+		})
+
+
+
+		inventory = workspace[LocalPlayer.Name].InventoryFolder.Value
+
+		local function hasItem(item)
+			if inventory:FindFirstChild(item) then
+				return true, 1
+			end
+			return false
+		end
+
+		local SetInvItem = getRemote("SetInvItem")
+		local function spoofHand(item)
+			if hasItem(item) then
+				SetInvItem:InvokeServer({
+					["hand"] = inventory:WaitForChild(item)
+				})
+			end
+		end
+
+		local knitRecieved, knit
+		knitRecieved, knit = pcall(function()
+			repeat task.wait()
+				return debug.getupvalue(require(game:GetService("Players")[LocalPlayer.Name].PlayerScripts.TS.knit).setup, 6)
+			until knitRecieved
+		end)
+
+		local function getController(name)
+			return knit.Controllers[name]
+		end
+
+		local AuraRemote = getRemote("SwordHit")
+
+		Players = game:GetService("Players")
+		--LocalPlayer = Players.LocalPlayer
+		Character = LocalPlayer.Character
+		PrimaryPart = Character.PrimaryPart
+
+		local viewmodel = game.Workspace.Camera.Viewmodel.RightHand.RightWrist
+		local weld = viewmodel.C0
+		local oldweld = viewmodel.C0
+
+		local animRunning = true
+		local reverseTween
+
+		local animAuraTab = {}
+
+		local auraAnimations = {
+			["Smooth"] = {
+				{CFrame = CFrame.new(0.69, -0.7, 0.1) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-51)), Timer = 0.1},
+				{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(-179), math.rad(54), math.rad(33)), Timer = 0.16},
+			},
+			["Spin"] = {
+				{CFrame = CFrame.new(0.69, -0.7, 0.1) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), Timer = 0.05},
+				{CFrame = CFrame.new(0.69, -0.7, 0.1) * CFrame.Angles(math.rad(-145), math.rad(0), math.rad(0)), Timer = 0.05},
+				{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(-180), math.rad(0), math.rad(0)), Timer = 0.05},
+				{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(-220), math.rad(0), math.rad(0)), Timer = 0.05},
+				{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(-270), math.rad(0), math.rad(0)), Timer = 0.05},
+				{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(-310), math.rad(0), math.rad(0)), Timer = 0.05},
+				{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(-360), math.rad(0), math.rad(0)), Timer = 0.05},
+			},
+			["Reverse Spin"] = {
+				{CFrame = CFrame.new(0.69, -0.7, 0.1) * CFrame.Angles(math.rad(90), math.rad(0), math.rad(0)), Timer = 0.05},
+				{CFrame = CFrame.new(0.69, -0.7, 0.1) * CFrame.Angles(math.rad(145), math.rad(0), math.rad(0)), Timer = 0.05},
+				{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(180), math.rad(0), math.rad(0)), Timer = 0.05},
+				{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(220), math.rad(0), math.rad(0)), Timer = 0.05},
+				{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(270), math.rad(0), math.rad(0)), Timer = 0.05},
+				{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(310), math.rad(0), math.rad(0)), Timer = 0.05},
+				{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(360), math.rad(0), math.rad(0)), Timer = 0.05},
+			},
+			["Swoosh"] = {
+				{CFrame = CFrame.new(0.69, -0.7, 0.1) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-51)), Timer = 0.1},
+				{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(-179), math.rad(94), math.rad(33)), Timer = 0.16},
+			},
+			["Swang"] = {
+				{CFrame = CFrame.new(0.69, -0.7, 0.1) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-51)), Timer = 0.1},
+				{CFrame = CFrame.new(0.16, -1.16, 0.5) * CFrame.Angles(math.rad(-199), math.rad(74), math.rad(43)), Timer = 0.16},
+			},
+			["Zoom"] = {
+				{CFrame = CFrame.new(0.69, -2, 0.1) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-51)), Timer = 0.1},
+				{CFrame = CFrame.new(0.16, -0.1, -1) * CFrame.Angles(math.rad(-179), math.rad(94), math.rad(33)), Timer = 0.16},
+			},
+			["Classic"] = {
+				{CFrame = CFrame.new(0.69, -1, 0.1) * CFrame.Angles(math.rad(-16), math.rad(12), math.rad(-21)), Timer = 0.1},
+				{CFrame = CFrame.new(0.69, -2, 0.1) * CFrame.Angles(math.rad(-72), math.rad(21), math.rad(-35)), Timer = 0.07},
+				{CFrame = CFrame.new(0.69, -0.6, 0.1) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), Timer = 0.07},
+			},
+			["Other Spin"] = {
+				{CFrame = CFrame.new(0.69, -2, 0.1) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(90)), Timer = 0.1},
+				{CFrame = CFrame.new(0.16, -0.1, -1) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(180)), Timer = 0.1},
+				{CFrame = CFrame.new(0.16, -0.1, -1) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(270)), Timer = 0.1},
+				{CFrame = CFrame.new(0.16, -0.1, -1) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(360)), Timer = 0.1},
+			},
+			["Corrupt"] = {
+				{CFrame = CFrame.new(0.69, -2, 0.1) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(90)), Timer = 0.1},
+				{CFrame = CFrame.new(0.69, -2, 0.1) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(60)), Timer = 0.3},
+			},
+		}
+
+		local weaponMeta = {
+			{"rageblade", 100},
+			{"emerald_sword", 99},
+			{"deathbloom", 99},
+			{"glitch_void_sword", 98},
+			{"sky_scythe", 98},
+			{"diamond_sword", 97}, 
+			{"iron_sword", 96},
+			{"stone_sword", 95},
+			{"wood_sword", 94},
+			{"emerald_dao", 93},
+			{"diamond_dao", 99},
+			{"diamond_dagger", 99},
+			{"diamond_great_hammer", 99},
+			{"diamond_scythe", 99},
+			{"iron_dao", 97},
+			{"iron_scythe", 97},
+			{"iron_dagger", 97},
+			{"iron_great_hammer", 97},
+			{"stone_dao", 96},
+			{"stone_dagger", 96},
+			{"stone_great_hammer", 96},
+			{"stone_scythe", 96},
+			{"wood_dao", 95},
+			{"wood_scythe", 95},
+			{"wood_great_hammer", 95},
+			{"wood_dagger", 95},
+			{"frosty_hammer", 1},
+		}
+
+		local funAnimations = {
+			PLAYER_VACUUM_SUCK = "rbxassetid://9671620809",
+			WINTER_BOSS_SPAWN = "rbxassetid://11843861791",
+			GLUE_TRAP_FLYING = "rbxassetid://11466075174",
+			VOID_DRAGON_TRANSFORM = "rbxassetid://10967424821",
+			SIT_ON_DODO_BIRD = "http://www.roblox.com/asset/?id=2506281703",
+			DODO_BIRD_FALL = "rbxassetid://7617326953",
+			SWORD_SWING = "rbxassetid://7234367412",
+		}
+
+		local ScreenGui = Instance.new("ScreenGui", LocalPlayer.PlayerGui)
+		ScreenGui.ResetOnSpawn = false
+
+		local function getBestWeapon()
+			local bestSword
+			local bestSwordMeta = 0
+			for i, sword in ipairs(weaponMeta) do
+				local name = sword[1]
+				local meta = sword[2]
+				if meta > bestSwordMeta and hasItem(name) then
+					bestSword = name
+					bestSwordMeta = meta
+				end
+			end
+			return inventory:FindFirstChild(bestSword)
+		end
+
+		local function getNearestPlayer(range)
+			local nearest
+			local nearestDist = 9e9
+			for i,v in pairs(game.Players:GetPlayers()) do
+				pcall(function()
+					if v == LocalPlayer or v.Team == LocalPlayer.Team then return end
+					if v.Character.Humanoid.health > 0 and (v.Character.PrimaryPart.Position - LocalPlayer.Character.PrimaryPart.Position).Magnitude < nearestDist and (v.Character.PrimaryPart.Position - LocalPlayer.Character.PrimaryPart.Position).Magnitude <= range then
+						nearest = v
+						nearestDist = (v.Character.PrimaryPart.Position - LocalPlayer.Character.PrimaryPart.Position).Magnitude
+					end
+				end)
+			end
+			return nearest
+		end
+
+		TargetHudMode = "Basic"
+
+
+		local swingAnim
+		local auraConnection
+		local targetInfo = Instance.new("TextLabel",ScreenGui)
+		local Button = Tab:CreateButton({
+			Name = "killaura",
+			Callback = function()
+
+
+				auraConnection = game:GetService("RunService").Heartbeat:Connect(function()
+					local nearest = getNearestPlayer(22)
+
+					if nearest ~= nil then
+						local nearestCharacter = nearest.Character
+						local nearestPrimaryPartPosition = nearestCharacter.PrimaryPart.Position
+						local selfPrimaryPartPosition = PrimaryPart.Position
+						local weapon = getBestWeapon()
+						spoofHand(weapon.Name)
+
+						task.spawn(	function()
+							for i = 1,1 do
+								AuraRemote:FireServer({
+									chargedAttack = {
+										chargeRatio = 0
+									},
+									entityInstance = nearestCharacter,
+									validate = {
+										raycast = {
+											cameraPosition = CurrentCamera,
+											cursorDirection = CFrame.LookVector
+										},
+										targetPosition = {
+											value = nearestPrimaryPartPosition
+										},
+										selfPosition = {
+											value = selfPrimaryPartPosition
+										}
+									},
+									weapon = weapon
+								})
+							end
+						end)
+					end
+				end)
+
+				local animAuraTab = {}
+				for i,v in pairs(auraAnimations) do table.insert(animAuraTab,i) end
+
+				auraAnimation = 1
+
+
+
+				task.spawn(function()
+					repeat task.wait(0)
+						if getNearestPlayer(22) ~= nil then
+							pcall(function()
+								local animation = auraAnimations[auraAnimation.Option]
+								local allTime = 0
+								task.spawn(function()
+									if true then
+										animRunning = true
+										for i,v in pairs(animation) do allTime += v.Timer end
+										for i,v in pairs(animation) do
+											local tween = game.TweenService:Create(viewmodel,TweenInfo.new(v.Timer),{C0 = oldweld * v.CFrame})
+											tween:Play()
+											task.wait(v.Timer - 0)
+										end
+										animRunning = false
+										game.TweenService:Create(viewmodel,TweenInfo.new(1),{C0 = oldweld}):Play()
+									end
+								end)
+								task.wait(allTime)
+							end)
+						end
+					until (not true)
+				end)
+
+				task.spawn(function()
+					repeat
+						local nearest = getNearestPlayer(22)
+
+						if nearest ~= nil then
+							isWinning = function()
+								return nearest.Character.Humanoid.Health > Character.Humanoid.Health
+							end
+						end
+
+						if targetInfo == nil then
+							targetInfo = Instance.new("TextLabel",ScreenGui)
+						end
+
+						if TargetHudMode.Option == "Basic" then
+							pcall(function()
+								targetInfo.Size = UDim2.fromScale(.12, .05)
+								targetInfo.BackgroundColor3 = Color3.fromRGB(25,25,25)
+								targetInfo.BorderSizePixel = 0
+								targetInfo.AnchorPoint = Vector2.new(0.5,0.5)
+								targetInfo.Position = UDim2.fromScale(0.6,0.5)
+								targetInfo.TextColor3 = Color3.fromRGB(255,255,255)
+								targetInfo.Text = "  "..nearest.DisplayName.. " - IsWinning: ".. tostring(isWinning())
+								targetInfo.TextXAlignment = Enum.TextXAlignment.Left
+
+								local hp = Instance.new("Frame", targetInfo)
+								hp.Position = UDim2.fromScale(0, .9)
+								hp.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+								hp.BorderSizePixel = 0
+
+								game.TweenService:Create(hp,TweenInfo.new(0.4),{
+									Size = UDim2.fromScale(0.01 * nearest.Character.Humanoid.Health,0.1)
+								}):Play()
+							end)	
+						end
+
+						if TargetHudMode.Option == "Basic2" then
+							pcall(function()
+
+
+
+								game.TweenService:Create(targetInfo,TweenInfo.new(1),{
+									Size = UDim2.fromScale(0.001 * nearest.Character.Humanoid.Health,0.05)
+								}):Play()
+								targetInfo.BackgroundColor3 = Color3.fromRGB(238, 2, 255)
+								targetInfo.BorderSizePixel = 0
+								targetInfo.AnchorPoint = Vector2.new(0.5,0.5)
+								targetInfo.Position = UDim2.fromScale(0.6,0.5)
+								targetInfo.TextColor3 = Color3.fromRGB(255,255,255)
+								targetInfo.Text = "  "..nearest.DisplayName
+								--targetInfo.TextScaled = true
+								targetInfo.TextXAlignment = Enum.TextXAlignment.Left
+
+
+							end)
+						end
+
+						task.wait()
+					until (not true)
+				end)
+			end,
+		})
+
+
+		local Button = Tab:CreateButton({
+			Name = "Speed (Disabler)",
+			Callback = function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+			end,
+		})
+
+		local Button = Tab:CreateButton({
+			Name = "Aimbot",
+			Callback = function()
+				FOV = 250
+
+				--// Service \\--
+				local ReplicatedStorage = game:GetService("ReplicatedStorage")
+				local Players = game:GetService("Players")
+				local Workspace = game:GetService("Workspace")
+
+				--// Variables \\--
+				local Camera = Workspace.CurrentCamera
+				local Player = Players.LocalPlayer
+				local Mouse = Player:GetMouse()
+				local Net = ReplicatedStorage:WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged")
+
+				--// Prevent Normal Shooting \\--
+				local old;
+				old = hookfunction(getrawmetatable(game).__namecall,function(...)
+					local args = {...}
+					if getnamecallmethod() == "InvokeServer" and not checkcaller() and (args[1].Name == "ProjectileHit" or args[1].Name == "ProjectileFire") and tostring(args[2]) ~= "telepearl" then
+						return
+					end
+					return old(...)
+				end)
+
+				--// Get Closest Enemy \\--
+				function GetClosestPlayer()
+					local Closest = false
+					local Distance = FOV
+					local MousePos = Vector2.new(Mouse.X, Mouse.Y)
+					for _, A_1 in next, Players:GetPlayers() do
+						if A_1.Team ~= Player.Team and A_1.Character and A_1.Character.PrimaryPart and A_1.Character:FindFirstChild("Humanoid") and A_1.Character.Humanoid.Health > 0 then
+							local vector, onScreen = Camera:WorldToScreenPoint(A_1.Character.PrimaryPart.Position)
+							if onScreen then
+								local NewDistance = (MousePos - Vector2.new(vector.X, vector.Y)).Magnitude
+								if NewDistance < Distance then
+									Distance = NewDistance
+									Closest = A_1.Character.PrimaryPart
+								end
+							end
+						end
+					end
+					warn(Distance)
+					return Closest
+				end
+
+				--// Mouse Connector \\--
+				local Debounce = false
+				Mouse.Button1Down:Connect(function()
+					--// Debounce Check \\--
+					if Debounce then
+						return
+					else
+						Debounce = true
+					end
+
+					--// Get Closest Enemy \\--
+					local Target = GetClosestPlayer()
+					if not Target then
+						Debounce = false
+						return
+					end
+
+					--// Get Correct Inventory \\--
+					local Inventory = false
+					for _, A_1 in next, ReplicatedStorage:WaitForChild("Inventories"):GetChildren() do
+						if A_1.Name == Player.Name and (A_1:FindFirstChild("wood_bow") or A_1:FindFirstChild("wood_crossbow")) then
+							Inventory = A_1
+							break
+						end
+					end
+					if not Inventory then
+						Debounce = false
+						return
+					end
+
+					--// Type \\--
+					local Bow = Inventory:FindFirstChild("wood_bow") or Inventory:FindFirstChild("wood_crossbow")
+
+					--// Shoot Attempt \\--
+					local Arrow = Net:WaitForChild("ProjectileFire"):InvokeServer(Bow)
+
+					--// Hit Attempt \\--
+					if typeof(Arrow) == "Instance" then
+						local Content = {
+							part = Target,
+							velocity = Vector3.new(),
+							hitCFrame = Target.CFrame + Vector3.new(0, 1, 0),
+							percentPullStrength = 1
+						}
+						Net:WaitForChild("ProjectileHit"):InvokeServer(Bow.Name == "wood_bow" and "arrow" or "crossbow_arrow", Arrow, Content)
+					end
+
+					-- Debounce
+					Debounce = false
+				end)
+			end,
+		})
+
+		local function raycast(start,dir)
+			local p = RaycastParams.new()
+			p.FilterType = Enum.RaycastFilterType.Exclude
+			p.FilterDescendantsInstances = {LocalPlayer.Character,workspace.CurrentCamera}
+
+			local ray = workspace:Raycast(start,dir,p)
+
+			return ray
+		end
+
+		local Button = Tab:CreateButton({
+			Name = "Spider",
+			Callback = function()
+				repeat
+					local raycastxd = raycast(PrimaryPart.Position,Character.Humanoid.MoveDirection * 2)
+					local velo = PrimaryPart.Velocity
+
+					if raycastxd and not game.UserInputService:IsKeyDown("S") then
+						PrimaryPart.Velocity = Vector3.new(velo.X, 44, velo.Z)
+					end
+
+					task.wait()
+				until not true
+			end,
+		})
+
+		local Button = Tab:CreateButton({
+			Name = "Staff Detector (ROBLOX)",
+			Callback = function()
+			end,
+		}) 
+
+		local chests = {}
+		for i,v in pairs(workspace:GetChildren()) do
+			if v.Name == "chest" then
+				table.insert(chests,v)
+			end
+		end
+
+
+		Players = game:GetService("Players")
+		--LocalPlayer = Players.LocalPlayer
+		Character = LocalPlayer.Character
+		PrimaryPart = Character.PrimaryPart
+
+		local Button = Tab:CreateButton({
+			Name = "Stealer",
+			Callback = function()
+				task.spawn(function()
+					repeat task.wait()
+						task.wait(0.075)
+						task.spawn(function()
+							for i, v in pairs(chests) do
+								local Magnitude = (v.Position - PrimaryPart.Position).Magnitude
+								if Magnitude <= 30 then
+									for _, item in pairs(v.ChestFolderValue.Value:GetChildren()) do
+										if item:IsA("Accessory") then
+											task.wait()
+											game:GetService("ReplicatedStorage"):WaitForChild("rbxts_include"):WaitForChild("node_modules"):FindFirstChild("@rbxts").net.out._NetManaged:FindFirstChild("Inventory/ChestGetItem"):InvokeServer(v.ChestFolderValue.Value, item)
+										end
+									end
+								end
+							end
+						end)
+					until not true
+				end)
+			end,
+		}) 
+
+		local function getGroupRank(plr:Player)
+			return plr:GetRankInGroup(5774246)
+		end
+
+		local Button = Tab:CreateButton({
+			Name = "Staff Detector (auto does it)",
+			Callback = function()
+				staffdetectorcon = game.Players.PlayerAdded:Connect(function(plr)
+
+					if getGroupRank(plr) > 10 then
+						writefile("Staff_Detection_GroupID", plr.Name)
+						newChat("/lobby")
+					end
+				end)
+			end,
+		})
+
+		local Button = Tab:CreateButton({
+			Name = "Texture Pack",
+			Callback = function()
+				Players = game:GetService("Players")
+				ReplicatedStorage = game:GetService("ReplicatedStorage")
+				UserInputService = game:GetService("UserInputService")
+				LocalPlayer = Players.LocalPlayer
+				Character = LocalPlayer.Character
+				Humanoid = Character.Humanoid
+				PrimaryPart = Character.PrimaryPart
+				Camera = workspace.Camera
+				CurrentCamera = workspace.CurrentCamera
+				RunService = game["Run Service"]
+
+				local func
+				task.spawn(function()
+					local objs = game:GetObjects("rbxassetid://14033898270")
+					local import = objs[1]
+					import.Parent = ReplicatedStorage
+					local index = {
+						{
+							name = "wood_sword",
+							offset = CFrame.Angles(math.rad(0), math.rad(-100), math.rad(-90)),
+							model = import:WaitForChild("Wood_Sword"),
+						},	
+						{
+							name = "stone_sword",
+							offset = CFrame.Angles(math.rad(0), math.rad(-100), math.rad(-90)),
+							model = import:WaitForChild("Stone_Sword"),
+						},
+						{
+							name = "iron_sword",
+							offset = CFrame.Angles(math.rad(0), math.rad(-100), math.rad(-90)),
+							model = import:WaitForChild("Iron_Sword"),
+						},
+						{
+							name = "diamond_sword",
+							offset = CFrame.Angles(math.rad(0), math.rad(-100), math.rad(-90)),
+							model = import:WaitForChild("Diamond_Sword"),
+						},
+						{
+							name = "emerald_sword",
+							offset = CFrame.Angles(math.rad(0), math.rad(-100), math.rad(-90)),
+							model = import:WaitForChild("Emerald_Sword"),
+						},
+						{
+							name = "wood_pickaxe",
+							offset = CFrame.Angles(math.rad(0), math.rad(-190), math.rad(-95)),
+							model = import:WaitForChild("Wood_Pickaxe"),
+						},
+						{
+							name = "stone_pickaxe",
+							offset = CFrame.Angles(math.rad(0), math.rad(-190), math.rad(-95)),
+							model = import:WaitForChild("Stone_Pickaxe"),
+						},
+						{
+							name = "iron_pickaxe",
+							offset = CFrame.Angles(math.rad(0), math.rad(-190), math.rad(-95)),
+							model = import:WaitForChild("Iron_Pickaxe"),
+						},
+						{
+							name = "diamond_pickaxe",
+							offset = CFrame.Angles(math.rad(0), math.rad(80), math.rad(-95)),
+							model = import:WaitForChild("Diamond_Pickaxe"),
+						},	
+						{
+							name = "wood_axe",
+							offset = CFrame.Angles(math.rad(0), math.rad(-10), math.rad(-95)),
+							model = import:WaitForChild("Wood_Axe"),
+						},	
+						{
+							name = "stone_axe",
+							offset = CFrame.Angles(math.rad(0), math.rad(-10), math.rad(-95)),
+							model = import:WaitForChild("Stone_Axe"),
+						},	
+						{
+							name = "iron_axe",
+							offset = CFrame.Angles(math.rad(0), math.rad(-10), math.rad(-95)),
+							model = import:WaitForChild("Iron_Axe"),
+						},	
+						{
+							name = "diamond_axe",
+							offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(-95)),
+							model = import:WaitForChild("Diamond_Axe"),
+						},	
+						{
+							name = "fireball",
+							offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(90)),
+							model = import:WaitForChild("Fireball"),
+						},	
+						{
+							name = "telepearl",
+							offset = CFrame.Angles(math.rad(0), math.rad(-90), math.rad(90)),
+							model = import:WaitForChild("Telepearl"),
+						},
+					}
+					func = CurrentCamera.Viewmodel.ChildAdded:Connect(function(tool)	
+						if not tool:IsA("Accessory") then return end	
+						for _, v in ipairs(index) do	
+							if v.name == tool.Name then		
+								for _, part in ipairs(tool:GetDescendants()) do
+									if part:IsA("BasePart") or part:IsA("MeshPart") or part:IsA("UnionOperation") then				
+										part.Transparency = 1
+									end			
+								end		
+								local model = v.model:Clone()
+								model.CFrame = tool:WaitForChild("Handle").CFrame * v.offset
+								model.CFrame *= CFrame.Angles(math.rad(0), math.rad(-50), math.rad(0))
+								model.Parent = tool			
+								local weld = Instance.new("WeldConstraint", model)
+								weld.Part0 = model
+								weld.Part1 = tool:WaitForChild("Handle")			
+								local tool2 = Players.LocalPlayer.Character:WaitForChild(tool.Name)			
+								for _, part in ipairs(tool2:GetDescendants()) do
+									if part:IsA("BasePart") or part:IsA("MeshPart") or part:IsA("UnionOperation") then				
+										part.Transparency = 1				
+									end			
+								end			
+								local model2 = v.model:Clone()
+								model2.Anchored = false
+								model2.CFrame = tool2:WaitForChild("Handle").CFrame * v.offset
+								model2.CFrame *= CFrame.Angles(math.rad(0), math.rad(-50), math.rad(0))
+								if v.name:match("sword") or v.name:match("blade") then
+									model2.CFrame *= CFrame.new(.5, 0, -1.1) - Vector3.new(0, 0, -.3)
+								elseif v.name:match("axe") and not v.name:match("pickaxe") and v.name:match("diamond") then
+									model2.CFrame *= CFrame.new(.08, 0, -1.1) - Vector3.new(0, 0, -.9)
+								elseif v.name:match("axe") and not v.name:match("pickaxe") and not v.name:match("diamond") then
+									model2.CFrame *= CFrame.new(-.2, 0, -2.4) + Vector3.new(0, 0, 2.12)
+								else
+									model2.CFrame *= CFrame.new(.2, 0, -.09)
+								end
+								model2.Parent = tool2
+								local weld2 = Instance.new("WeldConstraint", model)
+								weld2.Part0 = model2
+								weld2.Part1 = tool2:WaitForChild("Handle")
+							end
+						end
+					end)
+				end)
+			end,
+		})
+
+		local Tab = Window:CreateTab("Render", "hammer")
+
+		local Button = Tab:CreateButton({
+			Name = "NameTag",
+			Callback = function()
+				local Players = game:GetService("Players")
+
+				-- Function to create a nametag
+				local function createNametag(player)
+					local character = player.Character or player.CharacterAdded:Wait()
+					local head = character:WaitForChild("Head")
+
+					-- Create a BillboardGui for the nametag
+					local nametagGui = Instance.new("BillboardGui")
+					nametagGui.Adornee = head
+					nametagGui.Size = UDim2.new(0, 100, 0, 50)
+					nametagGui.StudsOffset = Vector3.new(0, 1.5, 0) -- Adjust height above head
+					nametagGui.AlwaysOnTop = true
+
+					-- Create a TextLabel for the nametag
+					local nametagLabel = Instance.new("TextLabel")
+					nametagLabel.Size = UDim2.new(1, 0, 1, 0)
+					nametagLabel.BackgroundTransparency = 1
+					nametagLabel.Text = player.Name
+					nametagLabel.TextColor3 = Color3.new(1, 1, 1) -- White text
+					nametagLabel.TextStrokeTransparency = 0.5 -- Optional stroke for visibility
+					nametagLabel.Font = Enum.Font.SourceSans
+					nametagLabel.TextSize = 14
+
+					-- Parent the TextLabel to the BillboardGui
+					nametagLabel.Parent = nametagGui
+
+					-- Parent the BillboardGui to the player's head
+					nametagGui.Parent = head
+				end
+
+				-- Connect the function to the PlayerAdded event
+				Players.PlayerAdded:Connect(createNametag)
+
+				-- Create nametag for players already in the game
+				for _, player in ipairs(Players:GetPlayers()) do
+					createNametag(player)
+				end
+			end,
+		})
+
+
+		local Button = Tab:CreateButton({
+			Name = "Player ESP",
+			Callback = function()
+				-- LocalScript placed in StarterPlayerScripts
+
+				local Players = game:GetService("Players")
+
+				-- Function to highlight all players
+				local function highlightPlayers()
+					for _, player in ipairs(Players:GetPlayers()) do
+						-- Check if the player character exists
+						if player.Character then
+							-- Create a Highlight object
+							local highlight = Instance.new("Highlight")
+							highlight.Parent = player.Character -- Attach it to the player character
+							highlight.FillColor = Color3.fromRGB(255, 0, 0) -- Set the fill color (red)
+							highlight.OutlineColor = Color3.fromRGB(0, 0, 0) -- Set the outline color (black)
+							highlight.FillTransparency = 0.2-- Set transparency (0 = opaque, 1 = transparent)
+							highlight.OutlineTransparency = 0 -- Set outline transparency (0 = opaque, 1 = transparent)
+						end
+					end
+				end
+
+				-- Highlight players when they spawn or respawn
+				Players.PlayerAdded:Connect(function(player)
+					player.CharacterAdded:Connect(function()
+						highlightPlayers() -- Highlight when a player spawns
+					end)
+				end)
+
+				-- Highlight already existing players when the script runs
+				highlightPlayers()
+			end,
+		})
+
+		local Tab = Window:CreateTab("Utility", "wrench")
+
+		local Tab = Window:CreateTab("World", "earth")
+
+		local Tab = Window:CreateTab("exploits", "cross")
+
+		local Button = Tab:CreateButton({
+			Name = "Infinite Yield",
+			Callback = function()
+				loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+			end,
+		})
+
+		local Button = Tab:CreateButton({
+			Name = "Godmode/AntiHit",
+			Callback = function()
+				repeat
+					local PlayerDis = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Magnitude
+					local Max = 34
+
+					if PlayerDis <= Max then
+						local oldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+						local cameraPart = Instance.new("Part", workspace)	
+						cameraPart.Anchored = true
+						cameraPart.Position = game.Players.LocalPlayer.Character.Head.Position
+
+						--workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+						workspace.CurrentCamera.CameraSubject = cameraPart
+
+						game.Players.LocalPlayer.Character:PivotTo(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(3,206,3)) 
+						game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+						task.wait(0.45)
+						game.Players.LocalPlayer.Character:PivotTo(oldPos) 
+						game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+						cameraPart:Destroy()
+						workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+					end
+				until (not true)
+			end,
+		})
+
+		local infJump
+
+		local Button = Tab:CreateButton({
+			Name = "InfJump",
+			Callback = function()
+				if infJump then infJump:Disconnect() end
+				infJumpDebounce = false
+
+				infJump = UserInputService.JumpRequest:Connect(function()
+					if not infJumpDebounce then
+						infJumpDebounce = true
+						LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):ChangeState(Enum.HumanoidStateType.Jumping)
+						wait()
+						infJumpDebounce = false
+					end
+				end)
+			end,
+		})
+
+		local Button = Tab:CreateButton({
+			Name = "Destroy ui",
+			Callback = function()
+				Rayfield:Destroy()
+			end,
+		})
+
+		Rayfield:Notify({
+			Title = "Vxalware V3",
+			Content = "Thanks For Being a tester!",
+			Duration = 3.0,
+			Image = "feather",
+		})
+
+		Rayfield:Notify({
+			Title = "Vxalware V3",
+			Content = "Vxalware V3 Has Successfully loaded!",
+			Duration = 3.0,
+			Image = "bell",
+		})
