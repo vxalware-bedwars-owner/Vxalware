@@ -1,17 +1,17 @@
-local UserInputService = game:GetService("UserInputService") -- Ensure UserInputService is loaded
+local UserInputService = game:GetService("UserInputService")
 
 if UserInputService.TouchEnabled then
     -- Vxalware Rewrite (mobile)
-    getgenv().CAK = "CAK_KZ7DiDSB5-viNcjC-5AKdwKjP0EmqopL" -- This is your key, please don't send it to anybody
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/qwertyui-is-back/CatV5/main/init.lua"))() -- CatVape
+    getgenv().CAK = "CAK_KZ7DiDSB5-viNcjC-5AKdwKjP0EmqopL"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/qwertyui-is-back/CatV5/main/init.lua"))()
 
-    loadstring(game:HttpGet('https://pastebin.com/raw/08HHpB92'))() -- Vxalware Extension
-    loadstring(game:HttpGet('https://gitlab.com/-/snippets/4774635/raw/main/BedwarsScript.lua'))() -- AlSploit
+    loadstring(game:HttpGet('https://pastebin.com/raw/08HHpB92'))()
+    loadstring(game:HttpGet('https://gitlab.com/-/snippets/4774635/raw/main/BedwarsScript.lua'))()
 else
     -- Vxalware Rewrite (PC)
-    getgenv().CAK = "CAK_KZ7DiDSB5-viNcjC-5AKdwKjP0EmqopL" -- This is your key, please don't send it to anybody
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/qwertyui-is-back/CatV5/main/init.lua"))() -- CatVape
+    getgenv().CAK = "CAK_KZ7DiDSB5-viNcjC-5AKdwKjP0EmqopL"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/qwertyui-is-back/CatV5/main/init.lua"))()
 
-    loadstring(game:HttpGet('https://pastebin.com/raw/08HHpB92'))() -- Vxalware Extension
-    loadstring(game:HttpGet('https://pastebin.com/raw/gZhGD17A'))() -- AlSploit
+    loadstring(game:HttpGet('https://pastebin.com/raw/08HHpB92'))()
+    loadstring(game:HttpGet('https://pastebin.com/raw/gZhGD17A'))()
 end
