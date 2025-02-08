@@ -11,7 +11,7 @@ frame.Parent = gui
 
 local textLabel = Instance.new("TextLabel")
 textLabel.Size = UDim2.new(1, 0, 1, 0) -- Fills the frame
-textLabel.Text = "Vxalware is down until further notice"
+textLabel.Text = "Vxalware is discontinued until further notice"
 textLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
 textLabel.BackgroundTransparency = 1
 textLabel.TextScaled = true
