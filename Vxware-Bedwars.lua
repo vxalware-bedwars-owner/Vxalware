@@ -22,7 +22,9 @@ textLabel.Parent = frame
 task.wait(5)
 gui:Destroy()
 
-line that ensures the code doesnt continiue to be executed.
+-- Prevent further execution
+return
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
 local UserInputService = game:GetService("UserInputService")
