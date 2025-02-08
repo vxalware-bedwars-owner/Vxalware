@@ -21,3 +21,4 @@ textLabel.Parent = frame
 -- Show message for 5 seconds, then remove it
 task.wait(5)
 gui:Destroy()
+--------------------------------------------------------------------------------------------------
