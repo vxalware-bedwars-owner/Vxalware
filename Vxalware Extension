@@ -61,6 +61,14 @@ loadstring(game:HttpGet("https://pastebin.com/raw/F4VHZiMF"))()
    end,
 })
 
+local Button = MainTab:CreateButton({
+   Name = "Vxalware V3",
+   Callback = function()
+
+loadstring(game:HttpGet('https://pastebin.com/raw/Gqn62R2m'))()
+   end,
+})
+
 local MainTab = Window:CreateTab("🌏 Universal GUIs", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("Universal GUIs")
 
@@ -84,7 +92,7 @@ local Button = MainTab:CreateButton({
    Name = "Chat Bypasser [OP]",
    Callback = function()
 
-loadstring(game:HttpGet(('https://pastebin.com/raw/dzKUQNHM'),true))()
+loadstring(game:HttpGet(('https://pastebin.com/raw/5LN1XiJr'),true))()
    end,
 })
 
@@ -103,7 +111,7 @@ local Button = MainTab:CreateButton({
    Name = "Sword Texture",
    Callback = function()
 
-loadstring(game:HttpGet("https://pastebin.com/raw/HXrFEn7v"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/05Sg4788"))()
    end,
 })
 
@@ -120,13 +128,5 @@ local Button = MainTab:CreateButton({
    Callback = function()
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/refs/heads/main/Copy%20Avatar'))()
-   end,
-})
-
-local Button = MainTab:CreateButton({
-   Name = "Vxalware V3",
-   Callback = function()
-
-loadstring(game:HttpGet('https://pastebin.com/raw/7yy9jYuA'))()
    end,
 })
