@@ -61,14 +61,6 @@ loadstring(game:HttpGet("https://pastebin.com/raw/F4VHZiMF"))()
    end,
 })
 
-local Button = MainTab:CreateButton({
-   Name = "Vxalware V3",
-   Callback = function()
-
-loadstring(game:HttpGet('https://pastebin.com/raw/Gqn62R2m'))()
-   end,
-})
-
 local MainTab = Window:CreateTab("🌏 Universal GUIs", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("Universal GUIs")
 
@@ -77,22 +69,6 @@ local Button = MainTab:CreateButton({
    Callback = function()
 
 loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Animation-Changer-16049"))()
-   end,
-})
-
-local Button = MainTab:CreateButton({
-   Name = "Night Bedwars",
-   Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/warprbx/NightRewrite/refs/heads/main/Night/Loader.luau"))()
-   end,
-})
-
-local Button = MainTab:CreateButton({
-   Name = "Chat Bypasser [OP]",
-   Callback = function()
-
-loadstring(game:HttpGet(('https://pastebin.com/raw/5LN1XiJr'),true))()
    end,
 })
 
@@ -112,14 +88,6 @@ local Button = MainTab:CreateButton({
    Callback = function()
 
 loadstring(game:HttpGet("https://pastebin.com/raw/05Sg4788"))()
-   end,
-})
-
-local Button = MainTab:CreateButton({
-   Name = "Nightmare Speed Disabler",
-   Callback = function()
-
-loadstring(game:HttpGet(('https://pastebin.com/raw/0JY0bKZU'),true))()
    end,
 })
 
