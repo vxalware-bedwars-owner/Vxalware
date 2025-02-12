@@ -1,4 +1,4 @@
-loadstring(game:HttpGet('https://pastebin.com/raw/pMTdQRb5'))() -- Atmosphere Script
+loadstring(game:HttpGet('https://pastebin.com/raw/5KyjL3Y1'))() -- Atmosphere Script
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
@@ -87,7 +87,7 @@ local Button = MainTab:CreateButton({
    Name = "Sword Texture",
    Callback = function()
 
-loadstring(game:HttpGet("https://pastebin.com/raw/05Sg4788"))()
+loadstring(game:HttpGet("https://pastebin.com/fdmZVrFF"))()
    end,
 })
 
