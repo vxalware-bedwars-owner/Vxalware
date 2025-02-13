@@ -61,6 +61,14 @@ loadstring(game:HttpGet("https://pastebin.com/raw/F4VHZiMF"))()
    end,
 })
 
+local Button = MainTab:CreateButton({
+   Name = "Mobile Keyboard",
+   Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/refs/heads/main/MobileKeyboard.txt"))()
+   end,
+})
+
 local MainTab = Window:CreateTab("🌏 Universal GUIs", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("Universal GUIs")
 
