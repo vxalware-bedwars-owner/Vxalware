@@ -54,7 +54,7 @@ loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Selenix-Ani
 })
 
 local Button = MainTab:CreateButton({
-   Name = "Lagback detector BETA",
+   Name = "Lagback detector [BETA]",
    Callback = function()
 
 loadstring(game:HttpGet("https://pastebin.com/raw/F4VHZiMF"))()
@@ -92,9 +92,9 @@ loadstring(game:HttpGet("https://pastebin.com/fdmZVrFF"))()
 })
 
 local Button = MainTab:CreateButton({
-   Name = "Avatar Stealer 💀",
+   Name = "Chat Bypasser [BETA]",
    Callback = function()
 
-loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/refs/heads/main/Copy%20Avatar'))()
+loadstring(game:HttpGet('https://pastebin.com/raw/BvPaPChX'))()
    end,
 })
