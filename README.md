@@ -4,4 +4,4 @@ Vxalware Beats all scripts (except premium ones) and tests have been done.
 Want to know more about Vxalware? DM SynthX on Discord or join the server!
 https://dsc.gg/vxalware
 
-**Current Status: 🟢(All Systems Operatioinal)**
+**Current Status: 🟡 (All Systems work but curretly updating)**
