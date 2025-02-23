@@ -15,4 +15,4 @@ else
     loadstring(game:HttpGet('https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware-Rewrite/refs/heads/main/Vxalware-Extension.lua'))()
     loadstring(game:HttpGet("https://pastebin.com/raw/JiuPNQTn",true))()
 end
--- VXALWARE REWRITE REBORN COME BACK AFTER 1 WEEK OF DOWNTIME!
+-- Vxalware Rewrite | Full Mobile and PC Support!
