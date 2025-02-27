@@ -7,4 +7,4 @@ https://dsc.gg/vxalware
 **Current Status: 🟢 (Fully Operational)**
 
 **Sneak Peaks:
-Finishing final touches for the new Vxalware Rewrite.zip**
+none :( Currently busy
