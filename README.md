@@ -5,6 +5,3 @@ Want to know more about Vxalware? DM SynthX on Discord or join the server!
 https://dsc.gg/vxalware
 
 **Current Status: 🟢 (Fully Operational)**
-
-**Sneak Peaks:
-none :( Currently busy**
