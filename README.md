@@ -7,4 +7,4 @@ https://dsc.gg/vxalware
 **Current Status: 🟢 (Fully Operational)**
 
 **Sneak Peaks:
-none :( Currently busy
+none :( Currently busy**
