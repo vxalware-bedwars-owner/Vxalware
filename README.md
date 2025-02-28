@@ -8,7 +8,7 @@ https://dsc.gg/vxalware
 
 **Info:**
 
-**- Vxalware Updates evry Saturday making it ine of the fastest bedwars scripts to release updates**
+**- Vxalware Updates evry Saturday making it one of the fastest bedwars scripts to release updates**
 
 **- Made with Care by Vxalware, A Nerd, & SynthX**
 
