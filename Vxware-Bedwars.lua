@@ -56,7 +56,7 @@ else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/qwertyui-is-back/CatV5/main/init.lua"))()
 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware-Rewrite/refs/heads/main/Vxalware-Extension.lua"))()
-    loadstring(game:HttpGet("https://pastebin.com/raw/JiuPNQTn",true))()
+    loadstring(game:HttpGet("https://pastebin.com/raw/AZ4fEfUu",true))()
 end
 
 -- Calculate execution time
