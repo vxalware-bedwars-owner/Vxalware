@@ -58,7 +58,7 @@ local Button = MainTab:CreateButton({
    Name = "AntiHit Counter [BETA]",
    Callback = function()
 
-loadstring(game:HttpGet("https://pastebin.com/raw/iLKjcfEp"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/N0t1z4pT"))()
    end,
 })
 
