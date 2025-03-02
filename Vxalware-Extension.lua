@@ -96,7 +96,7 @@ local Button = MainTab:CreateButton({
    Name = "Sword Texture",
    Callback = function()
 
-loadstring(game:HttpGet("https://pastebin.com/fdmZVrFF"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/fdmZVrFF"))()
    end,
 })
 
