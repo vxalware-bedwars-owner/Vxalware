@@ -55,10 +55,10 @@ loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Selenix-Ani
 })
 
 local Button = MainTab:CreateButton({
-   Name = "Lagback detector [BETA]",
+   Name = "AntiHit Counter [BETA]",
    Callback = function()
 
-loadstring(game:HttpGet("https://pastebin.com/raw/F4VHZiMF"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/iLKjcfEp"))()
    end,
 })
 
