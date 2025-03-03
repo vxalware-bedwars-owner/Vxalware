@@ -14,4 +14,4 @@ https://dsc.gg/vxalware
 
 **- Thanks to Mintblox and the Vxalware discord for being a support**
 
-**-The updates for the mobile version of Vxalware are currently on standby until further notice.**
+**- The updates for the mobile version of Vxalware are currently on standby until further notice.**
