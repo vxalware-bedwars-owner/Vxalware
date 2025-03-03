@@ -12,6 +12,6 @@ https://dsc.gg/vxalware
 
 **- Made with Care by Vxalware, A Nerd, & SynthX**
 
-**- Thanks to Void and Mintblox for being a support**
+**- Thanks to Mintblox and the Vxalware discord for being a support**
 
-**- To get things right, Mobile version of Vxalware will still be operational but will not recieve updates. Whereas the PC version of Vxalware will experience dominating updates!**
+**-The updates for the mobile version of Vxalware are currently on standby until further notice.**
