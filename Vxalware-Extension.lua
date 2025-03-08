@@ -89,6 +89,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/
    end,
 })
 
+local Button = MainTab:CreateButton({
+   Name = "Night - No lagback fly :D",
+   Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/warprbx/NightRewrite/refs/heads/main/Night/Loader.luau"))()
+   end,
+})
+
 local MainTab = Window:CreateTab("⚔️ Other stuff", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("Other stuff")
 
