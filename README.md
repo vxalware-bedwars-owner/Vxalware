@@ -2,7 +2,7 @@
 --------------------------------------------------------------------------
 Vxalware Beats all scripts (except premium ones) and tests have been done.
 Want to know more about Vxalware? DM SynthX on Discord or join the server!
-https://dsc.gg/vxalware
+*Server invites are currently disabled due to raid recovery*
 
 **Current Status: 🟢 (Systems are up!)**
 
