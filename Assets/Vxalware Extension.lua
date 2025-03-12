@@ -1,4 +1,4 @@
-loadstring(game:HttpGet('https://pastebin.com/raw/5KyjL3Y1'))() -- Atmosphere Script
+loadstring(game:HttpGet('https://pastebin.com/raw/5KyjL3Y1'))() -- Updated Atmosphere script!
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
