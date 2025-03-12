@@ -1,4 +1,3 @@
-loadstring(game:HttpGet('https://pastebin.com/raw/KJc5UQz1'))() -- No Fall DMG Script (by me)
 loadstring(game:HttpGet('https://pastebin.com/raw/5KyjL3Y1'))() -- Atmosphere Script
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
