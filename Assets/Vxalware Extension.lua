@@ -1,3 +1,4 @@
+loadstring(game:HttpGet('https://pastebin.com/raw/uvBGvDXB'))() -- No Fall Damage Script MADE BY ME!1!
 loadstring(game:HttpGet('https://pastebin.com/raw/5KyjL3Y1'))() -- Updated Atmosphere script!
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
