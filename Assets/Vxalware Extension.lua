@@ -1,37 +1,37 @@
-loadstring(game:HttpGet('https://pastebin.com/raw/5KyjL3Y1'))() -- Updated Atmosphere script!
+loadstring(game:HttpGet('https://pastebin.com/raw/5KyjL3Y1'))()
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
    Name = "🛏️Vxalware Bedwars🛏️",
-   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   Icon = 0,
    LoadingTitle = "Vxalware Extension",
    LoadingSubtitle = "Made by A Nerd",
-   Theme = "DarkBlue", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+   Theme = "DarkBlue",
 
    DisableRayfieldPrompts = false,
-   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+   DisableBuildWarnings = false,
 
    ConfigurationSaving = {
-      Enabled = False,
-      FolderName = nil, -- Create a custom folder for your hub/game
+      Enabled = false,
+      FolderName = nil,
       FileName = "Vxalware"
    },
 
    Discord = {
-      Enabled = false, -- Disabled to reduce loading time until rayfield fixes
-      Invite = "Gam32vXVCW", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
-      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+      Enabled = false,
+      Invite = "Gam32vXVCW",
+      RememberJoins = true
    },
 
-   KeySystem = false, -- Set this to true to use our key system
+   KeySystem = false,
    KeySettings = {
       Title = "Key System",
       Subtitle = "VX KYS",
-      Note = "Get key from discord: discord.gg/Gam32vXVCW", -- Use this to tell the user how to get a key
-      FileName = "Key_For_VX", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
-      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = {"Vxalware On Top!"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+      Note = "Get key from discord: discord.gg/Gam32vXVCW",
+      FileName = "Key_For_VX",
+      SaveKey = true,
+      GrabKeyFromSite = true,
+      Key = {"Vxalware On Top!"}
    }
 })
 
@@ -42,7 +42,7 @@ Rayfield:Notify({
    Image = nil,
 })
 
-local MainTab = Window:CreateTab("🛠️ Utilities", nil) -- Title, Image
+local MainTab = Window:CreateTab("🛠️ Utilities", nil)
 local MainSection = MainTab:CreateSection("Animation Changer")
 
 local Button = MainTab:CreateButton({
@@ -69,7 +69,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Delta-Scri
    end,
 })
 
-local MainTab = Window:CreateTab("🌏 Universal GUIs", nil) -- Title, Image
+local MainTab = Window:CreateTab("🌏 Universal GUIs", nil)
 local MainSection = MainTab:CreateSection("Universal GUIs")
 
 local Button = MainTab:CreateButton({
@@ -96,7 +96,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/warprbx/NightRewrite/
    end,
 })
 
-local MainTab = Window:CreateTab("⚔️ Other stuff", nil) -- Title, Image
+local MainTab = Window:CreateTab("⚔️ Other stuff", nil)
 local MainSection = MainTab:CreateSection("Other stuff")
 
 local Button = MainTab:CreateButton({
@@ -119,6 +119,6 @@ local Button = MainTab:CreateButton({
    Name = "Best No Fall DMG script",
    Callback = function()
 
-loadstring(game:HttpGet('https://pastebin.com/raw/uvBGvDXB'))() -- No Fall Damage Script MADE BY ME!1!
+loadstring(game:HttpGet('https://pastebin.com/raw/uvBGvDXB'))()
    end,
 })
