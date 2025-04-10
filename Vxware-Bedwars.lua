@@ -70,7 +70,7 @@ if isfolder("Night") then
 else
     -- Create folder and dev file
     makefolder("Night")
-    writefile("Night/Dev in progress.txt", game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Scripts-for-Roblox/refs/heads/main/Night%20Modify/Assets/Automatic%20Config%20Loader/Dev%20in%20progress"))
+    writefile("Night/Dev in progress.txt", game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware-Rewrite/refs/heads/main/Assets/Automatic%20Config%20Loader/Development%20in%20progress"))
     
     -- Folder exists, run the loader
     local Players = game:GetService("Players")
