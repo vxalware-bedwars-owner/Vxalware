@@ -9,3 +9,4 @@ Want to know more about Vxalware? DM SynthX on Discord or join the server!
 **Info:**
 
 **- The updates for the mobile version of Vxalware are currently on standby until further notice.**
+**- The updates for Vxalware are slowly fading away due to my concentration on other stuff. But it will be in commision!**
