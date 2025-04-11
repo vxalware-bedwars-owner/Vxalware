@@ -1,4 +1,4 @@
-if isfolder("Night") then
+if isfolder("newcatvape") then
     -- Folder exists, run the loader
     local Players = game:GetService("Players")
     local player = Players.LocalPlayer
@@ -47,13 +47,19 @@ if isfolder("Night") then
     
     if UserInputService.TouchEnabled then
         -- Vxalware Rewrite (mobile)
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua'))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/refs/heads/main/init.lua", "Script"))({
+            Username = "Vxalware",
+            Password = "i019aDk02aCN",
+        })
 
         loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware-Rewrite/refs/heads/main/Assets/Vxalware%20Extension.lua"))()
-        loadstring(game:HttpGet("https://alsploit.bedwars.workers.dev/MainScript.lua?Key=yyy7eG1DjWIulkrfnzDrFP2No1H3si8YVODj93SqCd0jFh1CVk", true))()
+        loadstring(game:HttpGet("https://alsploit.bedwars.workers.dev/MainScript.lua?Key=yyy7eG1DjWIulkrfnzDrFP2No1H3si8YVODj93SqCd0jFh1CVk", true))() -- Extra Modules
     else
         -- Vxalware Rewrite (PC)
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/QP-Offcial/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/refs/heads/main/init.lua", "Script"))({
+            Username = "Vxalware",
+            Password = "i019aDk02aCN",
+        })
     
         loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware-Rewrite/refs/heads/main/Assets/Vxalware%20Extension.lua"))()
         loadstring(game:HttpGet("https://pastebin.com/raw/g5azNFjf",true))() -- Extra Modules
@@ -69,8 +75,8 @@ if isfolder("Night") then
     finishedGui:Destroy() -- Remove final GUI
 else
     -- Create folder and dev file
-    makefolder("Night")
-    writefile("Night/Dev in progress.txt", game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware-Rewrite/refs/heads/main/Assets/Automatic%20Config%20Loader/Development%20in%20progress"))
+    makefolder("newcatvape")
+    writefile("newcatvape/Dev in progress.txt", game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware-Rewrite/refs/heads/main/Assets/Automatic%20Config%20Loader/Development%20in%20progress"))
     
     -- Folder exists, run the loader
     local Players = game:GetService("Players")
@@ -120,13 +126,19 @@ else
     
     if UserInputService.TouchEnabled then
         -- Vxalware Rewrite (mobile)
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua'))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/refs/heads/main/init.lua", "Script"))({
+            Username = "Vxalware",
+            Password = "i019aDk02aCN",
+        })
 
         loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware-Rewrite/refs/heads/main/Assets/Vxalware%20Extension.lua"))()
-        loadstring(game:HttpGet("https://alsploit.bedwars.workers.dev/MainScript.lua?Key=yyy7eG1DjWIulkrfnzDrFP2No1H3si8YVODj93SqCd0jFh1CVk", true))()
+        loadstring(game:HttpGet("https://alsploit.bedwars.workers.dev/MainScript.lua?Key=yyy7eG1DjWIulkrfnzDrFP2No1H3si8YVODj93SqCd0jFh1CVk", true))() -- Extra Modules
     else
         -- Vxalware Rewrite (PC)
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/QP-Offcial/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/refs/heads/main/init.lua", "Script"))({
+            Username = "Vxalware",
+            Password = "i019aDk02aCN",
+        })
     
         loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware-Rewrite/refs/heads/main/Assets/Vxalware%20Extension.lua"))()
         loadstring(game:HttpGet("https://pastebin.com/raw/g5azNFjf",true))() -- Extra Modules
