@@ -12,9 +12,9 @@ if isfolder("newcatvape") then
 
         local frame = Instance.new("Frame")
         frame.Parent = screenGui
-        frame.Size = UDim2.new(0.2, 0, 0.05, 0) -- Adjust size
-        frame.Position = UDim2.new(0, 10, 1, -50) -- Bottom-left corner
-        frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20) -- Dark mode
+        frame.Size = UDim2.new(0.2, 0, 0.05, 0)
+        frame.Position = UDim2.new(0, 10, 1, -50)
+        frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
         frame.BorderSizePixel = 0
         frame.Visible = true
 
@@ -27,7 +27,7 @@ if isfolder("newcatvape") then
         textLabel.Size = UDim2.new(1, 0, 1, 0)
         textLabel.BackgroundTransparency = 1
         textLabel.Text = text
-        textLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+        textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
         textLabel.Font = Enum.Font.GothamBold
         textLabel.TextSize = 14
         textLabel.TextScaled = true
@@ -37,8 +37,8 @@ if isfolder("newcatvape") then
 
     -- Show "Loading Vxalware..."
     local loadingGui = createGui("Loading Vxalware...")
-    task.wait(1.9) -- Wait for 1.9 seconds
-    loadingGui:Destroy() -- Remove GUI
+    task.wait(1.9)
+    loadingGui:Destroy()
 
     -- Start execution timer
     local startTime = tick()
@@ -67,16 +67,16 @@ if isfolder("newcatvape") then
 
     -- Calculate execution time
     local endTime = tick()
-    local totalTime = math.floor(endTime - startTime) -- Calculate total time
+    local totalTime = math.floor(endTime - startTime)
 
     -- Show "Finished loading Vxalware! Took: X seconds"
     local finishedGui = createGui("Finished loading Vxalware! Took: " .. totalTime .. " seconds")
-    task.wait(2) -- Keep the final message visible for a bit
-    finishedGui:Destroy() -- Remove final GUI
+    task.wait(2)
+    finishedGui:Destroy()
 else
-    -- Create folder and dev file
+    -- Create folder and file
     makefolder("newcatvape")
-    writefile("newcatvape/Dev in progress.txt", game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware-Rewrite/refs/heads/main/Assets/Automatic%20Config%20Loader/Development%20in%20progress"))
+    writefile("newcatvape/Test.txt", game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware-Rewrite/refs/heads/main/Assets/Vxalware%20ACL/Test.txt"))
     
     -- Folder exists, run the loader
     local Players = game:GetService("Players")
@@ -91,9 +91,9 @@ else
 
         local frame = Instance.new("Frame")
         frame.Parent = screenGui
-        frame.Size = UDim2.new(0.2, 0, 0.05, 0) -- Adjust size
-        frame.Position = UDim2.new(0, 10, 1, -50) -- Bottom-left corner
-        frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20) -- Dark mode
+        frame.Size = UDim2.new(0.2, 0, 0.05, 0)
+        frame.Position = UDim2.new(0, 10, 1, -50)
+        frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
         frame.BorderSizePixel = 0
         frame.Visible = true
 
@@ -106,7 +106,7 @@ else
         textLabel.Size = UDim2.new(1, 0, 1, 0)
         textLabel.BackgroundTransparency = 1
         textLabel.Text = text
-        textLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+        textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
         textLabel.Font = Enum.Font.GothamBold
         textLabel.TextSize = 14
         textLabel.TextScaled = true
@@ -116,8 +116,8 @@ else
 
     -- Show "Loading Vxalware..."
     local loadingGui = createGui("Loading Vxalware...")
-    task.wait(1.9) -- Wait for 1.9 seconds
-    loadingGui:Destroy() -- Remove GUI
+    task.wait(1.9)
+    loadingGui:Destroy()
 
     -- Start execution timer
     local startTime = tick()
@@ -146,9 +146,9 @@ else
 
     -- Calculate execution time
     local endTime = tick()
-    local totalTime = math.floor(endTime - startTime) -- Calculate total time
+    local totalTime = math.floor(endTime - startTime)
 
     -- Show "Finished loading Vxalware! Took: X seconds"
     local finishedGui = createGui("Finished loading Vxalware! Took: " .. totalTime .. " seconds")
-    task.wait(2) -- Keep the final message visible for a bit
-    finishedGui:Destroy() -- Remove final GUI
+    task.wait(2)
+    finishedGui:Destroy()
