@@ -1,13 +1,6 @@
-**Vxalware On Top!**
+**What happened to Vxalware?**
 --------------------------------------------------------------------------
-Want to know more about Vxalware? DM SynthX on Discord or join the server!
-
-*Server invites are currently disabled due to raid recovery*
-
-**Current Status: 🟢 (Systems are up!)**
-
-**Info:**
-
-**- The updates for the mobile version of Vxalware are currently on standby until further notice.**
-
-**- The updates for Vxalware are slowly fading away due to my concentration on other stuff. But it will be in commision!**
+*Without too much water, Vxalware is Dicountinued*
+This might not come as a surprise to many as the progress on Vxalware has slowly been going downhill.
+Vxalware will probably come back later in the future but for now, I just can't find the time to work
+on the script anymore. I have found other meaningful things to do but for now I must say goodbye...
