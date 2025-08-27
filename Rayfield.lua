@@ -1,17 +1,7 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/refs/heads/main/init.lua", "Script"))({
-    Username = "Vxalware",
-    Password = "i019aDk02aCN",
-}) -- CatV6
-
---[[
-loadstring(game:HttpGet("https://pastebin.com/u/meproatstuffV2"))() -- meproatstuffV2
---]]
-
-loadstring(game:HttpGet('https://pastebin.com/raw/5KyjL3Y1'))()
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "🛏️Vxalware Bedwars🛏️",
+   Name = "🛏️Vxalware Loader🛏️",
    Icon = 0,
    LoadingTitle = "Vxalware Extension",
    LoadingSubtitle = "Made by A Nerd",
@@ -97,14 +87,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/
    end,
 })
 
-local Button = MainTab:CreateButton({
-   Name = "Night - No lagback fly :D",
-   Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/warprbx/NightRewrite/refs/heads/main/Night/Loader.luau"))()
-   end,
-})
-
 local MainTab = Window:CreateTab("⚔️ Other stuff", nil)
 local MainSection = MainTab:CreateSection("Other stuff")
 
@@ -123,13 +105,3 @@ local Button = MainTab:CreateButton({
 loadstring(game:HttpGet('https://pastebin.com/raw/BvPaPChX'))()
    end,
 })
-
-local Button = MainTab:CreateButton({
-   Name = "Best No Fall DMG script",
-   Callback = function()
-
-loadstring(game:HttpGet('https://pastebin.com/raw/uvBGvDXB'))()
-   end,
-}) -- Vxalware Extension
-
-loadstring(game:HttpGet("https://alsploit.bedwars.workers.dev/MainScript.lua?Key=yyy7eG1DjWIulkrfnzDrFP2No1H3si8YVODj93SqCd0jFh1CVk", true))() -- AlSploit
