@@ -3,8 +3,8 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
    Name = "🛏️Vxalware Rewrite🛏️",
    Icon = 0,
-   LoadingTitle = "🛏️Vxalware Rewrite🛏️",
-   LoadingSubtitle = "Made by Vxalware",
+   LoadingTitle = "Loading...",
+   LoadingSubtitle = "Made by SynthX",
    ShowText = "Rayfield",
    Theme = "DarkBlue",
 
@@ -21,7 +21,7 @@ local Window = Rayfield:CreateWindow({
 
    Discord = {
       Enabled = false,
-      Invite = "noinvitelink",
+      Invite = "voidware",
       RememberJoins = true
    },
 
@@ -29,135 +29,128 @@ local Window = Rayfield:CreateWindow({
    KeySettings = {
       Title = "Vxalware",
       Subtitle = "Key System",
-      Note = "No method of obtaining the key is provided",
+      Note = "Key is: vxware",
       FileName = "VX_Key",
       SaveKey = true,
       GrabKeyFromSite = false,
-      Key = {"7966922476"}
+      Key = {"vxware"}
    }
 })
 
-local Tab = Window:CreateTab("Voidware", bed)
+local VoidTab = Window:CreateTab("🌌 Voidware", nil)
 
-local Button = Tab:CreateButton({
+VoidTab:CreateButton({
    Name = "Voidware Old",
    Callback = function()
        loadstring(game:HttpGet('https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua', true))()
    end,
 })
 
-local Button = Tab:CreateButton({
+VoidTab:CreateButton({
    Name = "Voidware Rewrite",
    Callback = function()
        loadstring(game:HttpGet('https://raw.githubusercontent.com/VapeVoidware/VWRewrite/main/NewMainScript.lua', true))()
    end,
 })
 
-local Button = Tab:CreateButton({
+VoidTab:CreateButton({
    Name = "Voidware Rise",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua", true))()
    end,
 })
 
-local Button = Tab:CreateButton({
+VoidTab:CreateButton({
    Name = "Voidware Packet",
    Callback = function()
        loadstring(game:HttpGet('https://raw.githubusercontent.com/VapeVoidware/VWPacket/main/NewMainScript.lua', true))()
    end,
 })
 
-local Tab = Window:CreateTab("CatVape", bed)
+local CatTab = Window:CreateTab("🐈 CatVape", nil)
 
-local Button = Tab:CreateButton({
+CatTab:CreateButton({
    Name = "CatVape",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua", true))()
    end,
 })
 
-local Tab = Window:CreateTab("Night", bed)
+local NightTab = Window:CreateTab("✨ Night", nil)
 
-local Button = Tab:CreateButton({
+NightTab:CreateButton({
    Name = "Night",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/null-wtf/Night/refs/heads/main/Night/Loader.luau", true))()
    end,
 })
 
-local Tab = Window:CreateTab("AlSploit", bed)
+local AlSploitTab = Window:CreateTab("🦤 AlSploit", nil)
 
-local Button = Tab:CreateButton({
+AlSploitTab:CreateButton({
    Name = "AlSploit",
    Callback = function()
        loadstring(game:HttpGet("https://r2.packetroblox.xyz/alsploit.lua", true))()
    end,
 })
 
-local Tab = Window:CreateTab("Rust", bed)
+local RustTab = Window:CreateTab("⚔️ Rust", nil)
 
-local Button = Tab:CreateButton({
+RustTab:CreateButton({
    Name = "Rust",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua", true))()
    end,
 })
 
-local Tab = Window:CreateTab("Others", settings)
+local OthersTab = Window:CreateTab("⚙️ Others", nil)
 
-local Button = MainTab:CreateButton({
+OthersTab:CreateButton({
    Name = "Anim. Changer gui",
    Callback = function()
-
-loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Selenix-Animation-Changer-V1-17880"))()
+       loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Selenix-Animation-Changer-V1-17880"))()
    end,
 })
 
-local Button = MainTab:CreateButton({
+OthersTab:CreateButton({
    Name = "AntiHit Counter [BETA]",
    Callback = function()
-
-loadstring(game:HttpGet("https://pastebin.com/raw/N0t1z4pT"))()
+       loadstring(game:HttpGet("https://pastebin.com/raw/N0t1z4pT"))()
    end,
 })
 
-local Button = MainTab:CreateButton({
+OthersTab:CreateButton({
    Name = "Mobile Keyboard",
    Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/refs/heads/main/MobileKeyboard.txt"))()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/refs/heads/main/MobileKeyboard.txt"))()
    end,
 })
 
-local Button = MainTab:CreateButton({
+OthersTab:CreateButton({
    Name = "Script Hub GUI",
    Callback = function()
-
-loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Animation-Changer-16049"))()
+       loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Animation-Changer-16049"))()
    end,
 })
 
-local Button = MainTab:CreateButton({
+OthersTab:CreateButton({
    Name = "Infinite Yield",
    Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
    end,
 })
 
-local Button = MainTab:CreateButton({
+OthersTab:CreateButton({
    Name = "Sword Texture",
    Callback = function()
-
-loadstring(game:HttpGet("https://pastebin.com/raw/fdmZVrFF"))()
+       loadstring(game:HttpGet("https://pastebin.com/raw/fdmZVrFF"))()
    end,
 })
 
-local Button = MainTab:CreateButton({
+OthersTab:CreateButton({
    Name = "Chat Bypasser [BETA]",
    Callback = function()
-
-loadstring(game:HttpGet('https://pastebin.com/raw/BvPaPChX'))()
+       loadstring(game:HttpGet('https://pastebin.com/raw/BvPaPChX'))()
    end,
 })
 
@@ -165,5 +158,5 @@ Rayfield:Notify({
    Title = "Successfully Loaded!",
    Content = "Thank you for using Vxalware",
    Duration = 6.5,
-   Image = thumbs-up,
+   Image = nil,
 })
