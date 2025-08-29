@@ -5,3 +5,4 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
+## Update 3.0.1
