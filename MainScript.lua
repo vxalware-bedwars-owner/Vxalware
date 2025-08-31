@@ -37,7 +37,7 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local VoidTab = Window:CreateTab("🌌 Voidware", nil)
+local VoidTab = Window:CreateTab("🌌 Voidpaste", nil)
 
 VoidTab:CreateButton({
    Name = "Voidware Old",
@@ -113,7 +113,7 @@ OthersTab:CreateButton({
 })
 
 OthersTab:CreateButton({
-   Name = "AntiHit Counter [BETA]",
+   Name = "AntiHit Counter [NOT WORKING]",
    Callback = function()
        loadstring(game:HttpGet("https://pastebin.com/raw/N0t1z4pT"))()
    end,
@@ -141,16 +141,34 @@ OthersTab:CreateButton({
 })
 
 OthersTab:CreateButton({
-   Name = "Sword Texture",
+   Name = "Sword Texture [Disable FOV changer]",
    Callback = function()
        loadstring(game:HttpGet("https://pastebin.com/raw/fdmZVrFF"))()
    end,
 })
 
 OthersTab:CreateButton({
-   Name = "Chat Bypasser [BETA]",
+   Name = "Chat Bypasser [NOT WORKING]",
    Callback = function()
        loadstring(game:HttpGet('https://pastebin.com/raw/BvPaPChX'))()
+   end,
+})
+
+local BestTab = Window:CreateTab("📜 Best Scripts", nil)
+
+BestTab:CreateButton({
+   Name = "CatVxpe (PC)",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua", true))() -- CatVxpe :D
+   end,
+})
+
+BestTab:CreateButton({
+   Name = "Rxalware (Mobile)",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua", true))() -- Rust
+       loadstring(game:HttpGet("https://r2.packetroblox.xyz/alsploit.lua", true))() -- AlSploit
+       -- "Rxalware" --> Rust X AlSploit [Successor for "Vxalware" --> Vape V4 X AlSploit]
    end,
 })
 
@@ -158,5 +176,5 @@ Rayfield:Notify({
    Title = "Successfully Loaded!",
    Content = "Thank you for using Vxalware",
    Duration = 6.5,
-   Image = nil,
+   Image = "rewind",
 })
