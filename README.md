@@ -1,9 +1,11 @@
 # Vxalware Loader
-*This is a loader for decent bedwars scripts*
+*Meet Vxalware Loader! An all in one bedwars script hub with some of the best scripts for the game! (PC & Mobile Support!)*
 ## Directions of use:
-**Go to Loader.lua, copy the script that is in there. Open up your executor, (Delta for android/ios and bunni for windows if you don't have one) paste in your script and click execute.**
+**Copy Script in Loader.lua, Paste in your executor and click execute**
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update 3.0.1
-- Bug Fixes
+## Update 3.0.2
+- Extra modules
+- Execution Covenience
+- Improved stability
