@@ -90,7 +90,7 @@ local AlSploitTab = Window:CreateTab("🦤 AlSploit", nil)
 AlSploitTab:CreateButton({
    Name = "AlSploit",
    Callback = function()
-       loadstring(game:HttpGet("https://r2.packetroblox.xyz/alsploit.lua", true))()
+       loadstring(game:HttpGet("https://pastebin.com/raw/dyJnaP0E", true))()
    end,
 })
 
@@ -141,7 +141,7 @@ OthersTab:CreateButton({
 })
 
 OthersTab:CreateButton({
-   Name = "Sword Texture [Disable FOV changer]",
+   Name = "Sword Texture",
    Callback = function()
        loadstring(game:HttpGet("https://pastebin.com/raw/fdmZVrFF"))()
    end,
@@ -167,7 +167,7 @@ BestTab:CreateButton({
    Name = "Rxalware (Mobile)",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua", true))() -- Rust
-       loadstring(game:HttpGet("https://r2.packetroblox.xyz/alsploit.lua", true))() -- AlSploit
+       loadstring(game:HttpGet("https://pastebin.com/raw/dyJnaP0E", true))() -- AlSploit Modified
        -- "Rxalware" --> Rust X AlSploit [Successor for "Vxalware" --> Vape V4 X AlSploit]
    end,
 })
