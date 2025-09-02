@@ -9,3 +9,7 @@
 - Extra modules
 - Execution Covenience
 - Improved stability
+## In Development
+- ACL Development [Automatic Config Loader]
+
+  This will automatically import the default config for selected MainScript
