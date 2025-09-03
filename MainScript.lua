@@ -167,6 +167,7 @@ BestTab:CreateButton({
    Name = "Rxalware (Mobile)",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua", true))() -- Rust
+       loadstring(game:HttpGet("https://pastebin.com/raw/0mBg0vYh", true))() -- AlSploit Config Loader
        loadstring(game:HttpGet("https://pastebin.com/raw/dyJnaP0E", true))() -- AlSploit Modified
        -- "Rxalware" --> Rust X AlSploit [Successor for "Vxalware" --> Vape V4 X AlSploit]
    end,
