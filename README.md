@@ -5,11 +5,7 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update 3.0.2
-- Extra modules
+## Update 3.0.3
+- Automatically loads default config for Rxalware Script 👍
 - Execution Covenience
 - Improved stability
-## In Development
-- ACL Development [Automatic Config Loader]
-
-  This will automatically import the default config for selected MainScript
