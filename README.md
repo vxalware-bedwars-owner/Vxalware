@@ -9,4 +9,3 @@
 - Improved 'Others' tab scripts
 - Execution Covenience
 - Improved stability
-## Commit Value: 225
