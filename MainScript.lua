@@ -135,7 +135,7 @@ OthersTab:CreateButton({
    end,
 })
 
-local Section = Tab:CreateSection("Element Scripts")
+local Section = OthersTab:CreateSection("Element Scripts")
 
 OthersTab:CreateButton({
    Name = "Fov Changer",
