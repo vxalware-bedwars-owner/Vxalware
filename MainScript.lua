@@ -105,17 +105,12 @@ RustTab:CreateButton({
 
 local OthersTab = Window:CreateTab("⚙️ Others", nil)
 
+local Section = OthersTab:CreateSection("GUI Scripts")
+
 OthersTab:CreateButton({
    Name = "Anim. Changer gui",
    Callback = function()
        loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Selenix-Animation-Changer-V1-17880"))()
-   end,
-})
-
-OthersTab:CreateButton({
-   Name = "AntiHit Counter [NOT WORKING]",
-   Callback = function()
-       loadstring(game:HttpGet("https://pastebin.com/raw/N0t1z4pT"))()
    end,
 })
 
@@ -140,6 +135,15 @@ OthersTab:CreateButton({
    end,
 })
 
+local Section = Tab:CreateSection("Element Scripts")
+
+OthersTab:CreateButton({
+   Name = "Fov Changer",
+   Callback = function()
+       loadstring(game:HttpGet("https://pastebin.com/raw/g5azNFjf"))()
+   end,
+})
+
 OthersTab:CreateButton({
    Name = "Sword Texture",
    Callback = function()
@@ -148,9 +152,23 @@ OthersTab:CreateButton({
 })
 
 OthersTab:CreateButton({
+   Name = "Atmosphere [IN PROGRESS]",
+   Callback = function()
+       loadstring(game:HttpGet("https://pastebin.com/raw/5KyjL3Y1"))()
+   end,
+})
+
+OthersTab:CreateButton({
+   Name = "Player Attach [NOT WORKING]",
+   Callback = function()
+       loadstring(game:HttpGet("https://pastebin.com/raw/N0t1z4pT"))()
+   end,
+})
+
+OthersTab:CreateButton({
    Name = "Chat Bypasser [NOT WORKING]",
    Callback = function()
-       loadstring(game:HttpGet('https://pastebin.com/raw/BvPaPChX'))()
+       loadstring(game:HttpGet("https://pastebin.com/raw/BvPaPChX"))()
    end,
 })
 
