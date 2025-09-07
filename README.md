@@ -5,7 +5,7 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update 3.0.3
-- Automatically loads default config for Rxalware Script 👍
+## Update 3.0.4
+- Improved 'Others' tab scripts
 - Execution Covenience
 - Improved stability
