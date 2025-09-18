@@ -138,6 +138,13 @@ OthersTab:CreateButton({
 local Section = OthersTab:CreateSection("Element Scripts")
 
 OthersTab:CreateButton({
+   Name = "Cat ACL tester",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua"))()
+   end,
+})
+
+OthersTab:CreateButton({
    Name = "Fov Changer",
    Callback = function()
        loadstring(game:HttpGet("https://pastebin.com/raw/g5azNFjf"))()
