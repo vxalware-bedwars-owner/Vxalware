@@ -31,13 +31,12 @@ if not isMobile then
         warn("[script] PC branch failed: "..tostring(err))
     end
 else
-    -- Mobile branch: ensure folders & download files, then write them
-    -- Create folders if missing (wrapped in pcall to avoid errors if functions missing)
+    -- Mobile branch: ensure catrewrite folder & download files, then write them
+    -- Create catrewrite folder if missing (wrapped in pcall to avoid errors if functions missing)
     pcall(function()
-        if type(isfolder) == "function" and not isfolder("vape") then makefolder("vape") end
-        if type(isfolder) == "function" and not isfolder("rise") then makefolder("rise") end
         if type(isfolder) == "function" and not isfolder("catrewrite") then makefolder("catrewrite") end
     end)
+
     -- helper to download + write file
     local function fetchAndWrite(url, outPath)
         local ok, body = pcall(function() return game:HttpGet(url, true) end)
@@ -51,12 +50,12 @@ else
         return true, nil
     end
 
-    -- fetch cheater.json -> catrewrite/cheater.json
-    local s1, e1 = fetchAndWrite(cheaterJsonUrl, "catrewrite/cheater.json")
+    -- fetch cheaters.json -> catrewrite/cheaters.json
+    local s1, e1 = fetchAndWrite(cheaterJsonUrl, "catrewrite/cheaters.json")
     if s1 then
-        print("[script] Wrote catrewrite/cheater.json")
+        print("[script] Wrote catrewrite/cheaters.json")
     else
-        warn("[script] Failed to write catrewrite/cheater.json: "..tostring(e1))
+        warn("[script] Failed to write catrewrite/cheaters.json: "..tostring(e1))
     end
 
     -- fetch main.lua -> catrewrite/main.lua
