@@ -9,3 +9,15 @@
 - Improved 'Others' tab scripts
 - Execution Covenience
 - Improved stability
+## Update queue: 3.0.5
+- Added ACL for CatVape mobile and PC
+- Execution Convenience
+- Improved Stability
+## Update queue: 3.0.6
+- Linked ACL for rust script in Rxalware
+- Execution Convenience
+- Improved Stability
+## Update queue: 3.0.7
+- Moved to better mobile and PC Support UI Lib (prob wind ui or luna lib)
+- Execution Convenience **Rewrite**
+- Improved Stability **Rewrite**
