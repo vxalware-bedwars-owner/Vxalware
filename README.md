@@ -21,3 +21,5 @@
 - Moved to better mobile and PC Support UI Lib (prob wind ui or luna lib)
 - Execution Convenience **Rewrite**
 - Improved Stability **Rewrite**
+## Update queue: 3.0.8
+- Regular Mainstream Update
