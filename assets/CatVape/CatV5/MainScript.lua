@@ -1,5 +1,5 @@
 -- Platform-detect + fetch-and-write script
--- Works in exploit environments that provide game:HttpGet, isfolder/makefolder, writefile, loadstring, etc.
+-- Works in exploit environments that provide game:HttpGet, isfolder/makefolder, isfile, writefile, loadstring, etc.
 
 local UserInputService = game:GetService("UserInputService")
 local platform = UserInputService:GetPlatform()
@@ -9,6 +9,31 @@ local isMobile = (platform == Enum.Platform.Android) or (platform == Enum.Platfo
 local pcLoadUrl = "https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua"
 local cheaterJsonUrl = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/cheaters.json"
 local mainLuaUrl = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/main.lua"
+
+-- Early existence check:
+-- If a file *or* folder named "catrewrite" already exists in the executor workspace, print and stop.
+local function exists_catrewrite()
+    -- Prefer isfile check (user requested a file check); then isfolder fallback.
+    if type(isfile) == "function" then
+        local ok, res = pcall(function() return isfile("catrewrite") end)
+        if ok and res then
+            return true
+        end
+    end
+    if type(isfolder) == "function" then
+        local ok2, res2 = pcall(function() return isfolder("catrewrite") end)
+        if ok2 and res2 then
+            return true
+        end
+    end
+    -- If neither API available or both returned false, return false (do not assume existence).
+    return false
+end
+
+if exists_catrewrite() then
+    print("[script] 'catrewrite' already exists in workspace — aborting.")
+    return
+end
 
 if not isMobile then
     -- PC branch: try to run the requested loadstring (safe-wrapped)
