@@ -1,7 +1,11 @@
+-- Platform-detect + fetch-and-write script
+-- Works in exploit environments that provide game:HttpGet, isfolder/makefolder, writefile, loadstring, etc.
+
 local UserInputService = game:GetService("UserInputService")
 local platform = UserInputService:GetPlatform()
 local isMobile = (platform == Enum.Platform.Android) or (platform == Enum.Platform.IOS)
 
+-- URLs you asked for
 local pcLoadUrl = "https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua"
 local cheaterJsonUrl = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/cheaters.json"
 local mainLuaUrl = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/main.lua"
@@ -28,9 +32,11 @@ if not isMobile then
     end
 else
     -- Mobile branch: ensure folders & download files, then write them
+    -- Create folders if missing (wrapped in pcall to avoid errors if functions missing)
     pcall(function()
         if type(isfolder) == "function" and not isfolder("vape") then makefolder("vape") end
         if type(isfolder) == "function" and not isfolder("rise") then makefolder("rise") end
+        if type(isfolder) == "function" and not isfolder("catrewrite") then makefolder("catrewrite") end
     end)
     -- helper to download + write file
     local function fetchAndWrite(url, outPath)
@@ -45,18 +51,20 @@ else
         return true, nil
     end
 
-    local s1, e1 = fetchAndWrite(cheaterJsonUrl, "vape/cheater.json")
+    -- fetch cheater.json -> catrewrite/cheater.json
+    local s1, e1 = fetchAndWrite(cheaterJsonUrl, "catrewrite/cheater.json")
     if s1 then
-        print("[script] Wrote vape/cheater.json")
+        print("[script] Wrote catrewrite/cheater.json")
     else
-        warn("[script] Failed to write vape/cheater.json: "..tostring(e1))
+        warn("[script] Failed to write catrewrite/cheater.json: "..tostring(e1))
     end
 
-    local s2, e2 = fetchAndWrite(mainLuaUrl, "vape/main.lua")
+    -- fetch main.lua -> catrewrite/main.lua
+    local s2, e2 = fetchAndWrite(mainLuaUrl, "catrewrite/main.lua")
     if s2 then
-        print("[script] Wrote vape/main.lua")
+        print("[script] Wrote catrewrite/main.lua")
     else
-        warn("[script] Failed to write vape/main.lua: "..tostring(e2))
+        warn("[script] Failed to write catrewrite/main.lua: "..tostring(e2))
     end
 end
 
