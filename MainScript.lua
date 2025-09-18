@@ -90,7 +90,7 @@ local AlSploitTab = Window:CreateTab("🦤 AlSploit", nil)
 AlSploitTab:CreateButton({
    Name = "AlSploit",
    Callback = function()
-       loadstring(game:HttpGet("https://pastebin.com/raw/dyJnaP0E", true))()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/AlSploit%20Fix.lua", true))()
    end,
 })
 
@@ -185,7 +185,7 @@ BestTab:CreateButton({
    Name = "Rxalware (Mobile)",
    Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua", true))() -- Rust
-       loadstring(game:HttpGet("https://pastebin.com/raw/dEVN5hhc", true))() -- AlSploit
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/MainScript.lua", true))() -- AlSploit
        -- "Rxalware" --> Rust X AlSploit [Successor for "Vxalware" --> Vape V4 X AlSploit]
    end,
 })
