@@ -1,6 +1,6 @@
 local HttpService = game:GetService("HttpService")
 local configName = "AlSploitConfiguration.json"
-local configUrl = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploitConfiguration.json"
+local configUrl = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/AlSploitConfiguration.json"
 
 -- Check if the file already exists
 if isfile(configName) then
