@@ -138,13 +138,6 @@ OthersTab:CreateButton({
 local Section = OthersTab:CreateSection("Element Scripts")
 
 OthersTab:CreateButton({
-   Name = "Cat ACL tester",
-   Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua"))()
-   end,
-})
-
-OthersTab:CreateButton({
    Name = "Fov Changer",
    Callback = function()
        loadstring(game:HttpGet("https://pastebin.com/raw/g5azNFjf"))()
@@ -181,25 +174,19 @@ OthersTab:CreateButton({
 
 local BestTab = Window:CreateTab("📜 Best Scripts", nil)
 
+local Section = BestTab:CreateSection("CatVxpe")
+
 BestTab:CreateButton({
-   Name = "CatVxpe (PC)",
+   Name = "CatVxpe Config Loader",
    Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua", true))() -- CatVxpe :D
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua", true))() -- CatVxpe Config Loader
    end,
 })
 
-local Dropdown = BestTab:CreateDropdown({
-   Name = "CatV5 Config",
-   Options = {"Option 1", "Option 2"},
-   CurrentOption = "Option 1", 
-   MultipleOptions = false,
-   Flag = "Dropdown1",
-   Callback = function(Option)
-      if Option == "Option 1" then
-         print("Option 1 selected")
-      elseif Option == "Option 2" then
-         print("Option 2 selected")
-      end
+BestTab:CreateButton({
+   Name = "CatVxpe Script",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua", true))() -- CatVxpe Script
    end,
 })
 
