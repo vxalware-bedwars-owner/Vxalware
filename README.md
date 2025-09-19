@@ -5,11 +5,7 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update 3.0.4
-- Improved 'Others' tab scripts
-- Execution Covenience
-- Improved stability
-## Update queue: 3.0.5
+## Update: 3.0.5
 - Added ACL for CatVape mobile and PC
 - Execution Convenience
 - Improved Stability
