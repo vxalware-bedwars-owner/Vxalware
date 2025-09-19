@@ -1,1 +1,1 @@
-print("No PC Support :(")
+print("No PC Config Support yet:(")
