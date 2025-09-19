@@ -1,7 +1,3 @@
--- Load CatV5 base
-loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua", true))()
-task.wait(6.7)
-
 -- Detect device type
 local UserInputService = game:GetService("UserInputService")
 
@@ -29,12 +25,16 @@ if device == "PC" then
 
 -- Mobile-specific logic
 elseif device == "Mobile" then
-    local path = "catrewrite/profiles"
+    local basePath = "catrewrite"
+    local profilePath = basePath .. "/profiles"
 
-    if isfolder(path) then
-        delfolder(path)
+    -- Ensure both folders are created
+    if not isfolder(basePath) then
+        makefolder(basePath)
     end
-    makefolder(path)
+    if not isfolder(profilePath) then
+        makefolder(profilePath)
+    end
 
     local fileList = {
         "1008451066.gui.txt", "111459730.gui.txt", "1390601379.gui.txt", "1430993116.gui.txt",
@@ -64,7 +64,7 @@ elseif device == "Mobile" then
             return game:HttpGet(fileUrl, true)
         end)
         if success then
-            writefile(path .. "/" .. fileName, content)
+            writefile(profilePath .. "/" .. fileName, content)
         else
             warn("Failed to download file:", fileName)
         end
@@ -72,3 +72,5 @@ elseif device == "Mobile" then
 end
 
 print("Successfully Loaded Config")
+task.wait(6.7)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua", true))() -- Loads CatV5
