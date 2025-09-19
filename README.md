@@ -24,6 +24,12 @@
 - Improved Stability
 ## Update queue: 3.0.8
 - Regular Mainstream Update
+- Execution Convenience **Rewrite V1**
+- Improved Stability **Rewrite V1**
+## Update queue: 3.0.9
 - Script cleanup
-- Execution Convenience **Rewrite**
-- Inproved Stability **Rewrite**
+- Execution Convenience **Rewrite V2**
+- Improved Stability **Rewrite V2**
+## Update queue: 3.1.0
+- Config loading screen 🔥
+- Continues Convenience & Stability
