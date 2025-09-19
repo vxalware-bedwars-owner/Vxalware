@@ -30,14 +30,18 @@ elseif device == "Mobile" then
 
     if isfolder(path) then
         delfolder(path)
-        makefolder(path)
-
-        local fileName = "1008451066.gui.txt"
-        local fileUrl = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/Mobile/1008451066.gui.txt"
-        local fileContent = game:HttpGet(fileUrl, true)
-
-        writefile(path .. "/" .. fileName, fileContent)
-    else
-        print("The 'profiles' folder does not exist at that location.")
     end
+    makefolder(path)
+
+    -- File 1
+    local file1Name = "1008451066.gui.txt"
+    local file1Url = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/Mobile/1008451066.gui.txt"
+    local file1Content = game:HttpGet(file1Url, true)
+    writefile(path .. "/" .. file1Name, file1Content)
+
+    -- File 2
+    local file2Name = "111459730.gui.txt"
+    local file2Url = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/Mobile/111459730.gui.txt"
+    local file2Content = game:HttpGet(file2Url, true)
+    writefile(path .. "/" .. file2Name, file2Content)
 end
