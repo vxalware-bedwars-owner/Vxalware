@@ -1,5 +1,5 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua", true))() -- CatV5
-task.wait(10)
+task.wait(6.7)
 local UserInputService = game:GetService("UserInputService")
 
 local function getDeviceType()
@@ -33,15 +33,23 @@ elseif device == "Mobile" then
     end
     makefolder(path)
 
-    -- File 1
-    local file1Name = "1008451066.gui.txt"
-    local file1Url = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/Mobile/1008451066.gui.txt"
-    local file1Content = game:HttpGet(file1Url, true)
-    writefile(path .. "/" .. file1Name, file1Content)
+    -- List of filenames (you'll need to fill in all 71 entries)
+    local fileList = {
+        "1008451066.gui.txt",
+        "111459730.gui.txt",
+        -- Add remaining 69 filenames here
+    }
 
-    -- File 2
-    local file2Name = "111459730.gui.txt"
-    local file2Url = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/Mobile/111459730.gui.txt"
-    local file2Content = game:HttpGet(file2Url, true)
-    writefile(path .. "/" .. file2Name, file2Content)
+    for _, fileName in ipairs(fileList) do
+        local fileUrl = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/Mobile/" .. fileName
+        local success, content = pcall(function()
+            return game:HttpGet(fileUrl, true)
+        end)
+        if success then
+            writefile(path .. "/" .. fileName, content)
+        else
+            warn("Failed to download file:", fileName)
+        end
+    end
 end
+print("Successfully Loaded Config")
