@@ -190,6 +190,8 @@ BestTab:CreateButton({
    end,
 })
 
+local Section = BestTab:CreateSection("Rise modified")
+
 BestTab:CreateButton({
    Name = "Rxalware (Mobile)",
    Callback = function()
