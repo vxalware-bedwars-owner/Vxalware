@@ -19,7 +19,10 @@
 - Improved Stability
 ## Update queue: 3.0.7
 - Moved to better mobile and PC Support UI Lib (prob wind ui or luna lib)
-- Execution Convenience **Rewrite**
-- Improved Stability **Rewrite**
+- Execution Convenience
+- Improved Stability
 ## Update queue: 3.0.8
 - Regular Mainstream Update
+- Script cleanup
+- Execution Convenience **Rewrite**
+- Inproved Stability **Rewrite**
