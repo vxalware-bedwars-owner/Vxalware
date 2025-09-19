@@ -61,8 +61,9 @@ else
     pcall(function()
         if type(isfolder) == "function" then
             if not isfolder("catrewrite") then makefolder("catrewrite") end
-            if not isfolder("catrewrite/rise") then makefolder("catrewrite/rise") end -- New empty folder
-            if not isfolder("catrewrite/new") then makefolder("catrewrite/new") end   -- New folder for assets
+            if not isfolder("catrewrite/assets") then makefolder("catrewrite/assets") end
+            if not isfolder("catrewrite/assets/rise") then makefolder("catrewrite/assets/rise") end -- New empty folder
+            if not isfolder("catrewrite/assets/new") then makefolder("catrewrite/assets/new") end   -- New folder for assets
         end
     end)
 
@@ -114,7 +115,7 @@ else
     for _, pngData in ipairs(pngsToWrite) do
         local filename = pngData[1]
         local content = pngData[2]
-        local outPath = "catrewrite/new/" .. filename
+        local outPath = "catrewrite/assets/new/" .. filename
         
         local wrote, werr = pcall(function() writefile(outPath, content) end)
         if wrote then
