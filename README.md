@@ -11,7 +11,6 @@
 - Improved stability
 ## Update queue: 3.0.5
 - Added ACL for CatVape mobile and PC
-- Config Loading Screen 🔥
 - Execution Convenience
 - Improved Stability
 ## Update queue: 3.0.6
