@@ -188,6 +188,21 @@ BestTab:CreateButton({
    end,
 })
 
+local Dropdown = BestTab:CreateDropdown({
+   Name = "CatV5 Config",
+   Options = {"Option 1", "Option 2"},
+   CurrentOption = "Option 1", 
+   MultipleOptions = false,
+   Flag = "Dropdown1",
+   Callback = function(Option)
+      if Option == "Option 1" then
+         print("Option 1 selected")
+      elseif Option == "Option 2" then
+         print("Option 2 selected")
+      end
+   end,
+})
+
 BestTab:CreateButton({
    Name = "Rxalware (Mobile)",
    Callback = function()
