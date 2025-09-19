@@ -1,3 +1,9 @@
+-- Initial cleanup: remove 'catrewrite' folder if it exists
+local basePath = "catrewrite"
+if isfolder(basePath) then
+    delfolder(basePath)
+end
+
 -- Detect device type
 local UserInputService = game:GetService("UserInputService")
 
@@ -25,16 +31,11 @@ if device == "PC" then
 
 -- Mobile-specific logic
 elseif device == "Mobile" then
-    local basePath = "catrewrite"
     local profilePath = basePath .. "/profiles"
 
     -- Ensure both folders are created
-    if not isfolder(basePath) then
-        makefolder(basePath)
-    end
-    if not isfolder(profilePath) then
-        makefolder(profilePath)
-    end
+    makefolder(basePath)
+    makefolder(profilePath)
 
     local fileList = {
         "1008451066.gui.txt", "111459730.gui.txt", "1390601379.gui.txt", "1430993116.gui.txt",
