@@ -190,14 +190,21 @@ BestTab:CreateButton({
    end,
 })
 
-local Section = BestTab:CreateSection("Rise modified")
+local Section = BestTab:CreateSection("Rust modified")
 
 BestTab:CreateButton({
-   Name = "Rxalware (Mobile)",
+   Name = "Rxalware Config Loader",
    Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua", true))() -- Rust
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/MainScript.lua", true))() -- AlSploit
-       -- "Rxalware" --> Rust X AlSploit [Successor for "Vxalware" --> Vape V4 X AlSploit]
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/MainScipt.lua", true))() -- Rust Config Loader
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/MainScipt.lua", true))() -- AlSploit Config Loader
+   end,
+})
+
+BestTab:CreateButton({
+   Name = "Rxalware Script",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua", true))() -- Rust Script
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/Fix.lua", true))() -- AlSploit Script
    end,
 })
 
