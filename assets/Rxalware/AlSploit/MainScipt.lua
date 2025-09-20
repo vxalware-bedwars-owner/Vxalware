@@ -1,5 +1,3 @@
-game.Players.LocalPlayer:Chatted("/console") -- opens console for config installation
-
 local HttpService = game:GetService("HttpService")
 local configName = "AlSploitConfiguration.json"
 local configUrl = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/AlSploitConfiguration.json"
