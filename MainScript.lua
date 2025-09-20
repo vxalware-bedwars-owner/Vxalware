@@ -11,6 +11,14 @@ local Window = WindUI:CreateWindow({
     Theme  = "Dark",
 })
 
+Window:Tag({
+    Title = "v3.0.7",
+    Color = Color3.fromHex("#30ff6a"),
+    Radius = 0,
+})
+
+Window:SetToggleKey(Enum.KeyCode.K)
+
 local function makeButton(tab, title, icon, url)
     tab:Button({
         Title = title,
@@ -85,10 +93,10 @@ local rustSection = BestTab:Section({ Title = "Rust modified" })
 makeButton(BestTab, "Rxalware Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/MainScipt.lua")
 makeButton(BestTab, "Rxalware Script", "play", "https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua")
 
--- final loaded notification
+-- Notification
 WindUI:Notify({
     Title = "Successfully Loaded!",
-    Content = "Thank you for using Vxalware",
+    Content = "Thank you for using Vxalware. Press 'K' to toggle GUI",
     Duration = 5,
     Icon = "check"
 })
