@@ -1,14 +1,10 @@
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/dist/main.lua"))()
-WindUI:SetTheme("Dark")
 
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Loader",
     Icon = "bed",
     Author = "Made by SynthX",
 })
-Window:SetToggleKey(Enum.KeyCode.H)
-Window:ToggleTransparency(true)
-Window:IsResizable(true)
 
 Window:EditOpenButton({
     Title = "Open Vxalware",
