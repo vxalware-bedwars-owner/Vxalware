@@ -5,12 +5,8 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update: 3.0.6
-- Made ACL for Rxalware Script
-- Execution Convenience
-- Improved Stability
-## Update queue: 3.0.7
-- Moved to better mobile and PC Support UI Lib (prob wind ui or luna lib)
+## Update: 3.0.7
+- Moved to better mobile and PC Support UI Lib [Wind UI]
 - Execution Convenience
 - Improved Stability
 ## Update queue: 3.0.8
