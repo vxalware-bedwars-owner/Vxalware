@@ -5,12 +5,8 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update: 3.0.5
-- Added ACL for CatVape mobile and PC
-- Execution Convenience
-- Improved Stability
-## Update queue: 3.0.6
-- Linked ACL for rust script in Rxalware
+## Update: 3.0.6
+- Made ACL for Rxalware Script
 - Execution Convenience
 - Improved Stability
 ## Update queue: 3.0.7
@@ -27,4 +23,4 @@
 - Improved Stability **Rewrite V2**
 ## Update queue: 3.1.0
 - Config loading screen 🔥
-- Continues Convenience & Stability
+- Continued Convenience & Stability
