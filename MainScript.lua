@@ -90,7 +90,7 @@ local AlSploitTab = Window:CreateTab("🦤 AlSploit", nil)
 AlSploitTab:CreateButton({
    Name = "AlSploit",
    Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/AlSploit%20Fix.lua", true))()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/Fix.lua", true))()
    end,
 })
 
