@@ -26,7 +26,7 @@ if device == "PC" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/PC/PC.lua", true))()
     end)
     if not success then
-        warn("Failed to load PC script:", err)
+        warn("Failed to load PC script: " .. tostring(err))
     end
 
 -- Mobile-specific logic
