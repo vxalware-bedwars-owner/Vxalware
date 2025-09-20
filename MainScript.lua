@@ -1,8 +1,4 @@
--- Option A: load WindUI from remote (same pattern you used)
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/dist/main.lua"))()
-
--- Option B: require WindUI from a ModuleScript in ReplicatedStorage
--- local WindUI = require(game:GetService("ReplicatedStorage"):WaitForChild("WindUI"))
 
 WindUI:SetTheme("Dark")
 WindUI.TransparencyValue = 0.15
@@ -15,7 +11,6 @@ local Window = WindUI:CreateWindow({
     Theme  = "Dark",
 })
 
--- Helper to make loading buttons (keeps code tidy)
 local function makeButton(tab, title, icon, url)
     tab:Button({
         Title = title,
@@ -50,7 +45,7 @@ makeButton(VoidTab, "Voidware Packet", "package", "https://raw.githubusercontent
 
 -- CatVape tab
 local CatTab = Window:Tab({ Title = "🐈 CatVape", Icon = "cat" })
-makeButton(CatTab, "CatVape", "paw", "https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua")
+makeButton(CatTab, "CatVape", "cat", "https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua")
 
 -- Night tab
 local NightTab = Window:Tab({ Title = "✨ Night", Icon = "moon" })
@@ -87,8 +82,8 @@ makeButton(BestTab, "CatVxpe Config Loader", "save", "https://raw.githubusercont
 makeButton(BestTab, "CatVxpe Script", "play", "https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua")
 
 local rustSection = BestTab:Section({ Title = "Rust modified" })
-makeButton(BestTab, "Rxalware Config Loader", "save-2", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/MainScipt.lua")
-makeButton(BestTab, "Rxalware Script", "layers", "https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua")
+makeButton(BestTab, "Rxalware Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/MainScipt.lua")
+makeButton(BestTab, "Rxalware Script", "play", "https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua")
 
 -- final loaded notification
 WindUI:Notify({
