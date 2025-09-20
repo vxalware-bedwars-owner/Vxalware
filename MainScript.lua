@@ -91,7 +91,7 @@ makeButton(BestTab, "CatVxpe Script", "play", "https://raw.githubusercontent.com
 
 local rustSection = BestTab:Section({ Title = "Rust modified" })
 makeButton(BestTab, "Rxalware Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/MainScipt.lua")
-makeButton(BestTab, "Rxalware Script", "play", "https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua")
+makeButton(BestTab, "Rxalware Script", "play", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/notwatermark.lua")
 
 -- Notification
 WindUI:Notify({
