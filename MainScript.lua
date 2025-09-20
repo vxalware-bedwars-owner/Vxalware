@@ -215,7 +215,7 @@ Rayfield:Notify({
    Image = "rewind",
 })
 ]]
-local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Scripts-for-Roblox/refs/heads/main/Wind%20UI.lua"))()
 WindUI:SetTheme("Dark")
 
 local Window = WindUI:CreateWindow({
