@@ -1,5 +1,3 @@
-game.Players.LocalPlayer:Chatted("/console") -- opens console for config installation
-
 -- Initial cleanup: remove 'catrewrite' folder if it exists
 local basePath = "catrewrite"
 if isfolder(basePath) then
