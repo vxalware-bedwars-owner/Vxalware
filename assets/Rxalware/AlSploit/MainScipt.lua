@@ -2,13 +2,13 @@ local HttpService = game:GetService("HttpService")
 local configName = "AlSploitConfiguration.json"
 local configUrl = "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/AlSploitConfiguration.json"
 
--- Check if the file already exists
+-- Check and delete the file if it exists
 if isfile(configName) then
-    -- File exists—nothing to do
-    return
+    delfile(configName)
+    print("Existing configuration file deleted:", configName)
 end
 
--- File doesn't exist—fetch and write it
+-- Fetch and write the new configuration file
 local success, response = pcall(function()
     return game:HttpGet(configUrl, true)
 end)
