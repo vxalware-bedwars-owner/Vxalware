@@ -5,11 +5,7 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update: 3.0.8
-- Regular Mainstream Update
-- Execution Convenience **Rewrite V1**
-- Improved Stability **Rewrite V1**
-## Update queue: 3.0.9
+## Update: 3.0.9
 - Script cleanup
 - Execution Convenience **Rewrite V2**
 - Improved Stability **Rewrite V2**
