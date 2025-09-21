@@ -4,7 +4,7 @@ WindUI:SetTheme("Dark")
 WindUI.TransparencyValue = 0.15
 
 local Window = WindUI:CreateWindow({
-    Title  = "Vxalware Rewrite  ",
+    Title  = "Vxalware Rewrite   ",
     Icon   = "badge-check",
     Folder = "Vxalware",
     Size   = UDim2.fromOffset(640, 480),
