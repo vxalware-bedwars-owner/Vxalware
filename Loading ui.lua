@@ -8,27 +8,25 @@ end
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
 
 -- Helper to create gradient GUI
 local function createStatusGui()
     local screenGui = Instance.new("ScreenGui")
     screenGui.Name = "CatV5StatusGui"
     screenGui.ResetOnSpawn = false
-    screenGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+    screenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
 
     local frame = Instance.new("Frame")
     frame.Size = UDim2.new(0.5, 0, 0.15, 0)
-    frame.Position = UDim2.new(0.25, 0, 0.4, 0)
-    frame.BackgroundTransparency = 0
-    frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    frame.Position = UDim2.new(0.5, 0, 0.5, 0) -- centered
     frame.AnchorPoint = Vector2.new(0.5, 0.5)
-    frame.Parent = screenGui
-    frame.ClipsDescendants = true
-    frame.BorderSizePixel = 0
-    frame.AutoLocalize = false
-    frame.Rotation = 0
-    frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     frame.BackgroundTransparency = 0
+    frame.BorderSizePixel = 0
+    frame.ClipsDescendants = true
+    frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    frame.Parent = screenGui
 
     -- Gradient background
     local gradient = Instance.new("UIGradient")
@@ -52,7 +50,7 @@ local function createStatusGui()
     textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
     textLabel.TextScaled = true
     textLabel.TextWrapped = true
-    textLabel.Font = Enum.Font.GothamBold -- bold font
+    textLabel.Font = Enum.Font.GothamBold
     textLabel.TextStrokeTransparency = 0.7
     textLabel.Text = "Starting..."
     textLabel.Parent = frame
@@ -66,6 +64,44 @@ local function createStatusGui()
         local tweenIn = TweenService:Create(textLabel, TweenInfo.new(0.25, Enum.EasingStyle.Sine), {TextTransparency = 0})
         tweenIn:Play()
     end
+
+    -- Make draggable
+    local dragging, dragInput, dragStart, startPos = false, nil, nil, nil
+    local function update(input)
+        local delta = input.Position - dragStart
+        frame.Position = UDim2.new(
+            startPos.X.Scale,
+            startPos.X.Offset + delta.X,
+            startPos.Y.Scale,
+            startPos.Y.Offset + delta.Y
+        )
+    end
+
+    frame.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = frame.Position
+
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+
+    frame.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            dragInput = input
+        end
+    end)
+
+    UserInputService.InputChanged:Connect(function(input)
+        if dragging and input == dragInput then
+            update(input)
+        end
+    end)
 
     return screenGui, updateText
 end
@@ -85,7 +121,6 @@ end
 
 local device = getDeviceType()
 updateStatus("Detected device: " .. device)
-
 task.wait(1.2)
 
 -- PC logic
