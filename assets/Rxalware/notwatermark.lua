@@ -16,7 +16,7 @@ local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
--- gradient GUI
+-- GUI Setup
 local function createStatusGui()
     local screenGui = Instance.new("ScreenGui")
     screenGui.Name = "RxalwareStatusGui"
@@ -107,7 +107,7 @@ end
 
 local statusGui, updateStatus = createStatusGui()
 
--- Detect device type
+-- Device Detection
 local function getDeviceType()
     if UserInputService.TouchEnabled and not UserInputService.GamepadEnabled then
         return "Mobile"
@@ -122,29 +122,38 @@ local device = getDeviceType()
 updateStatus("Detected device: " .. device)
 task.wait(1.2)
 
--- Load AlSploit
-updateStatus("Loading AlSploit...")
-local success, err = pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/MainScipt.lua", true))()
-end)
-if not success then
-    updateStatus("Failed to load AlSploit:\n" .. tostring(err))
-end
-
--- Wait exactly 4.1 seconds before Rust load
-task.wait(4.1)
-
--- Load Rust
-updateStatus("Loading Rxalware Rust...")
-local success2, err2 = pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rust/MainScript.lua", true))()
-end)
-if not success2 then
-    updateStatus("Failed to load Rust:\n" .. tostring(err2))
+-- Conditional Execution
+if device == "PC" then
+    updateStatus("Executing Rust for PC...")
+    local success, err = pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rust/MainScript.lua", true))()
+    end)
+    if not success then
+        updateStatus("Rust failed:\n" .. tostring(err))
+    else
+        updateStatus("Rust loaded successfully 🎉")
+    end
 else
-    updateStatus("Done! 🎉")
+    updateStatus("Executing AlSploit for Mobile...")
+    local success, err = pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/MainScipt.lua", true))()
+    end)
+    if not success then
+        updateStatus("AlSploit failed:\n" .. tostring(err))
+    else
+        updateStatus("AlSploit loaded, waiting for Rust...")
+        task.wait(4.1)
+        local success2, err2 = pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rust/MainScript.lua", true))()
+        end)
+        if not success2 then
+            updateStatus("Rust failed:\n" .. tostring(err2))
+        else
+            updateStatus("Rust loaded successfully 🎉")
+        end
+    end
 end
 
--- Keep GUI for 5 seconds
+-- GUI Cleanup
 task.wait(5)
 statusGui:Destroy()
