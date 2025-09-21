@@ -14,7 +14,7 @@ local Window = WindUI:CreateWindow({
 Window:Tag({
     Title = "v3.0.9",
     Color = Color3.fromHex("#30ff6a"),
-    Radius = 13,
+    Radius = 4.1,
 })
 
 Window:SetToggleKey(Enum.KeyCode.K)
