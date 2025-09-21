@@ -5,16 +5,16 @@ WindUI.TransparencyValue = 0.15
 
 local Window = WindUI:CreateWindow({
     Title  = "Vxalware Rewrite",
-    Icon   = "geist:window",
+    Icon   = "badge-check",
     Folder = "Vxalware",
     Size   = UDim2.fromOffset(640, 480),
     Theme  = "Dark",
 })
 
 Window:Tag({
-    Title = "v3.0.8",
+    Title = "v3.0.9",
     Color = Color3.fromHex("#30ff6a"),
-    Radius = 0,
+    Radius = 1.4,
 })
 
 Window:SetToggleKey(Enum.KeyCode.K)
@@ -79,9 +79,15 @@ makeButton(OthersTab, "Infinite Yield", "terminal", "https://raw.githubuserconte
 local elementSection = OthersTab:Section({ Title = "Element Scripts" })
 makeButton(OthersTab, "Fov Changer", "terminal", "https://pastebin.com/raw/g5azNFjf")
 makeButton(OthersTab, "Sword Texture", "terminal", "https://pastebin.com/raw/fdmZVrFF")
-makeButton(OthersTab, "Atmosphere [IN PROGRESS]", "terminal", "https://pastebin.com/raw/5KyjL3Y1")
-makeButton(OthersTab, "Player Attach [NOT WORKING]", "terminal", "https://pastebin.com/raw/N0t1z4pT")
+makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw/5KyjL3Y1")
 makeButton(OthersTab, "Chat Bypasser [NOT WORKING]", "terminal", "https://pastebin.com/raw/BvPaPChX")
+OthersTab:Button({
+    Title = "Destroy GUI",
+    Icon = "terminal",
+    Callback = function()
+        Input:Destroy()
+    end
+})
 
 -- Best Scripts tab
 local BestTab = Window:Tab({ Title = "📜 Best Scripts", Icon = "award" })
