@@ -4,7 +4,7 @@ WindUI:SetTheme("Dark")
 WindUI.TransparencyValue = 0.15
 
 local Window = WindUI:CreateWindow({
-    Title  = "Vxalware Loader",
+    Title  = "Vxalware Rewrite ",
     Icon   = "badge-check",
     Folder = "Vxalware",
     Size   = UDim2.fromOffset(640, 480),
@@ -14,7 +14,7 @@ local Window = WindUI:CreateWindow({
 Window:Tag({
     Title = "v3.0.9",
     Color = Color3.fromHex("#30ff6a"),
-    Radius = 1.4,
+    Radius = 4.1,
 })
 
 Window:SetToggleKey(Enum.KeyCode.K)
