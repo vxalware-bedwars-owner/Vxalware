@@ -124,24 +124,24 @@ task.wait(1.2)
 
 -- Conditional Execution
 if device == "PC" then
-    updateStatus("Executing Rust for PC...")
+    updateStatus("Executing Rust...")
     local success, err = pcall(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rust/MainScript.lua", true))()
     end)
     if not success then
         updateStatus("Rust failed:\n" .. tostring(err))
     else
-        updateStatus("Rust loaded successfully 🎉")
+        updateStatus("Done 🎉")
     end
 else
-    updateStatus("Executing AlSploit for Mobile...")
+    updateStatus("Executing AlSploit...")
     local success, err = pcall(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/MainScipt.lua", true))()
     end)
     if not success then
         updateStatus("AlSploit failed:\n" .. tostring(err))
     else
-        updateStatus("AlSploit loaded, waiting for Rust...")
+        updateStatus("")
         task.wait(4.1)
         local success2, err2 = pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rust/MainScript.lua", true))()
@@ -149,7 +149,7 @@ else
         if not success2 then
             updateStatus("Rust failed:\n" .. tostring(err2))
         else
-            updateStatus("Rust loaded successfully 🎉")
+            updateStatus("Done 🎉")
         end
     end
 end
