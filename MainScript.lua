@@ -4,7 +4,7 @@ WindUI:SetTheme("Dark")
 WindUI.TransparencyValue = 0.15
 
 local Window = WindUI:CreateWindow({
-    Title  = "Vxalware Rewrite",
+    Title  = "Vxalware Loader",
     Icon   = "badge-check",
     Folder = "Vxalware",
     Size   = UDim2.fromOffset(640, 480),
@@ -18,6 +18,7 @@ Window:Tag({
 })
 
 Window:SetToggleKey(Enum.KeyCode.K)
+Window:SetIconSize(36)
 
 local function makeButton(tab, title, icon, url)
     tab:Button({
@@ -81,13 +82,6 @@ makeButton(OthersTab, "Fov Changer", "terminal", "https://pastebin.com/raw/g5azN
 makeButton(OthersTab, "Sword Texture", "terminal", "https://pastebin.com/raw/fdmZVrFF")
 makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw/5KyjL3Y1")
 makeButton(OthersTab, "Chat Bypasser [NOT WORKING]", "terminal", "https://pastebin.com/raw/BvPaPChX")
-OthersTab:Button({
-    Title = "Destroy GUI",
-    Icon = "terminal",
-    Callback = function()
-        Input:Destroy()
-    end
-})
 
 -- Best Scripts tab
 local BestTab = Window:Tab({ Title = "📜 Best Scripts", Icon = "award" })
