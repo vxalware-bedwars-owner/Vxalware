@@ -5,11 +5,7 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update: 3.0.7
-- Moved to better mobile and PC Support UI Lib [Wind UI]
-- Execution Convenience
-- Improved Stability
-## Update queue: 3.0.8
+## Update: 3.0.8
 - Regular Mainstream Update
 - Execution Convenience **Rewrite V1**
 - Improved Stability **Rewrite V1**
