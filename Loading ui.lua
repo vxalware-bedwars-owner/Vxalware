@@ -1,4 +1,15 @@
--- Gui overlay helper
+-- Initial cleanup: remove 'catrewrite' folder if it exists
+local basePath = "catrewrite"
+if isfolder(basePath) then
+    delfolder(basePath)
+end
+
+-- Services
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+
+-- Helper to create gradient GUI
 local function createStatusGui()
     local screenGui = Instance.new("ScreenGui")
     screenGui.Name = "CatV5StatusGui"
@@ -6,51 +17,62 @@ local function createStatusGui()
     screenGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
 
     local frame = Instance.new("Frame")
-    frame.Size = UDim2.fromOffset(400, 120)
-    frame.Position = UDim2.new(0.5, -200, 0.4, -60)
+    frame.Size = UDim2.new(0.5, 0, 0.15, 0)
+    frame.Position = UDim2.new(0.25, 0, 0.4, 0)
     frame.BackgroundTransparency = 0
-    frame.BorderSizePixel = 0
+    frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    frame.AnchorPoint = Vector2.new(0.5, 0.5)
     frame.Parent = screenGui
+    frame.ClipsDescendants = true
+    frame.BorderSizePixel = 0
+    frame.AutoLocalize = false
+    frame.Rotation = 0
+    frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    frame.BackgroundTransparency = 0
 
     -- Gradient background
     local gradient = Instance.new("UIGradient")
     gradient.Color = ColorSequence.new{
-        ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 170, 255)),  -- Blue
-        ColorSequenceKeypoint.new(1, Color3.fromRGB(170, 0, 255))   -- Purple
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 170, 255)),
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(170, 0, 255))
     }
     gradient.Rotation = 45
     gradient.Parent = frame
 
+    -- Rounded corners
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 18)
+    corner.Parent = frame
+
+    -- Status label
     local textLabel = Instance.new("TextLabel")
-    textLabel.Size = UDim2.fromScale(1,1)
+    textLabel.Size = UDim2.new(1, -20, 1, -20)
+    textLabel.Position = UDim2.new(0, 10, 0, 10)
     textLabel.BackgroundTransparency = 1
     textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-    textLabel.Font = Enum.Font.GothamBold -- Good looking font
     textLabel.TextScaled = true
     textLabel.TextWrapped = true
-    textLabel.Text = "Initializing..."
+    textLabel.Font = Enum.Font.GothamBold -- bold font
+    textLabel.TextStrokeTransparency = 0.7
+    textLabel.Text = "Starting..."
     textLabel.Parent = frame
 
-    return screenGui, textLabel
+    -- Tween function for smooth updates
+    local function updateText(newText)
+        local tweenOut = TweenService:Create(textLabel, TweenInfo.new(0.25, Enum.EasingStyle.Sine), {TextTransparency = 1})
+        tweenOut:Play()
+        tweenOut.Completed:Wait()
+        textLabel.Text = newText
+        local tweenIn = TweenService:Create(textLabel, TweenInfo.new(0.25, Enum.EasingStyle.Sine), {TextTransparency = 0})
+        tweenIn:Play()
+    end
+
+    return screenGui, updateText
 end
 
--- Create status GUI
-local gui, statusLabel = createStatusGui()
-
--- Function to update text
-local function updateStatus(text)
-    statusLabel.Text = text
-end
-
--- Initial cleanup
-local basePath = "catrewrite"
-if isfolder(basePath) then
-    delfolder(basePath)
-end
+local statusGui, updateStatus = createStatusGui()
 
 -- Detect device type
-local UserInputService = game:GetService("UserInputService")
-
 local function getDeviceType()
     if UserInputService.TouchEnabled and not UserInputService.GamepadEnabled then
         return "Mobile"
@@ -61,31 +83,52 @@ local function getDeviceType()
     end
 end
 
-updateStatus("Detecting device...")
-task.wait(0.5)
 local device = getDeviceType()
-updateStatus("Device detected: "..device)
-task.wait(1)
+updateStatus("Detected device: " .. device)
 
--- PC-specific logic
+task.wait(1.2)
+
+-- PC logic
 if device == "PC" then
-    updateStatus("Loading PC script...")
+    updateStatus("Loading CatV5 for PC...")
     local success, err = pcall(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/PC/PC.lua", true))()
     end)
     if not success then
-        warn("Failed to load PC script: " .. tostring(err))
+        updateStatus("Failed to load PC script:\n" .. tostring(err))
     end
 
--- Mobile-specific logic
+-- Mobile logic
 elseif device == "Mobile" then
     updateStatus("Preparing mobile profiles...")
+
     local profilePath = basePath .. "/profiles"
     makefolder(basePath)
     makefolder(profilePath)
 
     local fileList = {
-        "1008451066.gui.txt", "111459730.gui.txt", "1390601379.gui.txt", -- trimmed for readability
+        "1008451066.gui.txt", "111459730.gui.txt", "1390601379.gui.txt", "1430993116.gui.txt",
+        "169302362.gui.txt", "2380077519.gui.txt", "2619619496.gui.txt", "3258873704.gui.txt",
+        "372226183.gui.txt", "3808081382.gui.txt", "4124008017.gui.txt", "4348829796.gui.txt",
+        "4777817887.gui.txt", "6035872082.gui.txt", "6079884123.gui.txt", "66654135.gui.txt",
+        "6701277882.gui.txt", "7326934954.gui.txt", "7709344486.gui.txt", "7781392706.gui.txt",
+        "7822444776.gui.txt", "80461030.gui.txt", "994732206.gui.txt", "billionaire client16008862571.txt",
+        "billionaire client6872265039.txt", "billionaire client6872274481.txt",
+        "billionaire v26872265039.txt", "billionaire v26872274481.txt", "cc17625359962.txt",
+        "closet client6872265039.txt", "closet client6872274481.txt", "closet6872265039.txt",
+        "closet6872274481.txt", "color.txt", "commit.txt", "default10449761463.txt",
+        "default11630038968.txt", "default11979315221.txt", "default121864768012064.txt",
+        "default12355337193.txt", "default124596094333302.txt", "default126509999114328.txt",
+        "default13772394625.txt", "default137925884276740.txt", "default142823291.txt",
+        "default168556275.txt", "default17625359962.txt", "default17750024818.txt",
+        "default2788229376.txt", "default283721918.txt", "default443406476.txt",
+        "default4442272183.txt", "default4483381587.txt", "default6872265039.txt",
+        "default6872274481.txt", "default8768229691.txt", "default893973440.txt",
+        "default95004353881831.txt", "default96342491571673.txt", "gui.txt", "hud.txt",
+        "language.txt", "non.txt", "panic6872265039.txt", "panic6872274481.txt",
+        "pistonaire nut6872265039.txt", "pistonaire nut6872274481.txt",
+        "silent (only legit reach)6872265039.txt", "silent (only legit reach)6872274481.txt",
+        "spotify.txt", "trillionaire config6872265039.txt", "trillionaire config6872274481.txt",
         "whitelist.json"
     }
 
@@ -104,15 +147,17 @@ elseif device == "Mobile" then
 end
 
 updateStatus("Loading CatV5...")
-task.wait(0.7)
-local ok, err = pcall(function()
+task.wait(1.2)
+
+local success, err = pcall(function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua", true))()
 end)
+if not success then
+    updateStatus("Failed to load CatV5:\n" .. tostring(err))
+else
+    updateStatus("Done! 🎉")
+end
 
-updateStatus("Done!")
+-- Keep GUI for 5 seconds
 task.wait(5)
-
--- Remove the GUI after 5 seconds
-pcall(function()
-    gui:Destroy()
-end)
+statusGui:Destroy()
