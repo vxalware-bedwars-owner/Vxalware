@@ -141,7 +141,7 @@ else
     if not success then
         updateStatus("AlSploit failed:\n" .. tostring(err))
     else
-        updateStatus("")
+        updateStatus("Executing Rust...")
         task.wait(4.1)
         local success2, err2 = pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rust/MainScript.lua", true))()
