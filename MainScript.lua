@@ -8,6 +8,7 @@ local Window = WindUI:CreateWindow({
     Icon   = "blocks",
     Author = "Update 3.1.0"
     Folder = "Vxalware",
+    Size   = UDim2.fromOffset(640, 480),
     Resizable = true,
     Theme  = "Dark",
 })
