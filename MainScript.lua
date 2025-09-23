@@ -4,22 +4,24 @@ WindUI:SetTheme("Dark")
 WindUI.TransparencyValue = 0.15
 
 local Window = WindUI:CreateWindow({
-    Title  = "Vxalware Rewrite",
-    Icon   = "blocks",
-    Author = "Update 3.1.0"
-    Folder = "Vxalware",
+    Title     = "Vxalware Rewrite",
+    Icon      = "blocks",
+    Author    = "Update 3.1.0",
+    Folder    = "Vxalware",
     Resizable = true,
-    Theme  = "Dark",
+    Theme     = "Dark",
+
+    -- Put the User table inside the CreateWindow options
+    User = {
+        Enabled = true,
+        Anonymous = true,
+        Callback = function()
+            print("clicked")
+        end,
+    },
 })
 
-User = {
-    Enabled = true,
-    Anonymous = true,
-    Callback = function()
-        print("clicked")
-    end,
-},
-
+-- Toggle key & icon size
 Window:SetToggleKey(Enum.KeyCode.K)
 Window:SetIconSize(36)
 
