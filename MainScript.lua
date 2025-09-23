@@ -4,17 +4,10 @@ WindUI:SetTheme("Dark")
 WindUI.TransparencyValue = 0.15
 
 local Window = WindUI:CreateWindow({
-    Title  = "Vxalware Rewrite   ",
+    Title  = "Vxalware Rewrite",
     Icon   = "badge-check",
     Folder = "Vxalware",
-    Size   = UDim2.fromOffset(640, 480),
     Theme  = "Dark",
-})
-
-Window:Tag({
-    Title = "v3.1.0",
-    Color = Color3.fromHex("#30ff6a"),
-    Radius = 4.1,
 })
 
 Window:SetToggleKey(Enum.KeyCode.K)
@@ -46,30 +39,30 @@ local function makeButton(tab, title, icon, url)
 end
 
 -- Voidpaste tab
-local VoidTab = Window:Tab({ Title = "🌌 Voidpaste", Icon = "star" })
+local VoidTab = Window:Tab({ Title = "Voidpaste", Icon = "star" })
 makeButton(VoidTab, "Voidware Old", "terminal", "https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua")
 makeButton(VoidTab, "Voidware Rewrite", "terminal", "https://raw.githubusercontent.com/VapeVoidware/VWRewrite/main/NewMainScript.lua")
 makeButton(VoidTab, "Voidware Rise", "terminal", "https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua")
 makeButton(VoidTab, "Voidware Packet", "terminal", "https://raw.githubusercontent.com/VapeVoidware/VWPacket/main/NewMainScript.lua")
 
 -- CatVape tab
-local CatTab = Window:Tab({ Title = "🐈 CatVape", Icon = "cat" })
+local CatTab = Window:Tab({ Title = "CatVape", Icon = "cat" })
 makeButton(CatTab, "CatVape", "terminal", "https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua")
 
 -- Night tab
-local NightTab = Window:Tab({ Title = "✨ Night", Icon = "moon" })
+local NightTab = Window:Tab({ Title = "Night", Icon = "moon" })
 makeButton(NightTab, "Night", "terminal", "https://raw.githubusercontent.com/null-wtf/Night/refs/heads/main/Night/Loader.luau")
 
 -- AlSploit tab
-local AlSploitTab = Window:Tab({ Title = "🦤 AlSploit", Icon = "shield" })
+local AlSploitTab = Window:Tab({ Title = "AlSploit", Icon = "shield" })
 makeButton(AlSploitTab, "AlSploit", "terminal", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/Fix.lua")
 
 -- Rust tab
-local RustTab = Window:Tab({ Title = "⚔️ Rust", Icon = "sword" })
+local RustTab = Window:Tab({ Title = "Rust", Icon = "sword" })
 makeButton(RustTab, "Rust", "terminal", "https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua")
 
 -- Others tab with sections
-local OthersTab = Window:Tab({ Title = "⚙️ Others", Icon = "settings" })
+local OthersTab = Window:Tab({ Title = "Others", Icon = "settings" })
 local guiSection = OthersTab:Section({ Title = "GUI Scripts" })
 
 makeButton(OthersTab, "Anim. Changer gui", "terminal", "https://rawscripts.net/raw/Universal-Script-Selenix-Animation-Changer-V1-17880")
@@ -84,7 +77,7 @@ makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw
 makeButton(OthersTab, "Chat Bypasser [NOT WORKING]", "terminal", "https://pastebin.com/raw/BvPaPChX")
 
 -- Best Scripts tab
-local BestTab = Window:Tab({ Title = "📜 Best Scripts", Icon = "award" })
+local BestTab = Window:Tab({ Title = "Best Scripts", Icon = "award" })
 local catSection = BestTab:Section({ Title = "CatVxpe" })
 makeButton(BestTab, "CatVxpe Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua")
 makeButton(BestTab, "CatVxpe Script", "play", "https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua")
