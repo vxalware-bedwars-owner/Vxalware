@@ -10,10 +10,5 @@
 - Continued Convenience & Stability
 ## Update queue: 3.1.1
 *Wind UI - fixes update*
-- Removed Spacing in name
-- Changed icon
-- Removed emoji
-- Auto sizing
 - Added author
 - Added user
-- Removed tags
