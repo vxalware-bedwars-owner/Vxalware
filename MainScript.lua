@@ -8,6 +8,14 @@ local Window = WindUI:CreateWindow({
     Icon   = "badge-check",
     Folder = "Vxalware",
     Theme  = "Dark",
+
+    User = {
+        Enabled = true,
+        Anonymous = false,
+        Callback = function()
+            print("clicked")
+        end,
+    },
 })
 
 Window:SetToggleKey(Enum.KeyCode.K)
