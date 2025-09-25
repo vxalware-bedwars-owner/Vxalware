@@ -74,7 +74,8 @@ makeButton(RustTab, "Rust", "terminal", "https://raw.githubusercontent.com/0xEIi
 local OthersTab = Window:Tab({ Title = "Others", Icon = "settings" })
 local guiSection = OthersTab:Section({ Title = "GUI Scripts" })
 
-makeButton(OthersTab, "Anim. Changer gui", "terminal", "https://rawscripts.net/raw/Universal-Script-Selenix-Animation-Changer-V1-17880")
+makeButton(OthersTab, "Gazer Anim. Changer", "terminal", "https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G")
+-- 'https://rawscripts.net/raw/Universal-Script-Selenix-Animation-Changer-V1-17880' Selenix, succeeded by Gazer
 makeButton(OthersTab, "Mobile Keyboard", "terminal", "https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/refs/heads/main/MobileKeyboard.txt")
 makeButton(OthersTab, "Script Hub GUI", "terminal", "https://rawscripts.net/raw/Universal-Script-FE-Animation-Changer-16049")
 makeButton(OthersTab, "Infinite Yield", "terminal", "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
