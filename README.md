@@ -1,5 +1,5 @@
 # Vxalware Loader
-*Meet Vxalware Loader! An all in one bedwars script hub with some of the best scripts for the game! (PC & Mobile Support!)*
+*Vxalware Loader is a bedwars script hub with configs as well as cool features for the game.*
 ## Directions of use:
 *Copy Script in Loader.lua, Paste in your executor, and click execute*
 ## Credits:
