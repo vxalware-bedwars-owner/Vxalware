@@ -5,16 +5,7 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update: 3.1.1
-*Wind UI - Fixes update*
-- Removed Spacing in name
-- Changed icon
-- Removed emoji
-- Auto sizing
-- Added author
-- Added user
-- Removed tags
-## Update queue: 3.1.2
+## Update: 3.1.2
 *CatVape - Mainstream update*
 - Better Blatant profile
 - Better Config profile
