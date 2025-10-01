@@ -1,4 +1,4 @@
--- Delete existing catrewrite
+-- Delete file
 local basePath = "catrewrite"
 if isfolder(basePath) then
     delfolder(basePath)
@@ -108,7 +108,7 @@ end
 
 local statusGui, updateStatus = createStatusGui()
 
--- Detect device type
+-- Detect device
 local function getDeviceType()
     if UserInputService.TouchEnabled and not UserInputService.GamepadEnabled then
         return "Mobile"
@@ -127,7 +127,7 @@ task.wait(1.2)
 if device == "PC" then
     updateStatus("Loading profiles...")
     local success, err = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/PC/PC.lua", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/PC/PC.lua",true))()
     end)
     if not success then
         updateStatus("Failed to load PC script:\n" .. tostring(err))
