@@ -6,7 +6,7 @@ WindUI.TransparencyValue = 0.15
 local Window = WindUI:CreateWindow({
     Title  = "Vxalware Rewrite",
     Icon   = "blocks",
-    Author = "Update 3.1.2",
+    Author = "Update 3.1.3",
     Folder = "Vxalware",
     Theme  = "Dark",
 
@@ -20,7 +20,6 @@ local Window = WindUI:CreateWindow({
 })
 
 Window:SetToggleKey(Enum.KeyCode.K)
-Window:SetIconSize(32)
 
 local function makeButton(tab, title, icon, url)
     tab:Button({
@@ -60,7 +59,7 @@ makeButton(CatTab, "CatVape", "terminal", "https://raw.githubusercontent.com/new
 
 -- Night tab
 local NightTab = Window:Tab({ Title = "Night", Icon = "moon" })
-makeButton(NightTab, "Night", "terminal", "https://raw.githubusercontent.com/null-wtf/Night/refs/heads/main/Night/Loader.luau")
+makeButton(NightTab, "Night", "terminal", "https://raw.githubusercontent.com/null-wtf/NewNight/refs/heads/main/Loader.luau")
 
 -- AlSploit tab
 local AlSploitTab = Window:Tab({ Title = "AlSploit", Icon = "shield" })
