@@ -20,6 +20,7 @@ local Window = WindUI:CreateWindow({
 })
 
 Window:SetToggleKey(Enum.KeyCode.K)
+Window:SetIconSize(26)
 
 local function makeButton(tab, title, icon, url)
     tab:Button({
