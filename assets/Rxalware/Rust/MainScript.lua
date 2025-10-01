@@ -1,10 +1,10 @@
--- Initial cleanup: remove 'rust' folder if it exists
+-- Remove folder
 local basePath = "rust"
 if isfolder(basePath) then
     delfolder(basePath)
 end
 
--- Detect device type
+-- Detect device
 local UserInputService = game:GetService("UserInputService")
 
 local function getDeviceType()
@@ -20,10 +20,10 @@ end
 local device = getDeviceType()
 print("The user's device is:", device)
 
--- Create base folder for both device types
+-- Create base folder (idk why)
 makefolder(basePath)
 
--- PC-specific logic
+-- PC
 if device == "PC" then
     local success, err = pcall(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rust/PC/PC.lua",true))()
@@ -32,7 +32,7 @@ if device == "PC" then
         warn("Failed to load PC script: " .. tostring(err))
     end
 
--- Mobile-specific logic
+-- Mobile
 elseif device == "Mobile" then
     local profilePath = basePath .. "/profiles"
     makefolder(profilePath)
@@ -61,4 +61,4 @@ end
 
 print("Successfully Loaded Config")
 task.wait(6.7)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua",true))() -- Loads Rust
+loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua",true))()
