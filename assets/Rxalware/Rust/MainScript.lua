@@ -26,7 +26,7 @@ makefolder(basePath)
 -- PC-specific logic
 if device == "PC" then
     local success, err = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rust/PC/PC.lua", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rust/PC/PC.lua",true))()
     end)
     if not success then
         warn("Failed to load PC script: " .. tostring(err))
@@ -61,4 +61,4 @@ end
 
 print("Successfully Loaded Config")
 task.wait(6.7)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua", true))() -- Loads Rust
+loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua",true))() -- Loads Rust
