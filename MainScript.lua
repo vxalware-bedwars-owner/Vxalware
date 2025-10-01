@@ -70,7 +70,7 @@ makeButton(AlSploitTab, "AlSploit", "terminal", "https://raw.githubusercontent.c
 local RustTab = Window:Tab({ Title = "Rust", Icon = "sword" })
 makeButton(RustTab, "Rust", "terminal", "https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua")
 
--- Others tab with sections
+-- Others tab
 local OthersTab = Window:Tab({ Title = "Others", Icon = "settings" })
 local guiSection = OthersTab:Section({ Title = "GUI Scripts" })
 
@@ -80,9 +80,33 @@ makeButton(OthersTab, "Mobile Keyboard", "terminal", "https://raw.githubusercont
 makeButton(OthersTab, "Script Hub GUI", "terminal", "https://rawscripts.net/raw/Universal-Script-FE-Animation-Changer-16049")
 makeButton(OthersTab, "Infinite Yield", "terminal", "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
 
+--[[
 local elementSection = OthersTab:Section({ Title = "Element Scripts" })
 makeButton(OthersTab, "Fov Changer", "terminal", "https://pastebin.com/raw/g5azNFjf")
 makeButton(OthersTab, "Sword Texture", "terminal", "https://pastebin.com/raw/fdmZVrFF")
+makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw/5KyjL3Y1")
+makeButton(OthersTab, "Chat Bypasser [NOT WORKING]", "terminal", "https://pastebin.com/raw/BvPaPChX")
+]]
+
+local elementSection = OthersTab:Section({ Title = "Element Scripts" })
+makeButton(OthersTab, "Fov Changer", "terminal", "https://pastebin.com/raw/g5azNFjf")
+makeButton(OthersTab, "Sword Texture", "terminal", "https://pastebin.com/raw/fdmZVrFF")
+
+elementSection:Dropdown({
+    Title = "Choose a Print",
+    List = { "print 1", "print 2", "print 3" },
+    Default = "print 1",
+    Callback = function(selected)
+        if selected == "print 1" then
+            print("1")
+        elseif selected == "print 2" then
+            print("2")
+        elseif selected == "print 3" then
+            print("3")
+        end
+    end
+})
+
 makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw/5KyjL3Y1")
 makeButton(OthersTab, "Chat Bypasser [NOT WORKING]", "terminal", "https://pastebin.com/raw/BvPaPChX")
 
