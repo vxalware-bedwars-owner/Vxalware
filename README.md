@@ -5,11 +5,9 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update: 3.1.3
-*Rxalware - Handling update*
-- Colour theme change
-- Better Config settings and careful precision
-- Better convenience & stability
-## Update queue: 3.1.4
-- Script cleanup
-- A TON of bug fixes
+## Update: 3.1.4
+*Bugs & Fixes Update*
+- Fixed existing bugs with config loaders
+- Fixed all bugs with mainscript
+- Added better txt pack
+- Better Stability and Convenience
