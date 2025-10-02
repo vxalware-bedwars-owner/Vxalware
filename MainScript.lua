@@ -6,7 +6,7 @@ WindUI.TransparencyValue = 0.15
 local Window = WindUI:CreateWindow({
     Title  = "Vxalware Rewrite",
     Icon   = "blocks",
-    Author = "Update 3.1.3",
+    Author = "Update 3.1.4",
     Folder = "Vxalware",
     Theme  = "Dark",
 
@@ -72,46 +72,22 @@ makeButton(RustTab, "Rust", "terminal", "https://raw.githubusercontent.com/0xEIi
 
 -- Others tab
 local OthersTab = Window:Tab({ Title = "Others", Icon = "settings" })
-local guiSection = OthersTab:Section({ Title = "GUI Scripts" })
 
+local guiSection = OthersTab:Section({ Title = "GUI Scripts" })
 makeButton(OthersTab, "Gazer Anim. Changer", "terminal", "https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G")
--- 'https://rawscripts.net/raw/Universal-Script-Selenix-Animation-Changer-V1-17880' Selenix, succeeded by Gazer
 makeButton(OthersTab, "Mobile Keyboard", "terminal", "https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/refs/heads/main/MobileKeyboard.txt")
 makeButton(OthersTab, "Script Hub GUI", "terminal", "https://rawscripts.net/raw/Universal-Script-FE-Animation-Changer-16049")
 makeButton(OthersTab, "Infinite Yield", "terminal", "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
 
---[[
 local elementSection = OthersTab:Section({ Title = "Element Scripts" })
 makeButton(OthersTab, "Fov Changer", "terminal", "https://pastebin.com/raw/g5azNFjf")
 makeButton(OthersTab, "Sword Texture", "terminal", "https://pastebin.com/raw/fdmZVrFF")
-makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw/5KyjL3Y1")
-makeButton(OthersTab, "Chat Bypasser [NOT WORKING]", "terminal", "https://pastebin.com/raw/BvPaPChX")
-]]
-
-local elementSection = OthersTab:Section({ Title = "Element Scripts" })
-makeButton(OthersTab, "Fov Changer", "terminal", "https://pastebin.com/raw/g5azNFjf")
-makeButton(OthersTab, "Sword Texture", "terminal", "https://pastebin.com/raw/fdmZVrFF")
-
-elementSection:Dropdown({
-    Title = "Choose a Print",
-    List = { "print 1", "print 2", "print 3" },
-    Default = "print 1",
-    Callback = function(selected)
-        if selected == "print 1" then
-            print("1")
-        elseif selected == "print 2" then
-            print("2")
-        elseif selected == "print 3" then
-            print("3")
-        end
-    end
-})
-
 makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw/5KyjL3Y1")
 makeButton(OthersTab, "Chat Bypasser [NOT WORKING]", "terminal", "https://pastebin.com/raw/BvPaPChX")
 
 -- Best Scripts tab
 local BestTab = Window:Tab({ Title = "Best Scripts", Icon = "award" })
+
 local catSection = BestTab:Section({ Title = "CatVxpe" })
 makeButton(BestTab, "CatVxpe Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua")
 makeButton(BestTab, "CatVxpe Script", "play", "https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua")
