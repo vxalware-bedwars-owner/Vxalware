@@ -5,9 +5,7 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update: 3.1.4
+## Update: 3.1.5
 *Bugs & Fixes Update*
-- Fixed existing bugs with config loaders
-- Fixed all bugs with mainscript
-- Added better txt pack
-- Better Stability and Convenience
+- Execution & Stability
+- Updated icon idk why
