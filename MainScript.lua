@@ -5,8 +5,8 @@ WindUI.TransparencyValue = 0.15
 
 local Window = WindUI:CreateWindow({
     Title  = "Vxalware Rewrite",
-    Icon   = "blocks",
-    Author = "Update 3.1.4",
+    Icon   = "moon-star",
+    Author = "Update 3.1.5",
     Folder = "Vxalware",
     Theme  = "Dark",
 
