@@ -9,3 +9,9 @@
 *Bugs & Fixes Update*
 - Execution & Stability
 - Updated icon idk why
+## Update 3.1.6
+- Improved execution & stability
+- Rewrited entire CatVape Config
+## Update 3.1.7
+- Improved execution & stability
+- Rewrited entire Rxalware Config
