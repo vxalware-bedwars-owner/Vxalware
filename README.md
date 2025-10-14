@@ -5,9 +5,10 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update 3.1.6
+## Update 3.1.7
 - Improved execution & stability
-- Rewrited entire CatVape Config
-## Update queue: 3.1.7
+- Fixed CatRewrite profile issue
+- Added notification lower (i think)
+## Update queue: 3.1.8
 - Improved execution & stability
 - Rewrited entire Rxalware Config
