@@ -1,4 +1,5 @@
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/dist/main.lua"))()
+WindUI:SetNotificationLower(true)
 
 WindUI:SetTheme("Dark")
 WindUI.TransparencyValue = 0.15
@@ -6,7 +7,7 @@ WindUI.TransparencyValue = 0.15
 local Window = WindUI:CreateWindow({
     Title  = "Vxalware Rewrite",
     Icon   = "moon-star",
-    Author = "Update 3.1.6",
+    Author = "Update 3.1.7",
     Folder = "Vxalware",
     Theme  = "Dark",
 
