@@ -12,3 +12,7 @@
 ## Update queue: 3.1.8
 - Improved execution & stability
 - Rewrited entire Rxalware Config
+## Update queue: 3.1.9
+- Improved execution & stability
+- Better config handling
+- Better GUI exposure update
