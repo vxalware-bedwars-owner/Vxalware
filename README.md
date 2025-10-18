@@ -8,7 +8,7 @@
 ## Update 3.1.7
 - Improved execution & stability
 - Fixed CatRewrite profile issue
-- Added notification lower (i think)
+- Prepare MainScript.lua for rewrite
 ## Update queue: 3.1.8
 - Improved execution & stability
 - Rewrited entire Rxalware Config
@@ -16,3 +16,8 @@
 - Improved execution & stability
 - Better config handling
 - Better GUI exposure update
+## Update queue: 3.2.0
+*Main Update.lol*
+- Rewrite entire MainScript.lua
+- MainStream Update for both configs
+- Properly linked config method with MainScript
