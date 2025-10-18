@@ -5,11 +5,7 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update 3.1.7
-- Improved execution & stability
-- Fixed CatRewrite profile issue
-- Prepare MainScript.lua for rewrite
-## Update queue: 3.1.8
+## Update: 3.1.8
 - Improved execution & stability
 - Rewrited entire Rxalware Config
 ## Update queue: 3.1.9
