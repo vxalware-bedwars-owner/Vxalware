@@ -1,26 +1,46 @@
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/dist/main.lua"))()
 
-WindUI:SetTheme("Dark")
-WindUI.TransparencyValue = 0.15
-
 local Window = WindUI:CreateWindow({
-    Title  = "Vxalware Rewrite",
-    Icon   = "moon-star",
-    Author = "Update 3.1.7",
+    Title = "Vxalware Rewrite",
+    Icon = "moon-star",
+    Author = "Update 3.1.9",
     Folder = "Vxalware",
-    Theme  = "Dark",
-
+    
+    Size = UDim2.fromOffset(580, 460),
+    MinSize = Vector2.new(560, 350),
+    MaxSize = Vector2.new(850, 560),
+    Transparent = false,
+    Theme = "Dark",
+    Resizable = true,
+    SideBarWidth = 200,
+    BackgroundImageTransparency = 0.42,
+    HideSearchBar = true,
+    ScrollBarEnabled = true,
+    
     User = {
         Enabled = true,
         Anonymous = false,
         Callback = function()
-            print("clicked")
+            print("user check")
         end,
     },
 })
 
 Window:SetToggleKey(Enum.KeyCode.K)
 Window:SetIconSize(26)
+Window:EditOpenButton({
+    Title = "Open Vxalware",
+    Icon = "monitor",
+    CornerRadius = UDim.new(0,16),
+    StrokeThickness = 2,
+    Color = ColorSequence.new(
+        Color3.fromHex("FF0F7B"), 
+        Color3.fromHex("F89B29")
+    ),
+    OnlyMobile = true,
+    Enabled = true,
+    Draggable = true,
+})
 
 local function makeButton(tab, title, icon, url)
     tab:Button({
