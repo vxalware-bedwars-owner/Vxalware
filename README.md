@@ -15,3 +15,4 @@
 - MainStream Update for both configs
 ## Update queue: 3.2.1
 - Check and refine links with mainscript and config loader
+- Rewrite to support new CatVape loader
