@@ -5,10 +5,7 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update: 3.1.8
-- Improved execution & stability
-- Rewrited entire Rxalware Config
-## Update queue: 3.1.9
+## Update: 3.1.9
 - Improved execution & stability
 - Better config handling
 - Better GUI exposure update
@@ -16,4 +13,5 @@
 *Main Update.lol*
 - Rewrite entire MainScript.lua
 - MainStream Update for both configs
-- Properly linked config method with MainScript
+## Update queue: 3.2.1
+- Check and refine links with mainscript and config loader
