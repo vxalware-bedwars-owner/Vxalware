@@ -3,7 +3,7 @@ local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footag
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.1.9",
+    Author = "Update 3.1.95",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -106,13 +106,13 @@ makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw
 makeButton(OthersTab, "Chat Bypasser [NOT WORKING]", "terminal", "https://pastebin.com/raw/BvPaPChX")
 
 -- Best Scripts tab
-local BestTab = Window:Tab({ Title = "Best Scripts", Icon = "award" })
+local BestTab = Window:Tab({ Title = "Configs", Icon = "atom" })
 
-local catSection = BestTab:Section({ Title = "CatVxpe" })
-makeButton(BestTab, "CatVxpe Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua")
+local catSection = BestTab:Section({ Title = "CatVape" })
+makeButton(BestTab, "CatVape Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua")
 makeButton(BestTab, "CatVxpe Script", "play", "https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua")
 
-local rustSection = BestTab:Section({ Title = "Rust modified" })
+local rustSection = BestTab:Section({ Title = "Rust config" })
 makeButton(BestTab, "Rxalware Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/notwatermark.lua")
 makeButton(BestTab, "Rxalware Script", "play", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/notwatermark.lua")
 
