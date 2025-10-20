@@ -76,7 +76,7 @@ makeButton(VoidTab, "Voidware Packet", "terminal", "https://raw.githubuserconten
 
 -- CatVape tab
 local CatTab = Window:Tab({ Title = "CatVape", Icon = "cat" })
-makeButton(CatTab, "CatVape", "terminal", "https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua")
+makeButton(CatTab, "CatVape", "terminal", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua")
 
 -- Night tab
 local NightTab = Window:Tab({ Title = "Night", Icon = "moon" })
@@ -110,7 +110,7 @@ local BestTab = Window:Tab({ Title = "Configs", Icon = "atom" })
 
 local catSection = BestTab:Section({ Title = "CatVape" })
 makeButton(BestTab, "CatVape Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua")
-makeButton(BestTab, "CatVxpe Script", "play", "https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua")
+makeButton(BestTab, "CatVxpe Script", "play", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua")
 
 local rustSection = BestTab:Section({ Title = "Rust config" })
 makeButton(BestTab, "Rxalware Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua")
