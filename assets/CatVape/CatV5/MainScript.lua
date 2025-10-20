@@ -193,7 +193,7 @@ updateStatus("Loading CatV5...")
 task.wait(1.2)
 
 local success, err = pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua",true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua",true))()
 end)
 if not success then
     updateStatus("Failed to load CatV5:\n" .. tostring(err))
