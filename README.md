@@ -11,7 +11,7 @@
 - Better GUI exposure update
 ## Update queue: 3.2.0
 *Main Update.lol*
-- Improved naming system for config loader
-- MainStream Update for CatVape and Rxalware
-- Change name for stuff
-- Fixed the config loading issue on CatVape
+- Mainstream Update for both Rxalware and CatVape
+- Fix issue for CatVape cause the loader got updated -_-
+- Add naming system to Rxalware and CatVape becasue easier guidance
+- Improve compatibility for MainScript with Config Loader after changes
