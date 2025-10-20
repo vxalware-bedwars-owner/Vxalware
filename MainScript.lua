@@ -113,8 +113,8 @@ makeButton(BestTab, "CatVape Config Loader", "save", "https://raw.githubusercont
 makeButton(BestTab, "CatVxpe Script", "play", "https://raw.githubusercontent.com/new-qwertyui/CatV5/main/init.lua")
 
 local rustSection = BestTab:Section({ Title = "Rust config" })
-makeButton(BestTab, "Rxalware Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/notwatermark.lua")
-makeButton(BestTab, "Rxalware Script", "play", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/notwatermark.lua")
+makeButton(BestTab, "Rxalware Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua")
+makeButton(BestTab, "Rxalware Script", "play", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua")
 
 -- Notification
 WindUI:Notify({
