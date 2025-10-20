@@ -60,7 +60,7 @@ local function makeButton(tab, title, icon, url)
                     Title = "Error",
                     Content = "Failed to run "..title.."\n"..tostring(err),
                     Icon = "x",
-                    Duration = 4
+                    Duration = 5
                 })
             end
         end
