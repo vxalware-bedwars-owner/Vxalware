@@ -5,13 +5,15 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update: 3.1.9
-- Improved execution & stability
-- Better config handling
-- Better GUI exposure update
-## Update queue: 3.2.0
-*Main Update.lol*
-- Mainstream Update for both Rxalware and CatVape
-- Fix issue for CatVape cause the loader got updated -_-
-- Add naming system to Rxalware and CatVape becasue easier guidance
-- Improve compatibility for MainScript with Config Loader after changes
+## Update: 3.2.0
+*MainScript Cleanup*
+- Made rust config better
+- Fixed sword not moving in rust config
+- Improved CatVape config
+- Fixed error issue with CatVape API
+- Fixed top of Wind UI
+- Fixed error handling
+- Changed gradient to white
+- Changed Best Scripts tab to Configs tab
+- Added sirius menu to Others tab
+- Overall script cleanup
