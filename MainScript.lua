@@ -3,7 +3,7 @@ local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footag
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.1.95",
+    Author = "Update 3.2.0",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -34,8 +34,8 @@ Window:EditOpenButton({
     CornerRadius = UDim.new(0,16),
     StrokeThickness = 2,
     Color = ColorSequence.new(
-        Color3.fromHex("FF0F7B"), 
-        Color3.fromHex("F89B29")
+        Color3.fromHex("FFFFFF"), 
+        Color3.fromHex("FFFFFF")
     ),
     OnlyMobile = true,
     Enabled = true,
@@ -103,7 +103,7 @@ local elementSection = OthersTab:Section({ Title = "Element Scripts" })
 makeButton(OthersTab, "Fov Changer", "terminal", "https://pastebin.com/raw/g5azNFjf")
 makeButton(OthersTab, "Sword Texture", "terminal", "https://pastebin.com/raw/fdmZVrFF")
 makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw/5KyjL3Y1")
-makeButton(OthersTab, "Chat Bypasser [NOT WORKING]", "terminal", "https://pastebin.com/raw/BvPaPChX")
+makeButton(OthersTab, "Sirius Menu", "terminal", "https://sirius.menu/sirius")
 
 -- Best Scripts tab
 local BestTab = Window:Tab({ Title = "Configs", Icon = "atom" })
