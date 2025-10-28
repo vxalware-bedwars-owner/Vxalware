@@ -120,7 +120,7 @@ makeButton(ConfigsTab, "Rxalware Script", "play", "https://raw.githubusercontent
 local CreditsTab = Window:Tab({ Title = "Credits", Icon = "star" })
 local Paragraph = CreditsTab:Paragraph({
     Title = "Wind UI",
-    Desc = "This script is made by SynthX. All credits go to .ftgs for making the UI Library",
+    Desc = "This script is made by SynthX. All credits go to footagesus for making the UI Library",
     Locked = false,
 })
 
