@@ -5,7 +5,7 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update: 3.2.1 Beta
+## Update: 3.2.1
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
 - [#] Modified changelog system for updates in MainScript.lua
