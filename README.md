@@ -5,15 +5,14 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update: 3.2.0
-*MainScript Cleanup*
-- Made rust config better
-- Fixed sword not moving in rust config
-- Improved CatVape config
-- Fixed error issue with CatVape API
-- Fixed top of Wind UI
-- Fixed error handling
-- Changed gradient to white
-- Changed Best Scripts tab to Configs tab
-- Added sirius menu to Others tab
-- Overall script cleanup
+## Update: 3.2.1 Beta
+[+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
+
+- [#] Modified changelog system for updates in MainScript.lua
+- [+] Added window divider in MainScript.lua
+- [#] Changed author to 'Update 3.2.1' in MainScript.lua
+- [!] Fixed Spelling mistake for CatVape in config section in MainScript.lua
+- [#] Changed code naming for configs tab in MainScript.lua
+- [+] Added credits tab in MainScript.lua
+- [+] Added elements to credits tab in MainScript.lua
+- [#] Changed Voidware icon to aperture in MainScript.lua
