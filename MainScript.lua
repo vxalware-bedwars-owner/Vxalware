@@ -3,7 +3,7 @@ local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footag
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.2.0",
+    Author = "Update 3.2.1 Beta",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -68,7 +68,7 @@ local function makeButton(tab, title, icon, url)
 end
 
 -- Voidpaste tab
-local VoidTab = Window:Tab({ Title = "Voidpaste", Icon = "star" })
+local VoidTab = Window:Tab({ Title = "Voidpaste", Icon = "aperture" })
 makeButton(VoidTab, "Voidware Old", "terminal", "https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua")
 makeButton(VoidTab, "Voidware Rewrite", "terminal", "https://raw.githubusercontent.com/VapeVoidware/VWRewrite/main/NewMainScript.lua")
 makeButton(VoidTab, "Voidware Rise", "terminal", "https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua")
@@ -89,7 +89,7 @@ makeButton(AlSploitTab, "AlSploit", "terminal", "https://raw.githubusercontent.c
 -- Rust tab
 local RustTab = Window:Tab({ Title = "Rust", Icon = "sword" })
 makeButton(RustTab, "Rust", "terminal", "https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua")
-
+Window:Divider() -- Divider
 -- Others tab
 local OthersTab = Window:Tab({ Title = "Others", Icon = "settings" })
 
@@ -105,16 +105,36 @@ makeButton(OthersTab, "Sword Texture", "terminal", "https://pastebin.com/raw/fdm
 makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw/5KyjL3Y1")
 makeButton(OthersTab, "Sirius Menu", "terminal", "https://sirius.menu/sirius")
 
--- Best Scripts tab
-local BestTab = Window:Tab({ Title = "Configs", Icon = "atom" })
+-- Configs tab
+local ConfigsTab = Window:Tab({ Title = "Configs", Icon = "atom" })
 
-local catSection = BestTab:Section({ Title = "CatVape" })
-makeButton(BestTab, "CatVape Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua")
-makeButton(BestTab, "CatVxpe Script", "play", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua")
+local catSection = ConfigsTab:Section({ Title = "CatVape" })
+makeButton(ConfigsTab, "CatVape Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua")
+makeButton(ConfigsTab, "CatVape Script", "play", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua")
 
-local rustSection = BestTab:Section({ Title = "Rust config" })
-makeButton(BestTab, "Rxalware Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua")
-makeButton(BestTab, "Rxalware Script", "play", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua")
+local rustSection = ConfigsTab:Section({ Title = "Rust config" })
+makeButton(ConfigsTab, "Rxalware Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua")
+makeButton(ConfigsTab, "Rxalware Script", "play", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua")
+
+-- Credits tab
+local CreditsTab = Window:Tab({ Title = "Credits", Icon = "star" })
+local Paragraph = CreditsTab:Paragraph({
+    Title = "Wind UI",
+    Desc = "This script is made by SynthX. All credits go to .ftgs for making the UI Library",
+    Locked = false,
+})
+
+local Paragraph = CreditsTab:Paragraph({
+    Title = "Scripts",
+    Desc = "All credits go to the various owners of the given scripts used in this script",
+    Locked = false,
+})
+
+local Paragraph = CreditsTab:Paragraph({
+    Title = "Keybind",
+    Desc = "If you didn't read the message at the start of the script execution, press 'K' to toggle the GUI",
+    Locked = false,
+})
 
 -- Notification
 WindUI:Notify({
