@@ -1,7 +1,7 @@
 # Vxalware Loader
 *Vxalware Loader is a bedwars script hub with cool features and custom configs honed to perfection*
 ## Directions of use:
-*Copy Script in Loader.lua, Paste in your executor, and click execute, (executor with 80% sUNC or higher is recommended)*
+*Copy the script in 'Loader.lua', paste in your executor, and click execute to load script. (executor with 85% sUNC or higher is recommended)*
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
