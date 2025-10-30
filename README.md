@@ -5,12 +5,11 @@
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update: 3.2.2
+## Update: 3.2.3
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
-- [#] Changed Directions of use
-- [+] Added Auto Mount and some stuff I forgot in CatVape config
-- [-] Removed Godmode and some stuff I forgot in CatVape config
-- [!] Fixed Killaura not working for CatVape (thanks max)
-- [#] Changed a ton of things in CatVape config that I forgot
-- [-] Removed AlSploit from MainScript.lua because script isn't being maintained anymore
+- [!] Improved Closet profile in CatVape Config
+- [!] Improved Blatant profile in CatVape Config
+- [!] Some updates were pushed when script was still in 3.2.2
+- [!] May need to enable hit sync in ka for it to be closet since silent aura isnt working
+- [!] Will Update again when CatVape fixes all known bugs (Silent Aura, universal tp down, godmode, antivoid, lag spikes, etc.)
