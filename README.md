@@ -8,9 +8,9 @@
 ## Update: 3.2.2
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
-[#] Changed Directions of use
-[+] Added Auto Mount and some stuff I forgot in CatVape config
-[-] Removed Godmode and some stuff I forgot in CatVape config
-[!] Fixed Killaura not working for CatVape (thanks max)
-[#] Changed a ton of things in CatVape config that I forgot
-[-] Removed AlSploit from MainScript.lua because script isn't being maintained anymore
+- [#] Changed Directions of use
+- [+] Added Auto Mount and some stuff I forgot in CatVape config
+- [-] Removed Godmode and some stuff I forgot in CatVape config
+- [!] Fixed Killaura not working for CatVape (thanks max)
+- [#] Changed a ton of things in CatVape config that I forgot
+- [-] Removed AlSploit from MainScript.lua because script isn't being maintained anymore
