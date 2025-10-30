@@ -3,7 +3,7 @@ local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footag
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.2.1",
+    Author = "Update 3.2.2",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -81,10 +81,6 @@ makeButton(CatTab, "CatVape", "terminal", "https://raw.githubusercontent.com/vxa
 -- Night tab
 local NightTab = Window:Tab({ Title = "Night", Icon = "moon" })
 makeButton(NightTab, "Night", "terminal", "https://raw.githubusercontent.com/null-wtf/NewNight/refs/heads/main/Loader.luau")
-
--- AlSploit tab
-local AlSploitTab = Window:Tab({ Title = "AlSploit", Icon = "shield" })
-makeButton(AlSploitTab, "AlSploit", "terminal", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/AlSploit/Fix.lua")
 
 -- Rust tab
 local RustTab = Window:Tab({ Title = "Rust", Icon = "sword" })
