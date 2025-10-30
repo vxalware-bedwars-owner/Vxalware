@@ -1,18 +1,16 @@
 # Vxalware Loader
 *Vxalware Loader is a bedwars script hub with cool features and custom configs honed to perfection*
 ## Directions of use:
-*Copy Script in Loader.lua, Paste in your executor, and click execute*
+*Copy Script in Loader.lua, Paste in your executor, and click execute, (executor with 80% sUNC or higher is recommended)*
 ## Credits:
 - Vxalware (Styling)
 - SynthX (Backend code)
-## Update: 3.2.1
+## Update: 3.2.2
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
-- [#] Modified changelog system for updates in MainScript.lua
-- [+] Added window divider in MainScript.lua
-- [#] Changed author to 'Update 3.2.1' in MainScript.lua
-- [!] Fixed Spelling mistake for CatVape in config section in MainScript.lua
-- [#] Changed code naming for configs tab in MainScript.lua
-- [+] Added credits tab in MainScript.lua
-- [+] Added elements to credits tab in MainScript.lua
-- [#] Changed Voidware icon to aperture in MainScript.lua
+[#] Changed Directions of use
+[+] Added Auto Mount and some stuff I forgot in CatVape config
+[-] Removed Godmode and some stuff I forgot in CatVape config
+[!] Fixed Killaura not working for CatVape (thanks max)
+[#] Changed a ton of things in CatVape config that I forgot
+[-] Removed AlSploit from MainScript.lua because script isn't being maintained anymore
