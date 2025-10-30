@@ -85,6 +85,17 @@ makeButton(NightTab, "Night", "terminal", "https://raw.githubusercontent.com/nul
 -- Rust tab
 local RustTab = Window:Tab({ Title = "Rust", Icon = "sword" })
 makeButton(RustTab, "Rust", "terminal", "https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua")
+
+-- Configs tab
+local ConfigsTab = Window:Tab({ Title = "Configs", Icon = "atom" })
+
+local catSection = ConfigsTab:Section({ Title = "CatVape" })
+makeButton(ConfigsTab, "CatVape Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua")
+makeButton(ConfigsTab, "CatVape Script", "play", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua")
+
+local rustSection = ConfigsTab:Section({ Title = "Rust config" })
+makeButton(ConfigsTab, "Rxalware Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua")
+makeButton(ConfigsTab, "Rxalware Script", "play", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua")
 Window:Divider() -- Divider
 -- Others tab
 local OthersTab = Window:Tab({ Title = "Others", Icon = "settings" })
@@ -100,17 +111,6 @@ makeButton(OthersTab, "Fov Changer", "terminal", "https://pastebin.com/raw/g5azN
 makeButton(OthersTab, "Sword Texture", "terminal", "https://pastebin.com/raw/fdmZVrFF")
 makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw/5KyjL3Y1")
 makeButton(OthersTab, "Sirius Menu", "terminal", "https://sirius.menu/sirius")
-
--- Configs tab
-local ConfigsTab = Window:Tab({ Title = "Configs", Icon = "atom" })
-
-local catSection = ConfigsTab:Section({ Title = "CatVape" })
-makeButton(ConfigsTab, "CatVape Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua")
-makeButton(ConfigsTab, "CatVape Script", "play", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua")
-
-local rustSection = ConfigsTab:Section({ Title = "Rust config" })
-makeButton(ConfigsTab, "Rxalware Config Loader", "save", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua")
-makeButton(ConfigsTab, "Rxalware Script", "play", "https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua")
 
 -- Credits tab
 local CreditsTab = Window:Tab({ Title = "Credits", Icon = "star" })
