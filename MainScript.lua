@@ -109,7 +109,7 @@ makeButton(OthersTab, "Infinite Yield", "terminal", "https://raw.githubuserconte
 local elementSection = OthersTab:Section({ Title = "Element Scripts" })
 makeButton(OthersTab, "Fov Changer", "terminal", "https://pastebin.com/raw/g5azNFjf") -- toggle
 makeButton(OthersTab, "Sword Texture", "terminal", "https://pastebin.com/raw/fdmZVrFF") -- dropdown
-makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw/5KyjL3Y1") -- dropdown
+makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw/5KyjL3Y1") -- dropdown/toggle
 makeButton(OthersTab, "Sirius Menu", "terminal", "https://sirius.menu/sirius")
 
 -- Credits tab
