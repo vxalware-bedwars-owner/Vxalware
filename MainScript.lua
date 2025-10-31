@@ -101,15 +101,15 @@ Window:Divider() -- Divider
 local OthersTab = Window:Tab({ Title = "Others", Icon = "settings" })
 
 local guiSection = OthersTab:Section({ Title = "GUI Scripts" })
-makeButton(OthersTab, "Gazer Anim. Changer", "terminal", "https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G")
+makeButton(OthersTab, "Gazer Anim. Changer", "terminal", "https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G") -- dropdown
 makeButton(OthersTab, "Mobile Keyboard", "terminal", "https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/refs/heads/main/MobileKeyboard.txt")
 makeButton(OthersTab, "Script Hub GUI", "terminal", "https://rawscripts.net/raw/Universal-Script-FE-Animation-Changer-16049")
 makeButton(OthersTab, "Infinite Yield", "terminal", "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
 
 local elementSection = OthersTab:Section({ Title = "Element Scripts" })
-makeButton(OthersTab, "Fov Changer", "terminal", "https://pastebin.com/raw/g5azNFjf")
-makeButton(OthersTab, "Sword Texture", "terminal", "https://pastebin.com/raw/fdmZVrFF")
-makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw/5KyjL3Y1")
+makeButton(OthersTab, "Fov Changer", "terminal", "https://pastebin.com/raw/g5azNFjf") -- toggle
+makeButton(OthersTab, "Sword Texture", "terminal", "https://pastebin.com/raw/fdmZVrFF") -- dropdown
+makeButton(OthersTab, "Atmosphere [DARK]", "terminal", "https://pastebin.com/raw/5KyjL3Y1") -- toggle
 makeButton(OthersTab, "Sirius Menu", "terminal", "https://sirius.menu/sirius")
 
 -- Credits tab
