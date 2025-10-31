@@ -3,8 +3,8 @@
 ## Directions of use:
 *Copy the script in 'Loader.lua', paste in your executor, and click execute to load script. (executor with 85% sUNC or higher is recommended)*
 ## Credits:
-- Vxalware (Styling)
-- SynthX (Backend code)
+- Vxalware (Frontend)
+- SynthX (Backend)
 ## Update: 3.2.3
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
