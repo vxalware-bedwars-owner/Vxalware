@@ -1,27 +1,9 @@
---[[
-local Dropdown = Tab:Dropdown({
-    Title = "",
-    Values = { "None", "", "" },
-    Value = "None",
-    Callback = function(option)
-        runWithNotify("", function()
-            if option == "None" then
-                print("nil")
-            elseif option == "" then
-                -- your first option logic here
-            elseif option == "" then
-                -- your second option logic here
-            end
-        end)
-    end
-})
-]]
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/dist/main.lua"))()
 
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.2.4",
+    Author = "Update 3.2.5 Beta",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -255,23 +237,61 @@ local Button = OthersTab:Button({
     end
 }) -- toggle
 
-local Button = OthersTab:Button({
+local Dropdown = OthersTab:Dropdown({
     Title = "Sword Texture",
-    Callback = function()
+    Values = { "None", "Fury", "Makima", "Marin", "Onyx", "PastaaWare", "Random", "VioletDreams", "Wichtiger" },
+    Value = "Onyx",
+    Callback = function(option)
         runWithNotify("Sword Texture", function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/fdmZVrFF",true))()
+            if option == "None" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Sword%20Texture/Uninjector.lua",true))()
+            elseif option == "Fury" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Sword%20Texture/Fury.lua",true))()
+            elseif option == "Makima" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Sword%20Texture/Makima.lua",true))()
+            elseif option == "Marin" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Sword%20Texture/Marin.lua",true))()
+            elseif option == "Onyx" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Sword%20Texture/Onyx.lua",true))()
+            elseif option == "PastaaWare" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Sword%20Texture/PastaaWare.lua",true))()
+            elseif option == "Random" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Sword%20Texture/Random.lua",true))()
+            elseif option == "VioletDreams" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Sword%20Texture/VioletDreams.lua",true))()
+            elseif option == "Wichtiger" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Sword%20Texture/Wichtiger.lua",true))()
+            end
         end)
     end
-}) -- dropdown
+})
 
-local Button = OthersTab:Button({
-    Title = "Atmosphere [DARK]",
-    Callback = function()
-        runWithNotify("Atmosphere [DARK]", function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/5KyjL3Y1",true))()
+local Dropdown = OthersTab:Dropdown({
+    Title = "Dark Atmosphere",
+    Values = { "None", "Blue", "Green", "Orange", "Pink", "Purple", "Red", "Yellow" },
+    Value = "None",
+    Callback = function(option)
+        runWithNotify("Dark Atmosphere", function()
+            if option == "None" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Atmosphere/Uninjector.lua",true))()
+            elseif option == "Blue" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Atmosphere/Blue.lua",true))()
+            elseif option == "Green" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Atmosphere/Green.lua",true))()
+            elseif option == "Orange" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Atmosphere/Orange.lua",true))()
+            elseif option == "Pink" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Atmosphere/Pink.lua",true))()
+            elseif option == "Purple" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Atmosphere/Purple.lua",true))()
+            elseif option == "Red" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Atmosphere/Red.lua",true))()
+            elseif option == "Yellow" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Atmosphere/Yellow.lua",true))()
+            end
         end)
     end
-}) -- dropdown
+})
 
 local Button = OthersTab:Button({
     Title = "Sirius Menu",
