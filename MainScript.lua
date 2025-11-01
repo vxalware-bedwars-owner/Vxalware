@@ -1,3 +1,21 @@
+--[[
+local Dropdown = Tab:Dropdown({
+    Title = "",
+    Values = { "None", "", "" },
+    Value = "None",
+    Callback = function(option)
+        runWithNotify("", function()
+            if option == "None" then
+                print("nil")
+            elseif option == "" then
+                -- your first option logic here
+            elseif option == "" then
+                -- your second option logic here
+            end
+        end)
+    end
+})
+]]
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/dist/main.lua"))()
 
 local Window = WindUI:CreateWindow({
@@ -184,14 +202,22 @@ Window:Divider() -- Divider
 -- Others tab
 local OthersTab = Window:Tab({ Title = "Others", Icon = "settings" })
 local guiSection = OthersTab:Section({ Title = "GUI Scripts" })
-local Button = OthersTab:Button({
-    Title = "Gazer Anim. Changer",
-    Callback = function()
-        runWithNotify("Gazer Anim. Changer", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G",true))()
+local Dropdown = OthersTab:Dropdown({
+    Title = "Animation Changer",
+    Values = { "None", "Gazer", "Selenix" },
+    Value = "None",
+    Callback = function(option)
+        runWithNotify("Animation Changer", function()
+            if option == "None" then
+                print("nil")
+            elseif option == "Gazer" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Animation%20Changer/Gazer.lua",true))()
+            elseif option == "Selenix" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Animation%20Changer/Selenix.lua",true))()
+            end
         end)
     end
-}) -- dropdown
+})
 
 local Button = OthersTab:Button({
     Title = "Mobile Keyboard",
