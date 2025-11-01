@@ -1,15 +1,19 @@
 # Vxalware Loader
 *Vxalware Loader is a bedwars script hub with cool features and custom configs honed to perfection*
-## Directions of use:
-*Copy the script in 'Loader.lua', paste in your executor, and click execute to load script. (executor with 85% sUNC or higher is recommended)*
+## Usage:
+1. Download the specific scripting utility of your choice
+2. Execute the provided loadstring below
+```luau
+loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/MainScript.lua",true))()
+```
 ## Credits:
 - Vxalware (Frontend)
 - SynthX (Backend)
-## Update: 3.2.3
+- Footagesus (UI Library)
+## Update: 3.2.4
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
-- [!] Improved Closet profile in CatVape Config
-- [!] Improved Blatant profile in CatVape Config
-- [!] Some updates were pushed when script was still in 3.2.2
-- [!] May need to enable hit sync in ka for it to be closet since silent aura isnt working
-- [!] Will Update again when CatVape fixes all known bugs (Silent Aura, universal tp down, godmode, antivoid, lag spikes, etc.)
+- [#] Changed whole layout for MainScript.lua
+- [#] Changed notification system for script in preperation for Update 3.2.5
+- [+] Prepared API for Update 3.2.5
+- [+] Added SynthX as contributor
