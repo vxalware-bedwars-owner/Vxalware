@@ -205,7 +205,6 @@ local guiSection = OthersTab:Section({ Title = "GUI Scripts" })
 local Dropdown = OthersTab:Dropdown({
     Title = "Animation Changer",
     Values = { "None", "Gazer", "Selenix" },
-    Value = "None",
     Callback = function(option)
         runWithNotify("Animation Changer", function()
             if option == "None" then
