@@ -76,7 +76,7 @@ local Button = VoidTab:Button({
     Title = "Voidware Old",
     Callback = function()
         runWithNotify("Voidware Old", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua",true))()
         end)
     end
 })
@@ -85,7 +85,7 @@ local Button = VoidTab:Button({
     Title = "Voidware Rewrite",
     Callback = function()
         runWithNotify("Voidware Rewrite", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWRewrite/main/NewMainScript.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWRewrite/main/NewMainScript.lua",true))()
         end)
     end
 })
@@ -94,7 +94,7 @@ local Button = VoidTab:Button({
     Title = "Voidware Rise",
     Callback = function()
         runWithNotify("Voidware Rise", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua",true))()
         end)
     end
 })
@@ -103,7 +103,7 @@ local Button = VoidTab:Button({
     Title = "Voidware Packet",
     Callback = function()
         runWithNotify("Voidware Packet", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWPacket/main/NewMainScript.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWPacket/main/NewMainScript.lua",true))()
         end)
     end
 })
@@ -114,7 +114,7 @@ local Button = CatTab:Button({
     Title = "CatVape",
     Callback = function()
         runWithNotify("CatVape", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua",true))()
         end)
     end
 })
@@ -125,7 +125,7 @@ local Button = NightTab:Button({
     Title = "Night",
     Callback = function()
         runWithNotify("Night", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/null-wtf/NewNight/refs/heads/main/Loader.luau", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/null-wtf/NewNight/refs/heads/main/Loader.luau",true))()
         end)
     end
 })
@@ -136,7 +136,7 @@ local Button = RustTab:Button({
     Title = "Rust",
     Callback = function()
         runWithNotify("Rust", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua",true))()
         end)
     end
 })
@@ -148,7 +148,7 @@ local Button = ConfigsTab:Button({
     Title = "CatVape Config Loader",
     Callback = function()
         runWithNotify("CatVape Config Loader", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua",true))()
         end)
     end
 })
@@ -157,7 +157,7 @@ local Button = ConfigsTab:Button({
     Title = "CatVape Script",
     Callback = function()
         runWithNotify("CatVape Script", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua",true))()
         end)
     end
 })
@@ -167,7 +167,7 @@ local Button = ConfigsTab:Button({
     Title = "Rxalware Config Loader",
     Callback = function()
         runWithNotify("Rxalware Config Loader", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua",true))()
         end)
     end
 })
@@ -176,7 +176,7 @@ local Button = ConfigsTab:Button({
     Title = "Rxalware Script",
     Callback = function()
         runWithNotify("Rxalware Script", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua",true))()
         end)
     end
 })
@@ -188,7 +188,7 @@ local Button = OthersTab:Button({
     Title = "Gazer Anim. Changer",
     Callback = function()
         runWithNotify("Gazer Anim. Changer", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G",true))()
         end)
     end
 }) -- dropdown
@@ -197,7 +197,7 @@ local Button = OthersTab:Button({
     Title = "Mobile Keyboard",
     Callback = function()
         runWithNotify("Mobile Keyboard", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/refs/heads/main/MobileKeyboard.txt", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/refs/heads/main/MobileKeyboard.txt",true))()
         end)
     end
 })
@@ -206,7 +206,7 @@ local Button = OthersTab:Button({
     Title = "Script Hub GUI",
     Callback = function()
         runWithNotify("Script Hub GUI", function()
-            loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Animation-Changer-16049", true))()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Animation-Changer-16049",true))()
         end)
     end
 })
@@ -215,7 +215,7 @@ local Button = OthersTab:Button({
     Title = "Infinite Yield",
     Callback = function()
         runWithNotify("Infinite Yield", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",true))()
         end)
     end
 })
@@ -225,7 +225,7 @@ local Button = OthersTab:Button({
     Title = "Fov Changer",
     Callback = function()
         runWithNotify("Fov Changer", function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/g5azNFjf", true))()
+            loadstring(game:HttpGet("https://pastebin.com/raw/g5azNFjf",true))()
         end)
     end
 }) -- toggle
@@ -234,7 +234,7 @@ local Button = OthersTab:Button({
     Title = "Sword Texture",
     Callback = function()
         runWithNotify("Sword Texture", function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/fdmZVrFF", true))()
+            loadstring(game:HttpGet("https://pastebin.com/raw/fdmZVrFF",true))()
         end)
     end
 }) -- dropdown
@@ -243,7 +243,7 @@ local Button = OthersTab:Button({
     Title = "Atmosphere [DARK]",
     Callback = function()
         runWithNotify("Atmosphere [DARK]", function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/5KyjL3Y1", true))()
+            loadstring(game:HttpGet("https://pastebin.com/raw/5KyjL3Y1",true))()
         end)
     end
 }) -- dropdown
@@ -252,7 +252,7 @@ local Button = OthersTab:Button({
     Title = "Sirius Menu",
     Callback = function()
         runWithNotify("Sirius Menu", function()
-            loadstring(game:HttpGet("https://sirius.menu/sirius", true))()
+            loadstring(game:HttpGet("https://sirius.menu/sirius",true))()
         end)
     end
 })
