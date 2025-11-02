@@ -3,7 +3,7 @@ local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footag
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.2.5 Beta",
+    Author = "Update 3.2.5",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -229,14 +229,21 @@ local Button = OthersTab:Button({
 })
 
 local elementSection = OthersTab:Section({ Title = "Element Scripts" })
-local Button = OthersTab:Button({
+local Toggle = OthersTab:Toggle({
     Title = "Fov Changer",
-    Callback = function()
+    Icon = "check",
+    Type = "Checkbox",
+    Default = false,
+    Callback = function(state)
         runWithNotify("Fov Changer", function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/g5azNFjf",true))()
+            if state then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/FOV%20Changer/Injector.lua", true))()
+            else
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/FOV%20Changer/Uninjector.lua", true))()
+            end
         end)
     end
-}) -- toggle
+})
 
 local Dropdown = OthersTab:Dropdown({
     Title = "Sword Texture",
