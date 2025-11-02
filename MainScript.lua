@@ -44,7 +44,6 @@ Window:EditOpenButton({
 
 -- runWithNotify API
 local _runWithNotify_firstRun = {}
-
 local function runWithNotify(title, fn, opts)
     -- API Directions:
     -- kind = "dropdown" | "toggle" | nil
@@ -60,16 +59,19 @@ local function runWithNotify(title, fn, opts)
     -- Silent run | Error run
     if not _runWithNotify_firstRun[title] then
         _runWithNotify_firstRun[title] = true
-        local ok, err = pcall(fn)
-        if not ok then
-            WindUI:Notify({
-                Title = "Error",
-                Content = "Failed to run "..tostring(title).."\n"..tostring(err),
-                Duration = 5,
-                Icon = "x",
-            })
+
+        if kind == "dropdown" or kind == "toggle" then
+            local ok, err = pcall(fn)
+            if not ok then
+                WindUI:Notify({
+                    Title = "Error",
+                    Content = "Failed to run "..tostring(title).."\n"..tostring(err),
+                    Duration = 5,
+                    Icon = "x",
+                })
+            end
+            return
         end
-        return
     end
 
     -- Normal run | Error run
