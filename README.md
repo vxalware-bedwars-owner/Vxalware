@@ -10,16 +10,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owne
 - Vxalware (Frontend)
 - SynthX (Backend)
 - Footagesus (UI Library)
-## Update: 3.2.5
+## Update: 3.2.6
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
-- [+] Added animation changer API
-- [+] Added atmosphere API
-- [+] Added FOV Changer API
-- [+] Added Sword Texture API
-- [#] Changed select few buttons to dropdowns
-- [#] Changed select few buttons to toggles
-- [#] Changed notification logic with runWithNotify API
-- [#] Changed a fair few more bits in MainScript.lua
-- [#] Changed Readme format for script usage purposes
+- [!] Fixed stack notifications return on execution
+- [-] Removed 'Fetching' notification on execution
+- [!] Fixed elements notifications
+- [!] Fixed dropdown and toggle naming bug
+- [!] Generally rewritten entire runWithNotify API
 - [+] Added Rat 🥀
