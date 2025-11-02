@@ -1,29 +1,15 @@
 local lighting = game:GetService("Lighting")
 
--- collect atmosphere
-local atmospheres = {}
-for _, child in ipairs(lighting:GetChildren()) do
-    if child.ClassName == "Atmosphere" then
-        table.insert(atmospheres, child)
-    end
+local prev = lighting:FindFirstChild("CustomAtmosphere")
+if prev then
+    prev:Destroy()
+else
+    print("no CustomAtmosphere")
 end
 
--- no atmosphere
-if #atmospheres == 0 then
-    print("No Atmosphere found.")
-    return
+local prevBloom = lighting:FindFirstChild("CustomBloom")
+if prevBloom then
+    prevBloom:Destroy()
+else
+    print("no CustomBloom")
 end
-
--- destory all
-for _, a in ipairs(atmospheres) do
-    a:Destroy()
-end
-
--- cleanup
-for _, child in ipairs(lighting:GetChildren()) do
-    if child.ClassName == "BloomEffect" then
-        child:Destroy()
-    end
-end
-
-print("Atmosphere removed.")
