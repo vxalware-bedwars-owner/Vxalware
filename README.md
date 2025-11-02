@@ -13,7 +13,13 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owne
 ## Update: 3.2.4
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
-- [#] Changed whole layout for MainScript.lua
-- [#] Changed notification system for script in preperation for Update 3.2.5
-- [+] Prepared API for Update 3.2.5
-- [+] Added SynthX as contributor
+- [+] Added animation changer API
+- [+] Added atmosphere API
+- [+] Added FOV Changer API
+- [+] Added Sword Texture API
+- [#] Changed select few buttons to dropdowns
+- [#] Changed select few buttons to toggles
+- [#] Changed notification logic with runWithNotify API
+- [#] Changed a fair few more bits in MainScript.lua
+- [#] Changed Readme format for script usage purposes
+- [+] Added Rat 🥀
