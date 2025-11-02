@@ -3,7 +3,7 @@ local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footag
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.2.5",
+    Author = "Update 3.2.6 Beta Test",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -42,25 +42,74 @@ Window:EditOpenButton({
     Draggable = true,
 })
 
--- runWithNotify helper
-local function runWithNotify(title, fn)
-    WindUI:Notify({
-        Title = "Loading",
-        Content = "Fetching: " .. tostring(title),
-        Duration = 1.5,
-    })
+-- runWithNotify API
+local _runWithNotify_firstRun = {}
 
-    -- pcall
+local function runWithNotify(title, fn)
+    -- Stop spaming notifications
+    if not _runWithNotify_firstRun[title] then
+        _runWithNotify_firstRun[title] = true
+        pcall(fn)
+        return
+    end
+
+    -- Execute
     local ok, err = pcall(fn)
 
     if ok then
+        -- Detect dropdowns and toggles
+        local optionValue, stateValue = nil, nil
+        if type(debug) == "table" and type(debug.getupvalue) == "function" then
+            local i = 1
+            while true do
+                local name, val = debug.getupvalue(fn, i)
+                if not name then break end
+                if name == "option" and optionValue == nil then optionValue = val end
+                if name == "state" and stateValue == nil then stateValue = val end
+                i = i + 1
+            end
+        end
+
+        -- Dropdown handling
+        if optionValue ~= nil then
+            if tostring(optionValue) == "None" then
+                return
+            else
+                WindUI:Notify({
+                    Title = "Success",
+                    Content = "Successfully executed "..tostring(optionValue),
+                    Duration = 1.5,
+                })
+                return
+            end
+        end
+
+        -- Toggle handling
+        if stateValue ~= nil then
+            if stateValue then
+                WindUI:Notify({
+                    Title = "Success",
+                    Content = "Successfully executed "..tostring(title),
+                    Duration = 1.5,
+                })
+            else
+                WindUI:Notify({
+                    Title = "Success",
+                    Content = "Successfully unexecuted "..tostring(title),
+                    Duration = 1.5,
+                })
+            end
+            return
+        end
+
+        -- Fallback success
         WindUI:Notify({
             Title = "Success",
             Content = "Successfully ran "..tostring(title),
             Duration = 1.5,
         })
     else
-        -- error notification
+        -- Error notification
         WindUI:Notify({
             Title = "Error",
             Content = "Failed to run "..tostring(title).."\n"..tostring(err),
