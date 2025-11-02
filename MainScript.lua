@@ -3,7 +3,7 @@ local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footag
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.2.6 Beta Test",
+    Author = "Update 3.2.6 Beta Tests",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -45,78 +45,84 @@ Window:EditOpenButton({
 -- runWithNotify API
 local _runWithNotify_firstRun = {}
 
-local function runWithNotify(title, fn)
-    -- Stop spaming notifications
+local function runWithNotify(title, fn, opts)
+    -- API Directions:
+    -- kind = "dropdown" | "toggle" | nil
+    -- getLabel = function() -> string  (for dropdowns)
+    -- getState = function() -> boolean (for toggles)
+    -- suppressNone = true|false (for dropdowns)
+    opts = opts or {}
+    local kind = opts.kind
+    local getLabel = opts.getLabel
+    local getState = opts.getState
+    local suppressNone = opts.suppressNone
+
+    -- Silent run | Error run
     if not _runWithNotify_firstRun[title] then
         _runWithNotify_firstRun[title] = true
-        pcall(fn)
+        local ok, err = pcall(fn)
+        if not ok then
+            WindUI:Notify({
+                Title = "Error",
+                Content = "Failed to run "..tostring(title).."\n"..tostring(err),
+                Duration = 5,
+                Icon = "x",
+            })
+        end
         return
     end
 
-    -- Execute
+    -- Normal run | Error run
     local ok, err = pcall(fn)
-
-    if ok then
-        -- Detect dropdowns and toggles
-        local optionValue, stateValue = nil, nil
-        if type(debug) == "table" and type(debug.getupvalue) == "function" then
-            local i = 1
-            while true do
-                local name, val = debug.getupvalue(fn, i)
-                if not name then break end
-                if name == "option" and optionValue == nil then optionValue = val end
-                if name == "state" and stateValue == nil then stateValue = val end
-                i = i + 1
-            end
-        end
-
-        -- Dropdown handling
-        if optionValue ~= nil then
-            if tostring(optionValue) == "None" then
-                return
-            else
-                WindUI:Notify({
-                    Title = "Success",
-                    Content = "Successfully executed "..tostring(optionValue),
-                    Duration = 1.5,
-                })
-                return
-            end
-        end
-
-        -- Toggle handling
-        if stateValue ~= nil then
-            if stateValue then
-                WindUI:Notify({
-                    Title = "Success",
-                    Content = "Successfully executed "..tostring(title),
-                    Duration = 1.5,
-                })
-            else
-                WindUI:Notify({
-                    Title = "Success",
-                    Content = "Successfully unexecuted "..tostring(title),
-                    Duration = 1.5,
-                })
-            end
-            return
-        end
-
-        -- Fallback success
-        WindUI:Notify({
-            Title = "Success",
-            Content = "Successfully ran "..tostring(title),
-            Duration = 1.5,
-        })
-    else
-        -- Error notification
+    if not ok then
         WindUI:Notify({
             Title = "Error",
             Content = "Failed to run "..tostring(title).."\n"..tostring(err),
             Duration = 5,
             Icon = "x",
         })
+        return
     end
+
+    -- Success run | Dropdown
+    if kind == "dropdown" and type(getLabel) == "function" then
+        local label = getLabel()
+        if suppressNone and tostring(label) == "None" then
+            return
+        end
+        WindUI:Notify({
+            Title = "Success",
+            Content = "Successfully executed "..tostring(label),
+            Duration = 1.5,
+        })
+        return
+    end
+
+    -- Success run | Toggle
+    if kind == "toggle" and type(getState) == "function" then
+        local state = getState()
+        if state then
+            WindUI:Notify({
+                Title = "Success",
+                Content = "Successfully executed "..tostring(title),
+                Duration = 1.5,
+            })
+        else
+            WindUI:Notify({
+                Title = "Success",
+                Content = "Successfully unexecuted "..tostring(title),
+                Duration = 1.5,
+            })
+        end
+        return
+    end
+
+    -- Success run | Universal
+    WindUI:Notify({
+        Title = "Success",
+        Content = "Successfully ran "..tostring(title),
+        Duration = 1.5,
+    })
 end
 
 -- Voidpaste tab
@@ -246,7 +252,11 @@ local Dropdown = OthersTab:Dropdown({
             elseif option == "Selenix" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Animation%20Changer/Selenix.lua",true))()
             end
-        end)
+        end, {
+            kind = "dropdown",
+            getLabel = function() return option end,
+            suppressNone = true,
+        })
     end
 })
 
@@ -290,7 +300,10 @@ local Toggle = OthersTab:Toggle({
             else
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/FOV%20Changer/Uninjector.lua", true))()
             end
-        end)
+        end, {
+            kind = "toggle",
+            getState = function() return state end,
+        })
     end
 })
 
@@ -319,7 +332,11 @@ local Dropdown = OthersTab:Dropdown({
             elseif option == "Wichtiger" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Sword%20Texture/Wichtiger.lua",true))()
             end
-        end)
+        end, {
+            kind = "dropdown",
+            getLabel = function() return option end,
+            suppressNone = true,
+        })
     end
 })
 
@@ -346,7 +363,11 @@ local Dropdown = OthersTab:Dropdown({
             elseif option == "Yellow" then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Atmosphere/Yellow.lua",true))()
             end
-        end)
+        end, {
+            kind = "dropdown",
+            getLabel = function() return option end,
+            suppressNone = true,
+        })
     end
 })
 
