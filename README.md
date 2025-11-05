@@ -18,6 +18,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owne
 - [+] Added Storage Esp in default
 - [+] Added Auto Kit in default
 - [#] Changed Auto Buy settings in default
+- [#] Changed AntiVoid settings in default
 - [#] Changed Silent Aura settings in closet
 - [#] Changed Killaura settings in closet
 - [#] Changed Staffdetector settings in panic
