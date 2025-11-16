@@ -317,7 +317,7 @@ VXConfig:Register("fovtggle", ToggleElement)
 local Dropdown = OthersTab:Dropdown({
     Title = "Sword Texture",
     Values = { "None", "Fury", "Makima", "Marin", "Onyx", "PastaaWare", "Random", "VioletDreams", "Wichtiger" },
-    Value = "Onyx",
+    Value = "None",
     Callback = function(option)
         runWithNotify("Sword Texture", function()
             if option == "None" then
@@ -378,6 +378,7 @@ local Dropdown = OthersTab:Dropdown({
         })
     end
 })
+VXConfig:Register("AtmoDpdwn", DropdownElement)
 
 local Button = OthersTab:Button({
     Title = "Sirius Menu",
@@ -407,6 +408,10 @@ local Paragraph = CreditsTab:Paragraph({
     Desc = "If you didn't read the message at the start of the script execution, press 'K' to toggle the GUI",
     Locked = false,
 })
+
+-- Save.lol
+VXConfig:Save()
+VXConfig:Load()
 
 -- Notification
 WindUI:Notify({
