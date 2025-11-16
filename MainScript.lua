@@ -1,9 +1,9 @@
-local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/dist/main.lua"))()
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.2.7",
+    Author = "Update 3.2.8 Beta",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -41,6 +41,10 @@ Window:EditOpenButton({
     Enabled = true,
     Draggable = true,
 })
+
+-- ConfigManager API
+local ConfigManager = Window.ConfigManager
+local VXConfig = ConfigManager:CreateConfig("VXConfig")
 
 -- runWithNotify API
 local _runWithNotify_firstRun = {}
@@ -261,6 +265,7 @@ local Dropdown = OthersTab:Dropdown({
         })
     end
 })
+VXConfig:Register("AnimDpdwn", DropdownElement)
 
 local Button = OthersTab:Button({
     Title = "Mobile Keyboard",
@@ -292,8 +297,7 @@ local Button = OthersTab:Button({
 local elementSection = OthersTab:Section({ Title = "Element Scripts" })
 local Toggle = OthersTab:Toggle({
     Title = "Fov Changer",
-    Icon = "check",
-    Type = "Checkbox",
+    Type = "Toggle",
     Default = false,
     Callback = function(state)
         runWithNotify("Fov Changer", function()
@@ -308,11 +312,12 @@ local Toggle = OthersTab:Toggle({
         })
     end
 })
+VXConfig:Register("fovtggle", ToggleElement)
 
 local Dropdown = OthersTab:Dropdown({
     Title = "Sword Texture",
     Values = { "None", "Fury", "Makima", "Marin", "Onyx", "PastaaWare", "Random", "VioletDreams", "Wichtiger" },
-    Value = "Onyx",
+    Value = "None",
     Callback = function(option)
         runWithNotify("Sword Texture", function()
             if option == "None" then
@@ -341,6 +346,7 @@ local Dropdown = OthersTab:Dropdown({
         })
     end
 })
+VXConfig:Register("txtdrpdwn", DropdownElement)
 
 local Dropdown = OthersTab:Dropdown({
     Title = "Dark Atmosphere",
@@ -372,6 +378,7 @@ local Dropdown = OthersTab:Dropdown({
         })
     end
 })
+VXConfig:Register("AtmoDpdwn", DropdownElement)
 
 local Button = OthersTab:Button({
     Title = "Sirius Menu",
@@ -401,6 +408,10 @@ local Paragraph = CreditsTab:Paragraph({
     Desc = "If you didn't read the message at the start of the script execution, press 'K' to toggle the GUI",
     Locked = false,
 })
+
+-- Save.lol
+VXConfig:Save()
+VXConfig:Load()
 
 -- Notification
 WindUI:Notify({
