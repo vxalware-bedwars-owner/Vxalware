@@ -352,7 +352,8 @@ local FovSaved = config.toggle["Fov Changer"]
 local Toggle = OthersTab:Toggle({
     Title = "Fov Changer",
     Type = "Toggle",
-    Default = (type(FovSaved) == "boolean") and FovSaved or false,
+    Flag = "FovChanger",
+    Default = FovSaved or false,
     Callback = function(state)
         runWithNotify("Fov Changer", function()
             if state then
@@ -364,10 +365,23 @@ local Toggle = OthersTab:Toggle({
             kind = "toggle",
             getState = function() return state end,
         })
-        config.toggle["Fov Changer"] = state
+        config.toggle["Fov Changer"] = (state == true)
         safeWriteConfig()
     end
 })
+
+task.defer(function()
+    pcall(function()
+        local saved = config.toggle["Fov Changer"]
+        if type(saved) == "boolean" then
+            if Toggle.Set then
+                Toggle:Set(saved)
+            elseif Toggle.SetValue then
+                Toggle:SetValue(saved)
+            end
+        end
+    end)
+end)
 
 local SwordSaved = config.dropdown["Sword Texture"]
 local Dropdown = OthersTab:Dropdown({
