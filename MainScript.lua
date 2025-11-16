@@ -42,6 +42,61 @@ Window:EditOpenButton({
     Draggable = true,
 })
 
+-- safeWriteConfig API
+local HttpService = game:GetService("HttpService")
+local folderName = "Vxalware"
+local configFilePath = folderName .. "/VXConfig.json"
+
+local hasFileApi = (type(isfolder) == "function")
+               and (type(makefolder) == "function")
+               and (type(isfile) == "function")
+               and (type(readfile) == "function")
+               and (type(writefile) == "function")
+
+local config = {
+    dropdown = {},
+    toggle = {},
+}
+
+local function safeWriteConfig()
+    if not hasFileApi then return false end
+    local ok, err = pcall(function()
+        writefile(configFilePath, HttpService:JSONEncode(config))
+    end)
+    return ok
+end
+
+local function loadConfig()
+    if not hasFileApi then return end
+    if not isfolder(folderName) then
+        pcall(makefolder, folderName)
+    end
+    if isfile(configFilePath) then
+        local ok, data = pcall(readfile, configFilePath)
+        if ok and data then
+            local succ, decoded = pcall(HttpService.JSONDecode, HttpService, data)
+            if succ and type(decoded) == "table" then
+                -- keep defaults
+                config.dropdown = decoded.dropdown or config.dropdown
+                config.toggle = decoded.toggle or config.toggle
+            end
+        end
+    else
+        safeWriteConfig()
+    end
+end
+
+loadConfig()
+
+if not hasFileApi then
+    WindUI:Notify({
+        Title = "Config Disabled",
+        Content = "API Unreachable — config will not be saved.",
+        Duration = 5,
+        Icon = "x",
+    })
+end
+
 -- runWithNotify API
 local _runWithNotify_firstRun = {}
 local function runWithNotify(title, fn, opts)
@@ -241,10 +296,11 @@ Window:Divider() -- Divider
 -- Others tab
 local OthersTab = Window:Tab({ Title = "Others", Icon = "settings" })
 local guiSection = OthersTab:Section({ Title = "GUI Scripts" })
+local AnimationSaved = config.dropdown["Animation Changer"]
 local Dropdown = OthersTab:Dropdown({
     Title = "Animation Changer",
     Values = { "None", "Gazer", "Selenix" },
-    Value = "None",
+    Value = AnimationSaved or "None",
     Callback = function(option)
         runWithNotify("Animation Changer", function()
             if option == "None" then
@@ -259,6 +315,8 @@ local Dropdown = OthersTab:Dropdown({
             getLabel = function() return option end,
             suppressNone = true,
         })
+        config.dropdown["Animation Changer"] = option
+        safeWriteConfig()
     end
 })
 
@@ -290,10 +348,11 @@ local Button = OthersTab:Button({
 })
 
 local elementSection = OthersTab:Section({ Title = "Element Scripts" })
+local FovSaved = config.toggle["Fov Changer"]
 local Toggle = OthersTab:Toggle({
     Title = "Fov Changer",
     Type = "Toggle",
-    Default = false,
+    Default = (type(FovSaved) == "boolean") and FovSaved or false,
     Callback = function(state)
         runWithNotify("Fov Changer", function()
             if state then
@@ -305,13 +364,16 @@ local Toggle = OthersTab:Toggle({
             kind = "toggle",
             getState = function() return state end,
         })
+        config.toggle["Fov Changer"] = state
+        safeWriteConfig()
     end
 })
 
+local SwordSaved = config.dropdown["Sword Texture"]
 local Dropdown = OthersTab:Dropdown({
     Title = "Sword Texture",
     Values = { "None", "Fury", "Makima", "Marin", "Onyx", "PastaaWare", "Random", "VioletDreams", "Wichtiger" },
-    Value = "None",
+    Value = SwordSaved or "None",
     Callback = function(option)
         runWithNotify("Sword Texture", function()
             if option == "None" then
@@ -338,13 +400,16 @@ local Dropdown = OthersTab:Dropdown({
             getLabel = function() return option end,
             suppressNone = true,
         })
+        config.dropdown["Sword Texture"] = option
+        safeWriteConfig()
     end
 })
 
+local AtmosSaved = config.dropdown["Dark Atmosphere"]
 local Dropdown = OthersTab:Dropdown({
     Title = "Dark Atmosphere",
     Values = { "None", "Blue", "Green", "Orange", "Pink", "Purple", "Red", "Yellow" },
-    Value = "None",
+    Value = AtmosSaved or "None",
     Callback = function(option)
         runWithNotify("Dark Atmosphere", function()
             if option == "None" then
@@ -369,6 +434,8 @@ local Dropdown = OthersTab:Dropdown({
             getLabel = function() return option end,
             suppressNone = true,
         })
+        config.dropdown["Dark Atmosphere"] = option
+        safeWriteConfig()
     end
 })
 
