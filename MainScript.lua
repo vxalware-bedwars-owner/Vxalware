@@ -348,6 +348,41 @@ local Button = OthersTab:Button({
 })
 
 local elementSection = OthersTab:Section({ Title = "Element Scripts" })
+local CCSaved = config.toggle["Client Crasher"]
+local Toggle = OthersTab:Toggle({
+    Title = "Client Crasher",
+    Type = "Toggle",
+    Flag = "ClientCrasher",
+    Default = CCSaved or false,
+    Callback = function(state)
+        runWithNotify("Client Crasher", function()
+            if state then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Client%20Crasher/Injector.lua", true))()
+            else
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Client%20Crasher/Uninjector.lua", true))()
+            end
+        end, {
+            kind = "toggle",
+            getState = function() return state end,
+        })
+        config.toggle["Client Crasher"] = (state == true)
+        safeWriteConfig()
+    end
+})
+
+task.defer(function()
+    pcall(function()
+        local saved = config.toggle["Client Crasher"]
+        if type(saved) == "boolean" then
+            if Toggle.Set then
+                Toggle:Set(saved)
+            elseif Toggle.SetValue then
+                Toggle:SetValue(saved)
+            end
+        end
+    end)
+end)
+
 local FovSaved = config.toggle["Fov Changer"]
 local Toggle = OthersTab:Toggle({
     Title = "Fov Changer",
