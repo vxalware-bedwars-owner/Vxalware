@@ -42,10 +42,6 @@ Window:EditOpenButton({
     Draggable = true,
 })
 
--- ConfigManager API
-local ConfigManager = Window.ConfigManager
-local VXConfig = ConfigManager:CreateConfig("VXConfig")
-
 -- runWithNotify API
 local _runWithNotify_firstRun = {}
 local function runWithNotify(title, fn, opts)
@@ -265,7 +261,6 @@ local Dropdown = OthersTab:Dropdown({
         })
     end
 })
-VXConfig:Register("AnimDpdwn", DropdownElement)
 
 local Button = OthersTab:Button({
     Title = "Mobile Keyboard",
@@ -312,7 +307,6 @@ local Toggle = OthersTab:Toggle({
         })
     end
 })
-VXConfig:Register("fovtggle", ToggleElement)
 
 local Dropdown = OthersTab:Dropdown({
     Title = "Sword Texture",
@@ -346,7 +340,6 @@ local Dropdown = OthersTab:Dropdown({
         })
     end
 })
-VXConfig:Register("txtdrpdwn", DropdownElement)
 
 local Dropdown = OthersTab:Dropdown({
     Title = "Dark Atmosphere",
@@ -378,7 +371,6 @@ local Dropdown = OthersTab:Dropdown({
         })
     end
 })
-VXConfig:Register("AtmoDpdwn", DropdownElement)
 
 local Button = OthersTab:Button({
     Title = "Sirius Menu",
@@ -408,10 +400,6 @@ local Paragraph = CreditsTab:Paragraph({
     Desc = "If you didn't read the message at the start of the script execution, press 'K' to toggle the GUI",
     Locked = false,
 })
-
--- Save.lol
-VXConfig:Save()
-VXConfig:Load()
 
 -- Notification
 WindUI:Notify({
