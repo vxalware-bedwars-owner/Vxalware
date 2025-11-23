@@ -349,7 +349,7 @@ local Button = OthersTab:Button({
 
 local elementSection = OthersTab:Section({ Title = "Element Scripts" })
 local CCSaved = config.toggle["Client Crasher"]
-local connections = {}
+local stopoverwritingconnections = {}
 local running = false
 local Toggle = OthersTab:Toggle({
     Title = "Client Crasher",
