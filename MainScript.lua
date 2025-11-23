@@ -357,9 +357,21 @@ local Toggle = OthersTab:Toggle({
     Callback = function(state)
         runWithNotify("Client Crasher", function()
             if state then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Client%20Crasher/Injector.lua", true))()
-            else
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Client%20Crasher/Uninjector.lua", true))()
+                Toggle:Clean(collectionService:GetInstanceAddedSignal('inventory-entity'):Connect(function(player: Model)
+                    local item = player:WaitForChild('HandInvItem') :: IntValue?
+                    for i,v in getconnections(item.Changed) do
+                        v:Disable()
+                    end                
+                end))
+
+                repeat
+                    if entitylib.isAlive then
+                        for _, tool in store.inventory.inventory.items do
+                            task.spawn(switchItem, tool.tool, 0, true)
+                        end
+                    end
+                    task.wait()
+                until not ClientCrasher.Enabled
             end
         end, {
             kind = "toggle",
