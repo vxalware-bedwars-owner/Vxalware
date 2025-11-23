@@ -349,6 +349,7 @@ local Button = OthersTab:Button({
 
 local elementSection = OthersTab:Section({ Title = "Element Scripts" })
 local CCSaved = config.toggle["Client Crasher"]
+local CollectionService = game:GetService("CollectionService")
 local Toggle = OthersTab:Toggle({
     Title = "Client Crasher",
     Type = "Toggle",
@@ -357,7 +358,7 @@ local Toggle = OthersTab:Toggle({
     Callback = function(state)
         runWithNotify("Client Crasher", function()
             if state then
-                Toggle:Clean(collectionService:GetInstanceAddedSignal('inventory-entity'):Connect(function(player: Model)
+                Toggle:Clean(CollectionService:GetInstanceAddedSignal('inventory-entity'):Connect(function(player: Model)
                     local item = player:WaitForChild('HandInvItem') :: IntValue?
                     for i,v in getconnections(item.Changed) do
                         v:Disable()
