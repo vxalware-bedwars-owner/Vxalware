@@ -13,12 +13,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owne
 ## Update: 3.2.7
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
-- [#] Changed Auto Dodge settings in default
-- [#] Changed Player Attach settings in default
-- [+] Added Storage Esp in default
-- [+] Added Auto Kit in default
-- [#] Changed Auto Buy settings in default
-- [#] Changed AntiVoid settings in default
-- [#] Changed Silent Aura settings in closet
-- [#] Changed Killaura settings in closet
-- [#] Changed Staffdetector settings in panic
+- [+] Added Config Saving
+- [!] Fixed issues with the script
+- [!] Fixed issues with Config Loader
+- [#] Changed Script fix file
+- [-] Removed Rat 🥀
