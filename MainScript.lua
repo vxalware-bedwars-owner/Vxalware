@@ -349,8 +349,6 @@ local Button = OthersTab:Button({
 
 local elementSection = OthersTab:Section({ Title = "Element Scripts" })
 local CCSaved = config.toggle["Client Crasher"]
-local CollectionService = game:GetService("CollectionService")
-local running = false
 local Toggle = OthersTab:Toggle({
     Title = "Client Crasher",
     Type = "Toggle",
@@ -358,37 +356,10 @@ local Toggle = OthersTab:Toggle({
     Default = CCSaved or false,
     Callback = function(state)
         runWithNotify("Client Crasher", function()
-            running = state
             if state then
-                local conn = CollectionService:GetInstanceAddedSignal("inventory-entity"):Connect(function(model)
-                    local item = model:FindFirstChild("HandInvItem")
-                    if not item then return end
-    
-                    for _, v in ipairs(getconnections(item.Changed)) do
-                        pcall(function() v:Disable() end)
-                    end
-                end)
-
-                table.insert(connections, conn)
-
-                task.spawn(function()
-                    while running do
-                        if entitylib.isAlive then
-                            for _, tool in store.inventory.inventory.items do
-                                task.spawn(switchItem, tool.tool, 0, true)
-                            end
-                        end
-                        task.wait()
-                    end
-                end)
-
+                print("state")
             else
-                for _, c in ipairs(connections) do
-                    pcall(function() c:Disconnect() end)
-                end
-                table.clear(connections)
-
-                running = false
+                print("no state")
             end
         end, {
             kind = "toggle",
