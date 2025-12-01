@@ -10,7 +10,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owne
 - Vxalware (Frontend)
 - SynthX (Backend)
 - Footagesus (UI Library)
-## Update: 3.2.7
+## Update: 3.2.8
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
 - [+] Added Config Saving
