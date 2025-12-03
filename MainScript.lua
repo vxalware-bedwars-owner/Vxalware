@@ -478,13 +478,13 @@ local Dropdown = OthersTab:Dropdown({
     Values = { "None", "Sirius", "Orca" },
     Value = GScriptsSaved or "None",
     Callback = function(option)
-        runWithNotify("Animation Changer", function()
+        runWithNotify("Good Scripts", function()
             if option == "None" then
                 print("nil")
             elseif option == "Sirius" then
-                loadstring(game:HttpGet("https://sirius.menu/sirius",true))()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Good%20Scripts/Sirius.lua",true))()
             elseif option == "Orca" then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua",true))()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Good%20Scripts/Orca.lua",true))()
             end
         end, {
             kind = "dropdown",
