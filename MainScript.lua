@@ -3,7 +3,7 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.2.8",
+    Author = "Update 3.2.9 Beta",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -56,6 +56,7 @@ local hasFileApi = (type(isfolder) == "function")
 local config = {
     dropdown = {},
     toggle = {},
+    slider = {},
 }
 
 local function safeWriteConfig()
@@ -79,6 +80,7 @@ local function loadConfig()
                 -- keep defaults
                 config.dropdown = decoded.dropdown or config.dropdown
                 config.toggle = decoded.toggle or config.toggle
+                config.slider = decoded.slider or config.slider
             end
         end
     else
@@ -101,14 +103,16 @@ end
 local _runWithNotify_firstRun = {}
 local function runWithNotify(title, fn, opts)
     -- API Directions:
-    -- kind = "dropdown" | "toggle" | nil
+    -- kind = "dropdown", "toggle", or "slider"
     -- getLabel = function() -> string  (for dropdowns)
     -- getState = function() -> boolean (for toggles)
-    -- suppressNone = true|false (for dropdowns)
+    -- getValue = function() -> value (for sliders)
+    -- suppressNone = true/false (for dropdowns)
     opts = opts or {}
     local kind = opts.kind
     local getLabel = opts.getLabel
     local getState = opts.getState
+    local getValue = opts.getValue
     local suppressNone = opts.suppressNone
 
     -- Silent run | Error run
@@ -171,6 +175,21 @@ local function runWithNotify(title, fn, opts)
                 Duration = 1.5,
             })
         end
+        return
+    end
+
+    -- Success run | Slider
+    if kind == "slider" and type(getValue) == "function" then
+        local value = getValue()
+        local valueStr = tostring(value)
+        if type(value) == "number" then
+            valueStr = tostring(tonumber(string.format("%.6f", value))):gsub("%.?0+$", "")
+        end
+        WindUI:Notify({
+            Title = "Success",
+            Content = tostring(title) .. " set to " .. valueStr,
+            Duration = 1.5,
+        })
         return
     end
 
@@ -274,20 +293,20 @@ local Button = ConfigsTab:Button({
     end
 })
 
-local rustSection = ConfigsTab:Section({ Title = "Rust config" })
+local rustSection = ConfigsTab:Section({ Title = "Rust" })
 local Button = ConfigsTab:Button({
-    Title = "Rxalware Config Loader",
+    Title = "Rust Config Loader",
     Callback = function()
-        runWithNotify("Rxalware Config Loader", function()
+        runWithNotify("Rust Config Loader", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua",true))()
         end)
     end
 })
 
 local Button = ConfigsTab:Button({
-    Title = "Rxalware Script",
+    Title = "Rust Script",
     Callback = function()
-        runWithNotify("Rxalware Script", function()
+        runWithNotify("Rust Script", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua",true))()
         end)
     end
