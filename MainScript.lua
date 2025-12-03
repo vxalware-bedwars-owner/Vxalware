@@ -376,9 +376,9 @@ local Toggle = OthersTab:Toggle({
     Callback = function(state)
         runWithNotify("Fov Changer", function()
             if state then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/FOV%20Changer/Injector.lua", true))()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/FOV%20Changer/Injector.lua",true))()
             else
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/FOV%20Changer/Uninjector.lua", true))()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/FOV%20Changer/Uninjector.lua",true))()
             end
         end, {
             kind = "toggle",
@@ -472,12 +472,27 @@ local Dropdown = OthersTab:Dropdown({
     end
 })
 
-local Button = OthersTab:Button({
-    Title = "Sirius Menu",
-    Callback = function()
-        runWithNotify("Sirius Menu", function()
-            loadstring(game:HttpGet("https://sirius.menu/sirius",true))()
-        end)
+local GScriptsSaved = config.dropdown["Good Scripts"]
+local Dropdown = OthersTab:Dropdown({
+    Title = "Good Scripts",
+    Values = { "None", "Sirius", "Orca" },
+    Value = GScriptsSaved or "None",
+    Callback = function(option)
+        runWithNotify("Animation Changer", function()
+            if option == "None" then
+                print("nil")
+            elseif option == "Sirius" then
+                loadstring(game:HttpGet("https://sirius.menu/sirius",true))()
+            elseif option == "Orca" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua",true))()
+            end
+        end, {
+            kind = "dropdown",
+            getLabel = function() return option end,
+            suppressNone = true,
+        })
+        config.dropdown["Good Scripts"] = option
+        safeWriteConfig()
     end
 })
 
