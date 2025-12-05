@@ -10,11 +10,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owne
 - Vxalware (Frontend)
 - SynthX (Backend)
 - Footagesus (UI Library)
-## Update: 3.2.8
+## Update: 3.2.9
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
-- [+] Added Config Saving
-- [!] Fixed issues with the script
-- [!] Fixed issues with Config Loader
-- [#] Changed Script fix file
-- [-] Removed Rat 🥀
+- [#] Changed Rust config to Rust
+- [#] Changed Rxalware to Rust
+- [+] Made dropdown for Orca and Sirius
+- [+] Added Slider support to runWithNotify API & safeWriteConfig API
+- [+] Added user support for CatVape Script
+- [!] I finnaly got a gf! (˶>⩊<˶)
