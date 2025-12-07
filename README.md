@@ -10,7 +10,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owne
 - Vxalware (Frontend)
 - SynthX (Backend)
 - Footagesus (UI Library)
-## Update: 3.2.9
+## Update: 3.2.95
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
 - [!] Fixed OpenButton size
