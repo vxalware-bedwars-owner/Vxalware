@@ -1,9 +1,10 @@
-local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+local Version = "1.6.61"
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/download/" .. Version .. "/main.lua"))()
 
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.2.9",
+    Author = "Update 3.2.95",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -472,27 +473,12 @@ local Dropdown = OthersTab:Dropdown({
     end
 })
 
-local GScriptsSaved = config.dropdown["Good Scripts"]
-local Dropdown = OthersTab:Dropdown({
-    Title = "Good Scripts",
-    Values = { "None", "Sirius", "Orca" },
-    Value = GScriptsSaved or "None",
-    Callback = function(option)
-        runWithNotify("Good Scripts", function()
-            if option == "None" then
-                print("nil")
-            elseif option == "Sirius" then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Good%20Scripts/Sirius.lua",true))()
-            elseif option == "Orca" then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Good%20Scripts/Orca.lua",true))()
-            end
-        end, {
-            kind = "dropdown",
-            getLabel = function() return option end,
-            suppressNone = true,
-        })
-        config.dropdown["Good Scripts"] = option
-        safeWriteConfig()
+local Button = OthersTab:Button({
+    Title = "Sirius Menu",
+    Callback = function()
+        runWithNotify("Sirius Menu", function()
+            loadstring(game:HttpGet("https://sirius.menu/sirius",true))()
+        end)
     end
 })
 
