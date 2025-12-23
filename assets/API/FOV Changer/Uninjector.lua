@@ -10,14 +10,14 @@ end
 -- stop loop
 state.Running = false
 
--- Disconnect any connections
+-- Disconnection
 if state.Connections then
     for _, c in ipairs(state.Connections) do
         pcall(function() if c and c.Disconnect then c:Disconnect() end end)
     end
 end
 
--- small delay to finish cleanup
+-- finish cleanup
 task.wait(0.2)
 
 -- Restore original FOV
