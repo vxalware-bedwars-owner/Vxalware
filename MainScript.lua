@@ -4,7 +4,7 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.3.1",
+    Author = "Update 3.3.2 Beta",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
