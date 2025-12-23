@@ -20,7 +20,7 @@ end
 local device = getDeviceType()
 print("The user's device is:", device)
 
--- Create base folder (idk why)
+-- Create folder
 makefolder(basePath)
 
 -- PC
@@ -60,5 +60,5 @@ elseif device == "Mobile" then
 end
 
 print("Successfully Loaded Config")
-task.wait(6.7)
+task.wait(2)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua",true))()
