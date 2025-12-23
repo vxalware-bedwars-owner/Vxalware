@@ -6,10 +6,10 @@ local LoopDelay = 0.1
 local player = game.Players.LocalPlayer
 local camera = workspace.CurrentCamera
 
--- terminate any old instances
+-- Uninject oldies
 if getgenv()[MODULE] and type(getgenv()[MODULE]) == "table" then
     getgenv()[MODULE].Running = false
-    -- allow previous loop to exit
+    -- exitation
     task.wait(0.15)
 end
 
@@ -22,30 +22,30 @@ local state = {
     Connections = {},
 }
 
--- enforce FOV in safe loop
+-- enforce FOV so it doesn't bug
 state.Thread = task.spawn(function()
     while state.Running do
         local cam = workspace.CurrentCamera
         if cam then
-            -- ensure FOV is kept at DesiredFOV
+            -- DesiredFOV would be kept at all times (i think)
             pcall(function() cam.FieldOfView = state.DesiredFOV end)
         end
         task.wait(LoopDelay)
     end
 
-    -- restore original FOV
+    -- restore FOV
     local cam = workspace.CurrentCamera
     if cam and state.OriginalFOV ~= nil then
         pcall(function() cam.FieldOfView = state.OriginalFOV end)
     end
 end)
 
--- Watch for camera replacement
+-- camera replacement counter
 local ok, conn = pcall(function()
     return workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
         camera = workspace.CurrentCamera
         if camera then
-            -- if haven't captured original FOV (nil), record it now
+            -- record FOV for good measure
             if state.OriginalFOV == nil then
                 state.OriginalFOV = camera.FieldOfView
             end
@@ -57,8 +57,8 @@ local ok, conn = pcall(function()
 end)
 if ok and conn then table.insert(state.Connections, conn) end
 
--- Expose control globally for uninjector or future checks
+-- uninjector moment
 getgenv()[MODULE] = state
 
--- print status
+-- status check
 print("[FOV Changer] injected. DesiredFOV =", DesiredFOV, "OriginalFOV =", state.OriginalFOV)
