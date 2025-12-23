@@ -5,13 +5,11 @@ local hasSaved = getgenv().__savedLightingState ~= nil
 local prev = lighting:FindFirstChild("CustomAtmosphere")
 local prevBloom = lighting:FindFirstChild("CustomBloom")
 
--- Topic for none
 if not hasSaved and not prev and not prevBloom then
     print("No custom atmosphere/bloom found and no saved state. Nothing to remove.")
     return
 end
 
--- Remove custom instances
 if prev then
     prev:Destroy()
     print("CustomAtmosphere removed.")
@@ -26,7 +24,6 @@ else
     print("no CustomBloom")
 end
 
--- Restore saved state
 if hasSaved then
     local saved = getgenv().__savedLightingState
 
@@ -38,7 +35,6 @@ if hasSaved then
     pcall(function() lighting.FogEnd = saved.FogEnd end)
     pcall(function() lighting.FogColor = saved.FogColor end)
 
-    -- Remove any custom named instances
     for _, child in ipairs(lighting:GetChildren()) do
         if child.ClassName == "Atmosphere" and child.Name == "CustomAtmosphere" then
             pcall(function() child:Destroy() end)
@@ -48,7 +44,6 @@ if hasSaved then
         end
     end
 
-    -- Recreate original Atmosphere
     if saved.OriginalAtmosphere then
         local a = Instance.new("Atmosphere")
         a.Name = saved.OriginalAtmosphere.Name or "RestoredAtmosphere"
@@ -60,7 +55,6 @@ if hasSaved then
         print("Restored original Atmosphere.")
     end
 
-    -- Recreate original BloomEffect
     if saved.OriginalBloom then
         local b = Instance.new("BloomEffect")
         b.Name = saved.OriginalBloom.Name or "RestoredBloom"
@@ -71,7 +65,6 @@ if hasSaved then
         print("Restored original BloomEffect.")
     end
 
-    -- Clear
     getgenv().__savedLightingState = nil
     print("Lighting restored to saved original state.")
 else
