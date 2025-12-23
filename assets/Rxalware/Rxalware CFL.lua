@@ -117,7 +117,7 @@ local device = getDeviceType()
 updateStatus("Detected device: " .. device)
 task.wait(1.2)
 
--- Conditional Execution
+-- Execution based on info
 if device == "PC" then
     updateStatus("Executing Rust...")
     local success, err = pcall(function()
