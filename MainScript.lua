@@ -4,7 +4,7 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.3.2 Beta",
+    Author = "Update 3.3.2",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -474,10 +474,10 @@ local Dropdown = OthersTab:Dropdown({
 })
 
 local Button = OthersTab:Button({
-    Title = "Sirius Menu",
+    Title = "CC Scripts",
     Callback = function()
-        runWithNotify("Sirius Menu", function()
-            loadstring(game:HttpGet("https://sirius.menu/sirius",true))()
+        runWithNotify("CC Scripts", function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/TKNY3nTF",true))()
         end)
     end
 })
