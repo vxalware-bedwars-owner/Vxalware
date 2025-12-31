@@ -13,11 +13,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owne
 - Vxalware (Frontend)
 - SynthX (Backend)
 - Footagesus (UI Library)
-## Update: 3.3.1
+## Update: 3.3.2
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
-- [+] Added Vxalware Whitelist access (dm theholyjay on discord)
-- [#] Improved Stability
-- [!] Fixed an issue where CatVape wouldn't automatically execute when in a match (maxlasertech be like)
-- [!] Fixed issue where you couldn't copy loadstring on readme (luau be like)
-- [+] Added Rat 🥀
+- [#] Rewrote Atmosphere Code
+- [#] Rewrote FOV Changer Code
+- [#] Rewrote Stuffs.txt (assets > API > Stuffs.txt)
+- [#] Rewrote Rxalware Config Loader
+- [!] Fixed CatVape AutoExecute not working
+- [+] Added Chat tags to appear beside name when chatting to show what rank you are on Vxalware
+- [+] Added directions for noobs in loader.lua
+- [#] Changed Sirius Menu to CC Script (more options)
