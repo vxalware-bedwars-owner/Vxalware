@@ -4,7 +4,7 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.3.2",
+    Author = "Update 3.3.3 Beta",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -202,8 +202,8 @@ local function runWithNotify(title, fn, opts)
     })
 end
 
--- Voidpaste tab
-local VoidTab = Window:Tab({ Title = "Voidpaste", Icon = "aperture" })
+-- Voidware tab
+local VoidTab = Window:Tab({ Title = "Voidware", Icon = "aperture" })
 local Button = VoidTab:Button({
     Title = "Voidware Old",
     Callback = function()
@@ -226,7 +226,7 @@ local Button = VoidTab:Button({
     Title = "Voidware Rise",
     Callback = function()
         runWithNotify("Voidware Rise", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua",true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWRise/refs/heads/main/NewMainScript.lua",true))()
         end)
     end
 })
@@ -269,6 +269,17 @@ local Button = RustTab:Button({
     Callback = function()
         runWithNotify("Rust", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua",true))()
+        end)
+    end
+})
+
+-- Sploit tab
+local SploitTab = Window:Tab({ Title = "AlSploit", Icon = "shield" })
+local Button = SploitTab:Button({
+    Title = "AlSploit",
+    Callback = function()
+        runWithNotify("AlSploit", function()
+            loadstring(game:HttpGet('https://alsploit.bedwars.workers.dev/AlSploitPurpleBlastReborn.lua'))()
         end)
     end
 })
