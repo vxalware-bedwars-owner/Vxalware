@@ -297,7 +297,7 @@ local ConfigsTab = Window:Tab({ Title = "Configs", Icon = "atom" })
 local catSection = ConfigsTab:Section({ Title = "CatVape" })
 local Button = ConfigsTab:Button({
     Title = "CatVape Config Loader",
-    Icon = "",
+    Icon = "save",
     Callback = function()
         runWithNotify("CatVape Config Loader", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua",true))()
@@ -307,6 +307,7 @@ local Button = ConfigsTab:Button({
 
 local Button = ConfigsTab:Button({
     Title = "CatVape Script",
+    Icon = "terminal",
     Callback = function()
         runWithNotify("CatVape Script", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua",true))()
@@ -318,6 +319,7 @@ local rustSection = ConfigsTab:Section({ Title = "Rust" })
 local Button = ConfigsTab:Button({
     Title = "Rust Config Loader",
     Callback = function()
+    Icon = "save",
         runWithNotify("Rust Config Loader", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua",true))()
         end)
@@ -326,6 +328,7 @@ local Button = ConfigsTab:Button({
 
 local Button = ConfigsTab:Button({
     Title = "Rust Script",
+    Icon = "terminal",
     Callback = function()
         runWithNotify("Rust Script", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua",true))()
