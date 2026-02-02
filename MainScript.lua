@@ -206,6 +206,7 @@ end
 local VoidTab = Window:Tab({ Title = "Voidware", Icon = "aperture" })
 local Button = VoidTab:Button({
     Title = "Voidware Old",
+    Icon = "aperture",
     Callback = function()
         runWithNotify("Voidware Old", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua",true))()
@@ -215,6 +216,7 @@ local Button = VoidTab:Button({
 
 local Button = VoidTab:Button({
     Title = "Voidware Rewrite",
+    Icon = "aperture",
     Callback = function()
         runWithNotify("Voidware Rewrite", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWRewrite/main/NewMainScript.lua",true))()
@@ -224,6 +226,7 @@ local Button = VoidTab:Button({
 
 local Button = VoidTab:Button({
     Title = "Voidware Rise",
+    Icon = "aperture",
     Callback = function()
         runWithNotify("Voidware Rise", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWRise/refs/heads/main/NewMainScript.lua",true))()
@@ -233,6 +236,7 @@ local Button = VoidTab:Button({
 
 local Button = VoidTab:Button({
     Title = "Voidware Packet",
+    Icon = "aperture",
     Callback = function()
         runWithNotify("Voidware Packet", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWPacket/main/NewMainScript.lua",true))()
@@ -244,6 +248,7 @@ local Button = VoidTab:Button({
 local CatTab = Window:Tab({ Title = "CatVape", Icon = "cat" })
 local Button = CatTab:Button({
     Title = "CatVape",
+    Icon = "cat",
     Callback = function()
         runWithNotify("CatVape", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua",true))()
@@ -255,6 +260,7 @@ local Button = CatTab:Button({
 local NightTab = Window:Tab({ Title = "Night", Icon = "moon" })
 local Button = NightTab:Button({
     Title = "Night",
+    Icon = "moon",
     Callback = function()
         runWithNotify("Night", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/null-wtf/NewNight/refs/heads/main/Loader.luau",true))()
@@ -266,6 +272,7 @@ local Button = NightTab:Button({
 local RustTab = Window:Tab({ Title = "Rust", Icon = "sword" })
 local Button = RustTab:Button({
     Title = "Rust",
+    Icon = "sword",
     Callback = function()
         runWithNotify("Rust", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua",true))()
@@ -274,9 +281,10 @@ local Button = RustTab:Button({
 })
 
 -- Sploit tab
-local SploitTab = Window:Tab({ Title = "AlSploit", Icon = "shield" })
+local SploitTab = Window:Tab({ Title = "AlSploit", Icon = "bird" })
 local Button = SploitTab:Button({
     Title = "AlSploit",
+    Icon = "bird",
     Callback = function()
         runWithNotify("AlSploit", function()
             loadstring(game:HttpGet('https://alsploit.bedwars.workers.dev/AlSploitPurpleBlastReborn.lua'))()
@@ -289,6 +297,7 @@ local ConfigsTab = Window:Tab({ Title = "Configs", Icon = "atom" })
 local catSection = ConfigsTab:Section({ Title = "CatVape" })
 local Button = ConfigsTab:Button({
     Title = "CatVape Config Loader",
+    Icon = "",
     Callback = function()
         runWithNotify("CatVape Config Loader", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua",true))()
