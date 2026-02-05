@@ -206,7 +206,7 @@ end
 local VoidTab = Window:Tab({ Title = "Voidware", Icon = "aperture" })
 local Button = VoidTab:Button({
     Title = "Voidware Old",
-    Icon = "aperture",
+    Icon = "clock-fading",
     Callback = function()
         runWithNotify("Voidware Old", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua",true))()
@@ -216,7 +216,7 @@ local Button = VoidTab:Button({
 
 local Button = VoidTab:Button({
     Title = "Voidware Rewrite",
-    Icon = "aperture",
+    Icon = "rotate-cw",
     Callback = function()
         runWithNotify("Voidware Rewrite", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWRewrite/main/NewMainScript.lua",true))()
@@ -226,7 +226,7 @@ local Button = VoidTab:Button({
 
 local Button = VoidTab:Button({
     Title = "Voidware Rise",
-    Icon = "aperture",
+    Icon = "asterisk",
     Callback = function()
         runWithNotify("Voidware Rise", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWRise/refs/heads/main/NewMainScript.lua",true))()
@@ -236,7 +236,7 @@ local Button = VoidTab:Button({
 
 local Button = VoidTab:Button({
     Title = "Voidware Packet",
-    Icon = "aperture",
+    Icon = "blocks",
     Callback = function()
         runWithNotify("Voidware Packet", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWPacket/main/NewMainScript.lua",true))()
@@ -280,7 +280,7 @@ local Button = RustTab:Button({
     end
 })
 
--- Sploit tab
+-- AlSploit tab
 local SploitTab = Window:Tab({ Title = "AlSploit", Icon = "bird" })
 local Button = SploitTab:Button({
     Title = "AlSploit",
@@ -318,8 +318,8 @@ local Button = ConfigsTab:Button({
 local rustSection = ConfigsTab:Section({ Title = "Rust" })
 local Button = ConfigsTab:Button({
     Title = "Rust Config Loader",
-    Callback = function()
     Icon = "save",
+    Callback = function()
         runWithNotify("Rust Config Loader", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua",true))()
         end)
@@ -365,6 +365,7 @@ local Dropdown = OthersTab:Dropdown({
 
 local Button = OthersTab:Button({
     Title = "Mobile Keyboard",
+    Icon = "terminal",
     Callback = function()
         runWithNotify("Mobile Keyboard", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/refs/heads/main/MobileKeyboard.txt",true))()
@@ -374,6 +375,7 @@ local Button = OthersTab:Button({
 
 local Button = OthersTab:Button({
     Title = "Script Hub GUI",
+    Icon = "terminal",
     Callback = function()
         runWithNotify("Script Hub GUI", function()
             loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Animation-Changer-16049",true))()
@@ -383,6 +385,7 @@ local Button = OthersTab:Button({
 
 local Button = OthersTab:Button({
     Title = "Infinite Yield",
+    Icon = "terminal",
     Callback = function()
         runWithNotify("Infinite Yield", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",true))()
@@ -498,6 +501,7 @@ local Dropdown = OthersTab:Dropdown({
 
 local Button = OthersTab:Button({
     Title = "CC Scripts",
+    Icon = "terminal",
     Callback = function()
         runWithNotify("CC Scripts", function()
             loadstring(game:HttpGet("https://pastebin.com/raw/TKNY3nTF",true))()
