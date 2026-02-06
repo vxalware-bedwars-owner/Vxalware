@@ -4,7 +4,7 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.3.3 Beta",
+    Author = "Update 3.3.3",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -204,7 +204,186 @@ end
 
 -- Voidware tab
 local VoidTab = Window:Tab({ Title = "Voidware", Icon = "aperture" })
+local voidSection = VoidTab:Section({ Title = "Voidware Old" })
 local Button = VoidTab:Button({
+    Title = "Config Loader",
+    Icon = "save",
+    Callback = function()
+        runWithNotify("Voidware Config Loader", function()
+            print("This feature has not been implemented yet!")
+        end)
+    end
+})
+
+local Button = VoidTab:Button({
+    Title = "Script",
+    Icon = "terminal",
+    Callback = function()
+        runWithNotify("Voidware Script", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua",true))()
+        end)
+    end
+})
+
+local voidSection = VoidTab:Section({ Title = "Voidware Rewrite" })
+local Button = VoidTab:Button({
+    Title = "Config Loader",
+    Icon = "save",
+    Callback = function()
+        runWithNotify("Voidware Config Loader", function()
+            print("This feature has not been implemented yet!")
+        end)
+    end
+})
+
+local Button = VoidTab:Button({
+    Title = "Script",
+    Icon = "terminal",
+    Callback = function()
+        runWithNotify("Voidware Script", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWRewrite/main/NewMainScript.lua",true))()
+        end)
+    end
+})
+
+local voidSection = VoidTab:Section({ Title = "Voidware Rise" })
+local Button = VoidTab:Button({
+    Title = "Config Loader",
+    Icon = "save",
+    Callback = function()
+        runWithNotify("Voidware Config Loader", function()
+            print("This feature has not been implemented yet!")
+        end)
+    end
+})
+
+local Button = VoidTab:Button({
+    Title = "Script",
+    Icon = "terminal",
+    Callback = function()
+        runWithNotify("Voidware Script", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWRise/refs/heads/main/NewMainScript.lua",true))()
+        end)
+    end
+})
+
+local voidSection = VoidTab:Section({ Title = "Voidware Packet" })
+local Button = VoidTab:Button({
+    Title = "Config Loader",
+    Icon = "save",
+    Callback = function()
+        runWithNotify("Voidware Config Loader", function()
+            print("This feature has not been implemented yet!")
+        end)
+    end
+})
+
+local Button = VoidTab:Button({
+    Title = "Script",
+    Icon = "terminal",
+    Callback = function()
+        runWithNotify("Voidware Script", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWPacket/main/NewMainScript.lua",true))()
+        end)
+    end
+})
+
+-- CatVape tab
+local CatTab = Window:Tab({ Title = "CatVape", Icon = "cat" })
+local catSection = CatTab:Section({ Title = "CatVape" })
+local Button = CatTab:Button({
+    Title = "Config Loader",
+    Icon = "save",
+    Callback = function()
+        runWithNotify("CatVape Config Loader", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua",true))()
+        end)
+    end
+})
+
+local Button = CatTab:Button({
+    Title = "Script",
+    Icon = "terminal",
+    Callback = function()
+        runWithNotify("CatVape Script", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua",true))()
+        end)
+    end
+})
+
+-- Night tab
+local NightTab = Window:Tab({ Title = "Night", Icon = "moon" })
+local nightSection = NightTab:Section({ Title = "Night" })
+local Button = NightTab:Button({
+    Title = "Config Loader",
+    Icon = "save",
+    Callback = function()
+        runWithNotify("Night Config Loader", function()
+            print("This feature has not been implemented yet!")
+        end)
+    end
+})
+
+local Button = NightTab:Button({
+    Title = "Script",
+    Icon = "terminal",
+    Callback = function()
+        runWithNotify("Night Script", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/null-wtf/NewNight/refs/heads/main/Loader.luau",true))()
+        end)
+    end
+})
+
+-- Rust tab
+local RustTab = Window:Tab({ Title = "Rust", Icon = "sword" })
+local rustSection = RustTab:Section({ Title = "Rust" })
+local Button = RustTab:Button({
+    Title = "Config Loader",
+    Icon = "save",
+    Callback = function()
+        runWithNotify("Rust Config Loader", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua",true))()
+        end)
+    end
+})
+
+local Button = RustTab:Button({
+    Title = "Script",
+    Icon = "terminal",
+    Callback = function()
+        runWithNotify("Rust Script", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua", true))()
+        end)
+    end
+})
+
+-- AlSploit tab
+local SploitTab = Window:Tab({ Title = "AlSploit", Icon = "bird" })
+local sploitSection = SploitTab:Section({ Title = "AlSploit" })
+local Button = SploitTab:Button({
+    Title = "Config Loader",
+    Icon = "save",
+    Callback = function()
+        runWithNotify("AlSploit Config Loader", function()
+            print("This feature has not been implemented yet!")
+        end)
+    end
+})
+
+local Button = SploitTab:Button({
+    Title = "Script",
+    Icon = "terminal",
+    Callback = function()
+        runWithNotify("AlSploit Script", function()
+            loadstring(game:HttpGet("https://alsploit.bedwars.workers.dev/AlSploitPurpleBlastReborn.lua",true))()
+        end)
+    end
+})
+
+-- Scripts tab
+local ScriptTab = Window:Tab({ Title = "Scripts", Icon = "atom" })
+local scriptSection = ScriptTab:Section({ Title = "Voidware" })
+local Button = ScriptTab:Button({
     Title = "Voidware Old",
     Icon = "clock-fading",
     Callback = function()
@@ -214,7 +393,7 @@ local Button = VoidTab:Button({
     end
 })
 
-local Button = VoidTab:Button({
+local Button = ScriptTab:Button({
     Title = "Voidware Rewrite",
     Icon = "rotate-cw",
     Callback = function()
@@ -224,7 +403,7 @@ local Button = VoidTab:Button({
     end
 })
 
-local Button = VoidTab:Button({
+local Button = ScriptTab:Button({
     Title = "Voidware Rise",
     Icon = "asterisk",
     Callback = function()
@@ -234,7 +413,7 @@ local Button = VoidTab:Button({
     end
 })
 
-local Button = VoidTab:Button({
+local Button = ScriptTab:Button({
     Title = "Voidware Packet",
     Icon = "blocks",
     Callback = function()
@@ -244,9 +423,8 @@ local Button = VoidTab:Button({
     end
 })
 
--- CatVape tab
-local CatTab = Window:Tab({ Title = "CatVape", Icon = "cat" })
-local Button = CatTab:Button({
+local scriptSection = ScriptTab:Section({ Title = "CatVape" })
+local Button = ScriptTab:Button({
     Title = "CatVape",
     Icon = "cat",
     Callback = function()
@@ -256,9 +434,8 @@ local Button = CatTab:Button({
     end
 })
 
--- Night tab
-local NightTab = Window:Tab({ Title = "Night", Icon = "moon" })
-local Button = NightTab:Button({
+local scriptSection = ScriptTab:Section({ Title = "Night" })
+local Button = ScriptTab:Button({
     Title = "Night",
     Icon = "moon",
     Callback = function()
@@ -268,104 +445,31 @@ local Button = NightTab:Button({
     end
 })
 
--- Rust tab
-local RustTab = Window:Tab({ Title = "Rust", Icon = "sword" })
-local Button = RustTab:Button({
-    Title = "Rust",
-    Icon = "sword",
-    Callback = function()
-        runWithNotify("Rust", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/0xEIite/rust/main/NewMainScript.lua",true))()
-        end)
-    end
-})
-
--- AlSploit tab
-local SploitTab = Window:Tab({ Title = "AlSploit", Icon = "bird" })
-local Button = SploitTab:Button({
+local scriptSection = ScriptTab:Section({ Title = "AlSploit" })
+local Button = ScriptTab:Button({
     Title = "AlSploit",
     Icon = "bird",
     Callback = function()
         runWithNotify("AlSploit", function()
-            loadstring(game:HttpGet('https://alsploit.bedwars.workers.dev/AlSploitPurpleBlastReborn.lua'))()
-        end)
-    end
-})
-
--- Configs tab
-local ConfigsTab = Window:Tab({ Title = "Configs", Icon = "atom" })
-local catSection = ConfigsTab:Section({ Title = "CatVape" })
-local Button = ConfigsTab:Button({
-    Title = "CatVape Config Loader",
-    Icon = "save",
-    Callback = function()
-        runWithNotify("CatVape Config Loader", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatV5/MainScript.lua",true))()
-        end)
-    end
-})
-
-local Button = ConfigsTab:Button({
-    Title = "CatVape Script",
-    Icon = "terminal",
-    Callback = function()
-        runWithNotify("CatVape Script", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua",true))()
-        end)
-    end
-})
-
-local rustSection = ConfigsTab:Section({ Title = "Rust" })
-local Button = ConfigsTab:Button({
-    Title = "Rust Config Loader",
-    Icon = "save",
-    Callback = function()
-        runWithNotify("Rust Config Loader", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua",true))()
-        end)
-    end
-})
-
-local Button = ConfigsTab:Button({
-    Title = "Rust Script",
-    Icon = "terminal",
-    Callback = function()
-        runWithNotify("Rust Script", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua",true))()
+            loadstring(game:HttpGet("https://alsploit.bedwars.workers.dev/AlSploitPurpleBlastReborn.lua",true))()
         end)
     end
 })
 Window:Divider() -- Divider
 -- Others tab
 local OthersTab = Window:Tab({ Title = "Others", Icon = "settings" })
-local guiSection = OthersTab:Section({ Title = "GUI Scripts" })
-local AnimationSaved = config.dropdown["Animation Changer"]
-local Dropdown = OthersTab:Dropdown({
-    Title = "Animation Changer",
-    Values = { "None", "Gazer", "Selenix" },
-    Value = AnimationSaved or "None",
-    Callback = function(option)
-        runWithNotify("Animation Changer", function()
-            if option == "None" then
-                print("nil")
-            elseif option == "Gazer" then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Animation%20Changer/Gazer.lua",true))()
-            elseif option == "Selenix" then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Animation%20Changer/Selenix.lua",true))()
-            end
-        end, {
-            kind = "dropdown",
-            getLabel = function() return option end,
-            suppressNone = true,
-        })
-        config.dropdown["Animation Changer"] = option
-        safeWriteConfig()
+local elementSection = OthersTab:Section({ Title = "Element Scripts" })
+local Button = OthersTab:Button({
+    Title = "CC Scripts",
+    Callback = function()
+        runWithNotify("CC Scripts", function()
+            loadstring(game:HttpGet("https://pastebin.com/raw/TKNY3nTF",true))()
+        end)
     end
 })
 
 local Button = OthersTab:Button({
     Title = "Mobile Keyboard",
-    Icon = "terminal",
     Callback = function()
         runWithNotify("Mobile Keyboard", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Delta-Scripts/refs/heads/main/MobileKeyboard.txt",true))()
@@ -375,7 +479,6 @@ local Button = OthersTab:Button({
 
 local Button = OthersTab:Button({
     Title = "Script Hub GUI",
-    Icon = "terminal",
     Callback = function()
         runWithNotify("Script Hub GUI", function()
             loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Animation-Changer-16049",true))()
@@ -385,7 +488,6 @@ local Button = OthersTab:Button({
 
 local Button = OthersTab:Button({
     Title = "Infinite Yield",
-    Icon = "terminal",
     Callback = function()
         runWithNotify("Infinite Yield", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",true))()
@@ -393,7 +495,7 @@ local Button = OthersTab:Button({
     end
 })
 
-local elementSection = OthersTab:Section({ Title = "Element Scripts" })
+local custoSection = OthersTab:Section({ Title = "Customization" })
 local FovSaved = config.toggle["Fov Changer"]
 local Toggle = OthersTab:Toggle({
     Title = "Fov Changer",
@@ -428,6 +530,30 @@ task.defer(function()
         end
     end)
 end)
+
+local AnimationSaved = config.dropdown["Animation Changer"]
+local Dropdown = OthersTab:Dropdown({
+    Title = "Animation Changer",
+    Values = { "None", "Gazer", "Selenix" },
+    Value = AnimationSaved or "None",
+    Callback = function(option)
+        runWithNotify("Animation Changer", function()
+            if option == "None" then
+                print("nil")
+            elseif option == "Gazer" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Animation%20Changer/Gazer.lua",true))()
+            elseif option == "Selenix" then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/Animation%20Changer/Selenix.lua",true))()
+            end
+        end, {
+            kind = "dropdown",
+            getLabel = function() return option end,
+            suppressNone = true,
+        })
+        config.dropdown["Animation Changer"] = option
+        safeWriteConfig()
+    end
+})
 
 local SwordSaved = config.dropdown["Sword Texture"]
 local Dropdown = OthersTab:Dropdown({
@@ -496,16 +622,6 @@ local Dropdown = OthersTab:Dropdown({
         })
         config.dropdown["Dark Atmosphere"] = option
         safeWriteConfig()
-    end
-})
-
-local Button = OthersTab:Button({
-    Title = "CC Scripts",
-    Icon = "terminal",
-    Callback = function()
-        runWithNotify("CC Scripts", function()
-            loadstring(game:HttpGet("https://pastebin.com/raw/TKNY3nTF",true))()
-        end)
     end
 })
 
