@@ -1,5 +1,5 @@
 # Vxalware Loader
-*Vxalware Loader is a bedwars script hub with cool features and custom configs honed to perfection*
+*Vxalware Loader is a bedwars script hub with sleek features and custom configs honed to perfection*
 ## Links:
 [Discord](https://dsc.gg/VxalwareCC)
 [YouTube](https://www.youtube.com/@OfficialStarGazerPro)
@@ -13,14 +13,13 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owne
 - Vxalware (Frontend)
 - SynthX (Backend)
 - Footagesus (UI Library)
-## Update: 3.3.2
+## Update: 3.3.3
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
-- [#] Rewrote Atmosphere Code
-- [#] Rewrote FOV Changer Code
-- [#] Rewrote Stuffs.txt (assets > API > Stuffs.txt)
-- [#] Rewrote Rxalware Config Loader
-- [!] Fixed CatVape AutoExecute not working
-- [+] Added Chat tags to appear beside name when chatting to show what rank you are on Vxalware
-- [+] Added directions for noobs in loader.lua
-- [#] Changed Sirius Menu to CC Script (more options)
+- [#] Change Readme description
+- [#] MainScript.lua now focuses on Configs rather than Scripts
+- [+] Added new icons for WindUI
+- [-] Removed stuff from stuffs.txt
+- [+] Added AlSploit
+- [+] Added Voidware Rise for Premium users
+- [#] Changed Voidpaste to Voidware to remian more formal
