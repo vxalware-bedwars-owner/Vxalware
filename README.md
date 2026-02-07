@@ -23,3 +23,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owne
 - [+] Added AlSploit
 - [+] Added Voidware Rise for Premium users
 - [#] Changed Voidpaste to Voidware to remian more formal
+
+**Update 3.3.31**
+
+- [!] Fixed Voidware icon not loading
+- [!] Fixed CC Scripts not working
