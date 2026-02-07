@@ -4,7 +4,7 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.3.3",
+    Author = "Update 3.3.31",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -385,7 +385,7 @@ local ScriptTab = Window:Tab({ Title = "Scripts", Icon = "atom" })
 local scriptSection = ScriptTab:Section({ Title = "Voidware" })
 local Button = ScriptTab:Button({
     Title = "Voidware Old",
-    Icon = "clock-fading",
+    Icon = "aperture",
     Callback = function()
         runWithNotify("Voidware Old", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua",true))()
