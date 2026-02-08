@@ -4,7 +4,7 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 local Window = WindUI:CreateWindow({
     Title = "Vxalware Rewrite",
     Icon = "moon-star",
-    Author = "Update 3.3.31",
+    Author = "Update 3.3.3",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -441,6 +441,17 @@ local Button = ScriptTab:Button({
     Callback = function()
         runWithNotify("Night", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/null-wtf/NewNight/refs/heads/main/Loader.luau",true))()
+        end)
+    end
+})
+
+local scriptSection = ScriptTab:Section({ Title = "Rust" })
+local Button = ScriptTab:Button({
+    Title = "Rust",
+    Icon = "sword",
+    Callback = function()
+        runWithNotify("Rust", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua",true))()
         end)
     end
 })
