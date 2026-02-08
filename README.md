@@ -18,13 +18,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owne
 
 - [#] Change Readme description
 - [#] MainScript.lua now focuses on Configs rather than Scripts
+- [#] Changed others tab layout
 - [+] Added new icons for WindUI
 - [-] Removed stuff from stuffs.txt
 - [+] Added AlSploit
 - [+] Added Voidware Rise for Premium users
 - [#] Changed Voidpaste to Voidware to remian more formal
-
-**Update 3.3.31**
-
 - [!] Fixed Voidware icon not loading
 - [!] Fixed CC Scripts not working
+- [!] Fixed Rust Script not loading
