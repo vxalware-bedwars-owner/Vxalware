@@ -342,7 +342,7 @@ local Button = RustTab:Button({
     Icon = "save",
     Callback = function()
         runWithNotify("Rust Config Loader", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware/Rxalware%20CFL.lua",true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rust/Rust/MainScript.lua",true))()
         end)
     end
 })
@@ -352,7 +352,7 @@ local Button = RustTab:Button({
     Icon = "terminal",
     Callback = function()
         runWithNotify("Rust Script", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rust/Rust.lua", true))()
         end)
     end
 })
@@ -451,7 +451,7 @@ local Button = ScriptTab:Button({
     Icon = "sword",
     Callback = function()
         runWithNotify("Rust", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rxalware.lua",true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rust/Rust.lua",true))()
         end)
     end
 })
