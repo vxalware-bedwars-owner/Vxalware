@@ -352,7 +352,7 @@ local Button = RustTab:Button({
     Icon = "terminal",
     Callback = function()
         runWithNotify("Rust Script", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rust/Rust.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rust/Rust.lua",true))()
         end)
     end
 })
