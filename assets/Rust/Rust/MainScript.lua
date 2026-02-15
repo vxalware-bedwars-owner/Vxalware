@@ -159,7 +159,7 @@ updateStatus("Loading Rust...")
 task.wait(1.2)
 
 local success, err = pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rust/Rust.lua", true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/Rust/Rust.lua",true))()
 end)
 if not success then
     updateStatus("Failed to load Rust:\n" .. tostring(err))
