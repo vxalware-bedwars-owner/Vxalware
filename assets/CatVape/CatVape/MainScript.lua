@@ -123,7 +123,7 @@ task.wait(1.2)
 if device == "PC" then
     updateStatus("Loading profiles...")
     local success, err = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape/PC/PC.lua", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape/PC/PC.lua",true))()
     end)
     if not success then
         updateStatus("Failed to load PC script:\n" .. tostring(err))
@@ -182,7 +182,7 @@ updateStatus("Loading CatV5...")
 task.wait(1.2)
 
 local success, err = pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua", true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/CatVape/CatVape.lua",true))()
 end)
 if not success then
     updateStatus("Failed to load CatV5:\n" .. tostring(err))
