@@ -2,9 +2,9 @@ local Version = "1.6.61"
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/download/" .. Version .. "/main.lua"))()
 
 local Window = WindUI:CreateWindow({
-    Title = "Vxalware Rewrite",
+    Title = "Vxalware CC",
     Icon = "moon-star",
-    Author = "Update 3.3.4 Beta",
+    Author = "Update 3.3.4",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -209,7 +209,7 @@ local Button = VoidTab:Button({
     Title = "Config Loader",
     Icon = "save",
     Callback = function()
-        runWithNotify("Voidware Config Loader", function()
+        runWithNotify("Voidware Config loader", function()
             print("This feature has not been implemented yet!")
         end)
     end
@@ -230,7 +230,7 @@ local Button = VoidTab:Button({
     Title = "Config Loader",
     Icon = "save",
     Callback = function()
-        runWithNotify("Voidware Config Loader", function()
+        runWithNotify("VW Rewrite Config Loader", function()
             print("This feature has not been implemented yet!")
         end)
     end
@@ -240,7 +240,7 @@ local Button = VoidTab:Button({
     Title = "Script",
     Icon = "terminal",
     Callback = function()
-        runWithNotify("Voidware Script", function()
+        runWithNotify("VW Rewrite Script", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWRewrite/main/NewMainScript.lua",true))()
         end)
     end
@@ -251,7 +251,7 @@ local Button = VoidTab:Button({
     Title = "Config Loader",
     Icon = "save",
     Callback = function()
-        runWithNotify("Voidware Config Loader", function()
+        runWithNotify("VW Rise Config Loader", function()
             print("This feature has not been implemented yet!")
         end)
     end
@@ -261,7 +261,7 @@ local Button = VoidTab:Button({
     Title = "Script",
     Icon = "terminal",
     Callback = function()
-        runWithNotify("Voidware Script", function()
+        runWithNotify("VW Rise Script", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWRise/refs/heads/main/NewMainScript.lua",true))()
         end)
     end
@@ -272,7 +272,7 @@ local Button = VoidTab:Button({
     Title = "Config Loader",
     Icon = "save",
     Callback = function()
-        runWithNotify("Voidware Config Loader", function()
+        runWithNotify("VW Packet Config Loader", function()
             print("This feature has not been implemented yet!")
         end)
     end
@@ -282,7 +282,7 @@ local Button = VoidTab:Button({
     Title = "Script",
     Icon = "terminal",
     Callback = function()
-        runWithNotify("Voidware Script", function()
+        runWithNotify("VW Packet Script", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VWPacket/main/NewMainScript.lua",true))()
         end)
     end
