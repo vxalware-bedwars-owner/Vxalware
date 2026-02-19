@@ -209,7 +209,7 @@ local Button = VoidTab:Button({
     Title = "Config Loader",
     Icon = "save",
     Callback = function()
-        runWithNotify("Voidware Config loader", function()
+        runWithNotify("Voidware Config Loader", function()
             print("This feature has not been implemented yet!")
         end)
     end
