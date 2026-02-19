@@ -1,3 +1,4 @@
+![Vxalware](assets/Vxalware.png)
 # Vxalware Loader
 *Vxalware Loader is a bedwars script hub with sleek features and custom configs honed to perfection*
 ## Links:
@@ -13,17 +14,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owne
 - Vxalware (Frontend)
 - SynthX (Backend)
 - Footagesus (UI Library)
-## Update: 3.3.3
+## Update: 3.3.4
 [+] Added, [-] Removed, [!] Fixed, [#] Modified/Changed
 
-- [#] Change Readme description
-- [#] MainScript.lua now focuses on Configs rather than Scripts
-- [#] Changed others tab layout
-- [+] Added new icons for WindUI
-- [-] Removed stuff from stuffs.txt
-- [+] Added AlSploit
-- [+] Added Voidware Rise for Premium users
-- [#] Changed Voidpaste to Voidware to remian more formal
-- [!] Fixed Voidware icon not loading
-- [!] Fixed CC Scripts not working
-- [!] Fixed Rust Script not loading
+- [+] Added CatVape chat tag autoexecute
+- [#] Rewrote CatVape Config loader
+- [+] Added protection for custom CV users
+- [+] Added Beta testing
+- [!] Fixed CV loader not working
+- [#] Universally changed CatV5 to CatVape
+- [#] Rewrote Rust Config loader
+- [#] Cleaned up assets for config preps
+- [+] Added Vxalware image to readme
+- [!] Fixed incorrect loadstrings
+- [!] Added users to custom loaders
