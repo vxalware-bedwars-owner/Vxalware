@@ -7,20 +7,14 @@ if not state or type(state) ~= "table" then
     return
 end
 
--- stop loop
 state.Running = false
-
--- Disconnection
 if state.Connections then
     for _, c in ipairs(state.Connections) do
         pcall(function() if c and c.Disconnect then c:Disconnect() end end)
     end
 end
 
--- finish cleanup
 task.wait(0.2)
-
--- Restore original FOV
 local cam = workspace.CurrentCamera
 if cam and state.OriginalFOV ~= nil then
     pcall(function() cam.FieldOfView = state.OriginalFOV end)
@@ -29,6 +23,5 @@ else
     print("[FOV Uninjector] No original FOV recorded; nothing to restore.")
 end
 
--- Remove module record
 getgenv()[MODULE] = nil
 print("[FOV Uninjector] Uninjection complete.")
