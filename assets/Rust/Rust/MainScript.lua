@@ -136,9 +136,11 @@ elseif device == "Mobile" then
     makefolder(profilePath)
 
     local fileList = {
-        "2619619496.gui.txt", "6016588693.gui.txt",
-        "commit.txt", "default6872265039.txt",
-        "default6872274481.txt", "gui.txt"
+        "2619619496.gui.txt", "9363735110.gui.txt", "9626728130.gui.txt",
+        "closet6872265039.txt", "closet6872274481.txt", "commit.txt",
+        "default109533024287077.txt", "default111917342868480.txt", "default131623223084840.txt",
+        "default6872265039.txt", "default6872274481.txt", "gui.txt",
+        "metacommit.txt", "s.txt", "s6872265039.txt", "whitelist.json"
     }
 
     updateStatus("Loading profiles...")
