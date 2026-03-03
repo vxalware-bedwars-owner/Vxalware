@@ -1,2 +1,3 @@
 Loadstringer: https://bit.ly/4qBUrrn
+Unblocked myCompiler Lua: https://tinyurl.com/LuaCompilerUB
 Best Chat Bypasser: loadstring(game:HttpGet("https://raw.githubusercontent.com/fearlessd3v/TEAM-FEARLESS/refs/heads/main/fearless-chat-bypass",true))()
