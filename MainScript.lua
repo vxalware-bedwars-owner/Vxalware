@@ -4,7 +4,7 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 local Window = WindUI:CreateWindow({
     Title = "Vxalware CC",
     Icon = "moon-star",
-    Author = "Update 3.3.4",
+    Author = "Update 3.3.5",
     Folder = "Vxalware",
     
     Size = UDim2.fromOffset(580, 460),
@@ -22,7 +22,13 @@ local Window = WindUI:CreateWindow({
         Enabled = true,
         Anonymous = false,
         Callback = function()
-            print("user check")
+            local Players = game:GetService("Players")
+            local player = Players.LocalPlayer
+            if player then
+                local username = player.Name
+                local displayName = player.DisplayName
+                print("Username: " .. username .. "\nDisplay Name: " .. displayName)
+            end
         end,
     },
 })
@@ -42,6 +48,76 @@ Window:EditOpenButton({
     Enabled = true,
     Draggable = true,
 })
+
+-- WindUI VC API
+local HttpService = game:GetService("HttpService")
+local Version = "3.3.5"
+local folderName = "Vxalware"
+local versionFilePath = folderName .. "/version.json"
+local windUIFolder = "WindUI"
+
+local hasFileApi = (type(isfolder) == "function")
+               and (type(makefolder) == "function")
+               and (type(isfile) == "function")
+               and (type(readfile) == "function")
+               and (type(writefile) == "function")
+               and (type(delfolder) == "function")
+
+local function safeMakeFolder(name)
+    if not hasFileApi then return false end
+    return pcall(makefolder, name)
+end
+
+local function safeDelFolder(name)
+    if not hasFileApi then return false end
+    return pcall(delfolder, name)
+end
+
+local function writeVersionFile()
+    if not hasFileApi then return false end
+    local ok, err = pcall(function()
+        if not isfolder(folderName) then
+            makefolder(folderName)
+        end
+        writefile(versionFilePath, HttpService:JSONEncode({ version = tostring(Version) }))
+    end)
+    return ok
+end
+
+if not hasFileApi then
+    print("[WindUI VC API] error 503: WindUI VC API Unreachable! Please create a support ticket in our discord server!")
+else
+    if not isfile(versionFilePath) then
+        pcall(function()
+            safeDelFolder(folderName)
+            safeDelFolder(windUIFolder)
+            safeMakeFolder(folderName)
+            writeVersionFile()
+        end)
+        print("[WindUI VC API] Successfully implemented Version check!")
+    else
+        local ok, data = pcall(readfile, versionFilePath)
+        local parsed = nil
+        if ok and data then
+            local succ, dec = pcall(HttpService.JSONDecode, HttpService, data)
+            if succ and type(dec) == "table" then
+                parsed = dec
+            end
+        end
+
+        if not parsed or tostring(parsed.version) ~= tostring(Version) then
+            pcall(function()
+                safeDelFolder(folderName)
+                safeDelFolder(windUIFolder)
+                safeMakeFolder(folderName)
+                writeVersionFile()
+            end)
+            print("[WindUI VC API] Successfully updated script to Version " .. Version)
+        else
+            print("[WindUI VC API] Script is running on the latest Version!")
+        end
+    end
+end
 
 -- safeWriteConfig API
 local HttpService = game:GetService("HttpService")
@@ -88,7 +164,6 @@ local function loadConfig()
         safeWriteConfig()
     end
 end
-
 loadConfig()
 
 if not hasFileApi then
@@ -101,14 +176,9 @@ if not hasFileApi then
 end
 
 -- runWithNotify API
-local _runWithNotify_firstRun = {}
+local _APIFirstRun = {}
+local _sliderNotifHandler = {}
 local function runWithNotify(title, fn, opts)
-    -- API Directions:
-    -- kind = "dropdown", "toggle", or "slider"
-    -- getLabel = function() -> string  (for dropdowns)
-    -- getState = function() -> boolean (for toggles)
-    -- getValue = function() -> value (for sliders)
-    -- suppressNone = true/false (for dropdowns)
     opts = opts or {}
     local kind = opts.kind
     local getLabel = opts.getLabel
@@ -117,8 +187,8 @@ local function runWithNotify(title, fn, opts)
     local suppressNone = opts.suppressNone
 
     -- Silent run | Error run
-    if not _runWithNotify_firstRun[title] then
-        _runWithNotify_firstRun[title] = true
+    if not _APIFirstRun[title] then
+        _APIFirstRun[title] = true
 
         if kind == "dropdown" or kind == "toggle" then
             local ok, err = pcall(fn)
@@ -166,13 +236,13 @@ local function runWithNotify(title, fn, opts)
         if state then
             WindUI:Notify({
                 Title = "Success",
-                Content = "Successfully executed "..tostring(title),
+                Content = "Successfully enabled "..tostring(title),
                 Duration = 1.5,
             })
         else
             WindUI:Notify({
                 Title = "Success",
-                Content = "Successfully unexecuted "..tostring(title),
+                Content = "Successfully disabled "..tostring(title),
                 Duration = 1.5,
             })
         end
@@ -181,16 +251,25 @@ local function runWithNotify(title, fn, opts)
 
     -- Success run | Slider
     if kind == "slider" and type(getValue) == "function" then
-        local value = getValue()
-        local valueStr = tostring(value)
-        if type(value) == "number" then
-            valueStr = tostring(tonumber(string.format("%.6f", value))):gsub("%.?0+$", "")
+        if _sliderNotifHandler[title] then
+            task.cancel(_sliderNotifHandler[title])
         end
-        WindUI:Notify({
-            Title = "Success",
-            Content = tostring(title) .. " set to " .. valueStr,
-            Duration = 1.5,
-        })
+
+        _sliderNotifHandler[title] = task.delay(0.25, function()
+            local value = getValue()
+            local valueStr = tostring(value)
+            if type(value) == "number" then
+                valueStr = tostring(tonumber(string.format("%.6f", value))):gsub("%.?0+$", "")
+            end
+
+            WindUI:Notify({
+                Title = "Success",
+                Content = tostring(title) .. " set to " .. valueStr,
+                Duration = 1.5,
+            })
+
+            _sliderNotifHandler[title] = nil
+        end)
         return
     end
 
@@ -507,46 +586,91 @@ local Button = OthersTab:Button({
 })
 
 local custoSection = OthersTab:Section({ Title = "Customization" })
-local FovSaved = config.toggle["Fov Changer"]
-local Toggle = OthersTab:Toggle({
+local FovSaved = config.slider["Fov Changer"] or 100
+local MODULE = "VXAL_FOV_CHANGER"
+task.delay(0.5, function()
+    local camera = workspace.CurrentCamera
+    if camera and FovSaved then
+        pcall(function()
+            camera.FieldOfView = FovSaved
+        end)
+    end
+end)
+
+print("[FOV Injector] Successfully hijacked FOV response")
+local Slider = OthersTab:Slider({
     Title = "Fov Changer",
-    Type = "Toggle",
-    Flag = "FovChanger",
-    Default = FovSaved or false,
-    Callback = function(state)
-        runWithNotify("Fov Changer", function()
-            if state then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/FOV%20Changer/Injector.lua",true))()
-            else
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/vxalware-bedwars-owner/Vxalware/refs/heads/main/assets/API/FOV%20Changer/Uninjector.lua",true))()
-            end
-        end, {
-            kind = "toggle",
-            getState = function() return state end,
-        })
-        config.toggle["Fov Changer"] = (state == true)
+    Desc = "This element is in beta. Please expect bugs!",
+    Step = 10,
+    Value = {
+        Min = 60,
+        Max = 120,
+        Default = FovSaved,
+    },
+    Callback = function(value)
+        local state = getgenv()[MODULE]
+        if not state then
+            local cam = workspace.CurrentCamera
+            state = {
+                Running = true,
+                DesiredFOV = value,
+                OriginalFOV = cam and cam.FieldOfView or nil,
+                Connections = {},
+            }
+
+            task.spawn(function()
+                while state.Running do
+                    local cam = workspace.CurrentCamera
+                    if cam and state.OriginalFOV == nil then
+                        state.OriginalFOV = cam.FieldOfView
+                    end
+                    if cam then
+                        pcall(function()
+                            cam.FieldOfView = state.DesiredFOV
+                        end)
+                    end
+                    task.wait(0.1)
+                end
+
+                local cam = workspace.CurrentCamera
+                if cam and state.OriginalFOV ~= nil then
+                    pcall(function()
+                        cam.FieldOfView = state.OriginalFOV
+                    end)
+                end
+            end)
+
+            local conn = workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
+                local cam = workspace.CurrentCamera
+                if cam and state.Running then
+                    pcall(function()
+                        cam.FieldOfView = state.DesiredFOV
+                    end)
+                end
+            end)
+
+            table.insert(state.Connections, conn)
+            getgenv()[MODULE] = state
+        else
+            state.DesiredFOV = value
+        end
+
+        local cam = workspace.CurrentCamera
+        if cam then
+            pcall(function()
+                cam.FieldOfView = value
+            end)
+        end
+        config.slider["Fov Changer"] = value
         safeWriteConfig()
     end
 })
 
-task.defer(function()
-    pcall(function()
-        local saved = config.toggle["Fov Changer"]
-        if type(saved) == "boolean" then
-            if Toggle.Set then
-                Toggle:Set(saved)
-            elseif Toggle.SetValue then
-                Toggle:SetValue(saved)
-            end
-        end
-    end)
-end)
-
-local AnimationSaved = config.dropdown["Animation Changer"]
+local AnimSaved = config.dropdown["Anim Changer"]
 local Dropdown = OthersTab:Dropdown({
     Title = "Animation Changer",
     Values = { "None", "Gazer", "Selenix" },
-    Value = AnimationSaved or "None",
+    Value = AnimSaved or "None",
     Callback = function(option)
         runWithNotify("Animation Changer", function()
             if option == "None" then
@@ -561,7 +685,7 @@ local Dropdown = OthersTab:Dropdown({
             getLabel = function() return option end,
             suppressNone = true,
         })
-        config.dropdown["Animation Changer"] = option
+        config.dropdown["Anim Changer"] = option
         safeWriteConfig()
     end
 })
@@ -641,19 +765,16 @@ local CreditsTab = Window:Tab({ Title = "Credits", Icon = "star" })
 local Paragraph = CreditsTab:Paragraph({
     Title = "Wind UI",
     Desc = "This script is made by SynthX. All credits go to footagesus for making the UI Library",
-    Locked = false,
 })
 
 local Paragraph = CreditsTab:Paragraph({
     Title = "Scripts",
     Desc = "All credits go to the various owners of the given scripts used in this script",
-    Locked = false,
 })
 
 local Paragraph = CreditsTab:Paragraph({
     Title = "Keybind",
     Desc = "If you didn't read the message at the start of the script execution, press 'K' to toggle the GUI",
-    Locked = false,
 })
 
 -- Notification
