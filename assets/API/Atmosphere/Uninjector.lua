@@ -1,32 +1,23 @@
 -- Advanced atmosphere uninjector
 local lighting = game:GetService("Lighting")
-
 local hasSaved = getgenv().__savedLightingState ~= nil
 local prev = lighting:FindFirstChild("CustomAtmosphere")
 local prevBloom = lighting:FindFirstChild("CustomBloom")
 
 if not hasSaved and not prev and not prevBloom then
-    print("No custom atmosphere/bloom found and no saved state. Nothing to remove.")
     return
 end
 
 if prev then
     prev:Destroy()
-    print("CustomAtmosphere removed.")
-else
-    print("no CustomAtmosphere")
 end
 
 if prevBloom then
     prevBloom:Destroy()
-    print("CustomBloom removed.")
-else
-    print("no CustomBloom")
 end
 
 if hasSaved then
     local saved = getgenv().__savedLightingState
-
     pcall(function() lighting.TimeOfDay = saved.TimeOfDay end)
     pcall(function() lighting.Brightness = saved.Brightness end)
     pcall(function() lighting.Ambient = saved.Ambient end)
@@ -52,7 +43,6 @@ if hasSaved then
         a.Offset = saved.OriginalAtmosphere.Offset
         a.Color = saved.OriginalAtmosphere.Color
         a.Decay = saved.OriginalAtmosphere.Decay
-        print("Restored original Atmosphere.")
     end
 
     if saved.OriginalBloom then
@@ -62,11 +52,10 @@ if hasSaved then
         b.Intensity = saved.OriginalBloom.Intensity
         b.Threshold = saved.OriginalBloom.Threshold
         b.Size = saved.OriginalBloom.Size
-        print("Restored original BloomEffect.")
     end
 
     getgenv().__savedLightingState = nil
-    print("Lighting restored to saved original state.")
+    print("[Atmosphere Uninjector] Visuals restored to saved original state.")
 else
-    print("Removed custom atmosphere/bloom but no original state to restore.")
+    print("[Atmosphere Uninjector] Successfully uninjected atmosphere.")
 end
