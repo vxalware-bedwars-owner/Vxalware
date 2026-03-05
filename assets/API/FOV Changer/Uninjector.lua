@@ -24,4 +24,3 @@ else
 end
 
 getgenv()[MODULE] = nil
-print("[FOV Uninjector] Uninjection complete.")
