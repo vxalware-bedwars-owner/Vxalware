@@ -5,6 +5,7 @@ local prev = lighting:FindFirstChild("CustomAtmosphere")
 local prevBloom = lighting:FindFirstChild("CustomBloom")
 
 if not hasSaved and not prev and not prevBloom then
+    print("[Atmosphere Uninjector] Successfully set module to 'None'")
     return
 end
 
