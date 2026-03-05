@@ -67,4 +67,4 @@ bloom.Intensity = 0.3
 bloom.Threshold = 0.8
 bloom.Size = 30
 
-print("Orange atmosphere applied!")
+print("[Atmosphere Changer] Successfully applied Orange Atmosphere")
