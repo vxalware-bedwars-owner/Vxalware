@@ -20,7 +20,7 @@ if cam and state.OriginalFOV ~= nil then
     pcall(function() cam.FieldOfView = state.OriginalFOV end)
     print("[FOV Uninjector] Restored original FOV:", state.OriginalFOV)
 else
-    print("[FOV Uninjector] No original FOV recorded; nothing to restore.")
+    print("[FOV Uninjector] Successfully set FOV module to 'None'")
 end
 
 getgenv()[MODULE] = nil
